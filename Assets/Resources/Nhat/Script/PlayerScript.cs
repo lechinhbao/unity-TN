@@ -76,10 +76,7 @@ public class PlayerScript : MonoBehaviour
         {
             isJumping = false;
         }
-        if (collision.gameObject.CompareTag("Destroy"))
-        {
-            Destroy(gameObject); // Xóa đối tượng box
-        }
+      
     }
 }
 
