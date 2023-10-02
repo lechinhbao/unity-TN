@@ -6,7 +6,6 @@ public class PlayerScript : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D rb;
-    private bool isFacingRight = true;
    
     private bool isRunning;
     private bool isJumping;
@@ -14,26 +13,27 @@ public class PlayerScript : MonoBehaviour
     public float runSpeed = 5f;
     public float jumpForce = 5f;
 
-    
+    private bool isFacingRight = true;
 
     private void Start()
+
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     private void Update()
     {
-
+     
         // Điều khiển chạy
         float move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(move * runSpeed, rb.velocity.y);
         isRunning = Mathf.Abs(move) > 0;
-
-
+    
 
         // Xác định hướng nhìn của Player
-          if (move > 0 && !isFacingRight)
+        if (move > 0 && !isFacingRight)
           {
               Flip();
           }
@@ -41,7 +41,6 @@ public class PlayerScript : MonoBehaviour
           {
               Flip();
           }
-         
 
         // Điều khiển nhảy
         if (Input.GetButtonDown("Jump") && !isJumping)
@@ -63,8 +62,6 @@ public class PlayerScript : MonoBehaviour
         scale.x *= -1;
         transform.localScale = scale;
     }
-   
-  
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -73,5 +70,9 @@ public class PlayerScript : MonoBehaviour
         {
             isJumping = false;
         }
+     
     }
+  
 }
+
+

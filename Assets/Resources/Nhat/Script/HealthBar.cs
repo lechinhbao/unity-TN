@@ -1,22 +1,15 @@
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Slider slider;
-    public Gradient gradient;
-    public Image fill;
+    public Image fillBar;
+    public TextMeshProUGUI valueText;
 
-    public void SetMaxHealth(int maxHealth)
+    public void UpdateBar(int currentValue, int maxValue) 
     {
-        slider.maxValue = maxHealth;
-        slider.value = maxHealth;
-        fill.color = gradient.Evaluate(1f);
-    }
-
-    public void SetHealth(int health)
-    {
-        slider.value = health;
-        fill.color = gradient.Evaluate(slider.normalizedValue);
+        fillBar.fillAmount = (float)currentValue / (float)maxValue;
+        valueText.text = currentValue.ToString() + " / " + maxValue.ToString();
     }
 }
