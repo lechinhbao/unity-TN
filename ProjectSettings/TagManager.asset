@@ -6,6 +6,9 @@ TagManager:
   tags:
   - block
   - player
+  - Salamander
+  - Fire
+  - Trai
   layers:
   - Default
   - TransparentFX
