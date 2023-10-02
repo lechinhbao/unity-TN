@@ -72,7 +72,12 @@ public class PlayerScript : MonoBehaviour
         }
      
     }
-  
+    public void Death()
+    {
+        animator.SetTrigger("PlayerDeath");
+    }
+
 }
+
 
 

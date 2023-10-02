@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +11,9 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
     public UnityEvent OnDeath;
 
+    private Animator animator;
+
+    public float deathAnimationDuration = 2.0f;
     private void OnEnable()
     {
         OnDeath.AddListener(Death);
@@ -24,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
 
        healthBar.UpdateBar(currentHealth, maxHealth);
-
+        animator = GetComponent<Animator>();
     }
     public void TakeDamage(int damage)
     {
@@ -38,8 +41,22 @@ public class PlayerHealth : MonoBehaviour
     }
     public void Death()
     {
+        // Kích hoạt animation "Die".
+        animator.SetTrigger("PlayerDeath");
+
+        // Chờ cho đến khi animation hoàn thành trước khi hủy GameObject.
+        StartCoroutine(DestroyAfterAnimation());
+    }
+
+    private IEnumerator DestroyAfterAnimation()
+    {
+        // Chờ đợi thời gian của animation chết hoàn thành.
+        yield return new WaitForSeconds(deathAnimationDuration);
+
+        // Hủy (destroy) GameObject.
         Destroy(gameObject);
     }
+
     private void Update()
     {
    

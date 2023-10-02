@@ -7877,19 +7877,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68059cf54193e754facc70bfa571a374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &291426150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 291426135}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebf041fcd0598f44781938819a32873e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
 --- !u!114 &291426157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7907,6 +7894,7 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  deathAnimationDuration: 2
 --- !u!114 &291426164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55562,7 +55550,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3471967255334180284, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
       propertyPath: runSpeed
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3471967255334180284, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
       propertyPath: m_Enabled
@@ -55640,9 +55628,6 @@ PrefabInstance:
       addedObject: {fileID: 291426157}
     - targetCorrespondingSourceObject: {fileID: 4785949740243035383, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
       insertIndex: 3
-      addedObject: {fileID: 291426150}
-    - targetCorrespondingSourceObject: {fileID: 4785949740243035383, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
-      insertIndex: 4
       addedObject: {fileID: 291426142}
   m_SourcePrefab: {fileID: 100100000, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
 --- !u!1001 &7063166452388584837
