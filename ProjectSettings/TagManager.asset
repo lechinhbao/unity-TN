@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Stone
   - Ladder
+  - Trap
+  - Monster
+  - HealthBar
   layers:
   - Default
   - TransparentFX

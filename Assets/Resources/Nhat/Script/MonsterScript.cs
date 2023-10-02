@@ -8,6 +8,8 @@ public class MonsterScript : MonoBehaviour
     private bool isRight; //true -> di chuyen phai false di chuyen ben trai
     public GameObject player;
     // Start is called before the first frame update
+
+
     void Start()
     {
 
@@ -72,4 +74,6 @@ public class MonsterScript : MonoBehaviour
     {
         this.player = player;
     }
-}
+   
+    }
+
