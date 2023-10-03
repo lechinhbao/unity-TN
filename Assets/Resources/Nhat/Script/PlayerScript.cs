@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -75,7 +76,9 @@ public class PlayerScript : MonoBehaviour
     public void Death()
     {
         animator.SetTrigger("PlayerDeath");
+       
     }
+    
 
 }
 

@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     private Animator anim;
     public GameObject menu;
     private bool isPlaying = true;
-    private int countCoin = 0;
+    // private int countCoin = 0;
     public TMP_Text txtCoin;
     //Nhạc
     public AudioSource soundCoin;
