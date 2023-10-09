@@ -7,6 +7,7 @@ TagManager:
   - PER
   - enimi
   - Playered
+  - bulletPlayer
   layers:
   - Default
   - TransparentFX
