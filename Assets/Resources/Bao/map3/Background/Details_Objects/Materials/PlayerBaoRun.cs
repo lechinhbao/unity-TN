@@ -18,6 +18,8 @@ public class PlayerBaoRun : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
 
     private enum MovemenState {idle, running,jumping,falling }
+
+    private bool isRight= true;
    
     private void Start()
     {
@@ -25,12 +27,40 @@ public class PlayerBaoRun : MonoBehaviour
         coli = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+
     }
 
 
     // Update is called once per frame
     private void Update()
     {
+        anim.SetBool("fire", false);
+
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            anim.SetBool("fire",true);
+            var x = transform.position.x + (isRight ? 0.5f : - 0.5f);
+            var y = transform.position.y -0.1f;
+            var z = transform.position.z;
+           GameObject gameObject= (GameObject) Instantiate(
+                Resources.Load("Bao/refabs/bulletPlayer"), new Vector3(x,y,z),
+                Quaternion.identity
+             );
+            gameObject.GetComponent<BulletPlayerB>().setIsRoght(isRight);
+        }
+
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            isRight = false;
+            Debug.Log("da quay");
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            isRight = true;
+        }
+
+
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeedB, rb.velocity.y);
         if (Input.GetButtonDown("Jump") && IsGround())
@@ -75,5 +105,14 @@ public class PlayerBaoRun : MonoBehaviour
     private bool IsGround()
     {
        return Physics2D.BoxCast(coli.bounds.center, coli.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "enimi")
+        {
+            anim.SetTrigger("hurt");
+        }
+        
     }
 }
