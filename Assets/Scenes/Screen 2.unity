@@ -8349,54 +8349,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4785949740243035383, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
   m_PrefabInstance: {fileID: 6974781322511773983}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &291426142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 291426135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68059cf54193e754facc70bfa571a374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &291426157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 291426135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d534037837930846b9825bf90e69d83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  Health: 5
-  healthBar: {fileID: 2142865564}
-  OnDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  deathAnimationDuration: 2
-  pausePanel: {fileID: 802552720}
---- !u!114 &291426171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 291426135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87ac0bf077e73e44eaf81f74d023d432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pausePanel: {fileID: 802552720}
-  restartButton: {fileID: 68104390}
-  continueButton: {fileID: 2033142651}
-  exitButton: {fileID: 35560376}
 --- !u!1 &293711008
 GameObject:
   m_ObjectHideFlags: 0
@@ -57565,33 +57517,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3471967255334180284, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
-      propertyPath: runSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3471967255334180284, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3471967255334180284, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
-      propertyPath: playerHealth
+    - target: {fileID: 468390037487681272, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
+      propertyPath: healthBar
       value: 
       objectReference: {fileID: 2142865564}
-    - target: {fileID: 4561845967998093324, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596746922433195287, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.3628488
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596746922433195287, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4480871
-      objectReference: {fileID: 0}
+    - target: {fileID: 468390037487681272, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 802552720}
+    - target: {fileID: 1424449868120495458, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
+      propertyPath: exitButton
+      value: 
+      objectReference: {fileID: 35560376}
+    - target: {fileID: 1424449868120495458, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 802552720}
+    - target: {fileID: 1424449868120495458, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
+      propertyPath: restartButton
+      value: 
+      objectReference: {fileID: 68104390}
+    - target: {fileID: 1424449868120495458, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 2033142651}
     - target: {fileID: 4596746922433195287, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.92
+      value: 55.7
       objectReference: {fileID: 0}
     - target: {fileID: 4596746922433195287, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -57636,16 +57588,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4785949740243035383, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 291426171}
-    - targetCorrespondingSourceObject: {fileID: 4785949740243035383, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 291426157}
-    - targetCorrespondingSourceObject: {fileID: 4785949740243035383, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 291426142}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
 --- !u!1001 &7063166452388584837
 PrefabInstance:
