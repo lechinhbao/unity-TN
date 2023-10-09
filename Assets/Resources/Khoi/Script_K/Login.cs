@@ -51,7 +51,7 @@ public class Login : MonoBehaviour
         // gọi API
         if (acc.Equals("khoi") && pass.Equals("12345"))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
         else
         {
