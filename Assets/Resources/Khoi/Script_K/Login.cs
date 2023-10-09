@@ -33,13 +33,13 @@ public class Login : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            Selectable next = eventSystem.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnRight();
+            Selectable next = eventSystem.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnDown();
             if (next != null) next.Select();
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            Selectable next = eventSystem.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnLeft();
+            Selectable next = eventSystem.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnUp();
             if (next != null) next.Select();
         }
     }
@@ -51,7 +51,7 @@ public class Login : MonoBehaviour
         // gọi API
         if (acc.Equals("khoi") && pass.Equals("12345"))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
         else
         {
