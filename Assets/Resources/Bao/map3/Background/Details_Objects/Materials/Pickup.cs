@@ -8,13 +8,13 @@ public class Pickup : MonoBehaviour
     public GameObject itemButton;
    private void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Playered").GetComponent<Inventory>();
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Playered"))
+        if (collision.CompareTag("Player"))
         {
             
             for(int i =0; i<inventory.slots.Length; i++)
