@@ -10,7 +10,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int maxHealth;
     int currentHealth;
 
+    public int Health;
     public HealthBar healthBar;
+
+
     public UnityEvent OnDeath;
 
     private Animator animator;
@@ -74,7 +77,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
-            TakeDamage(50);
+            TakeDamage(Health);
         }
     }
+ 
 }
