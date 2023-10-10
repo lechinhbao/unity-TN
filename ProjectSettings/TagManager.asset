@@ -9,6 +9,7 @@ TagManager:
   - Salamander
   - Fire
   - Trai
+  - Boss
   layers:
   - Default
   - TransparentFX
