@@ -10,7 +10,7 @@ public class Level : MonoBehaviour
     
     public void level()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
    
