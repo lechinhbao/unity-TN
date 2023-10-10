@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
 
     public int Health;
     public HealthBar healthBar;
+
+
     public UnityEvent OnDeath;
 
     private Animator animator;
@@ -78,4 +80,5 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(Health);
         }
     }
+ 
 }
