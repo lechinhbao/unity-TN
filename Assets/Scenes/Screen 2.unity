@@ -31158,6 +31158,63 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!1001 &1202972199
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4388114276243398582, guid: 5dc11d87574b6cd4bb1b07b1486c1035, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 56.820374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388114276243398582, guid: 5dc11d87574b6cd4bb1b07b1486c1035, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.129616
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388114276243398582, guid: 5dc11d87574b6cd4bb1b07b1486c1035, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388114276243398582, guid: 5dc11d87574b6cd4bb1b07b1486c1035, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388114276243398582, guid: 5dc11d87574b6cd4bb1b07b1486c1035, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388114276243398582, guid: 5dc11d87574b6cd4bb1b07b1486c1035, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388114276243398582, guid: 5dc11d87574b6cd4bb1b07b1486c1035, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388114276243398582, guid: 5dc11d87574b6cd4bb1b07b1486c1035, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388114276243398582, guid: 5dc11d87574b6cd4bb1b07b1486c1035, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388114276243398582, guid: 5dc11d87574b6cd4bb1b07b1486c1035, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795836063762065088, guid: 5dc11d87574b6cd4bb1b07b1486c1035, type: 3}
+      propertyPath: m_Name
+      value: Knight_attack1 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5dc11d87574b6cd4bb1b07b1486c1035, type: 3}
 --- !u!114 &1205192815 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4603666391751852355, guid: b93878d63d639ca479ed964fde84402c, type: 3}
@@ -57258,11 +57315,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4596746922433195287, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.48
+      value: 52.53
       objectReference: {fileID: 0}
     - target: {fileID: 4596746922433195287, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.43
+      value: 1.87
       objectReference: {fileID: 0}
     - target: {fileID: 4596746922433195287, guid: 53cd4c8ab73ffa54c979de82d362bafe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -58584,3 +58641,4 @@ SceneRoots:
   - {fileID: 1764814242}
   - {fileID: 1335483810}
   - {fileID: 1510715766}
+  - {fileID: 1202972199}
