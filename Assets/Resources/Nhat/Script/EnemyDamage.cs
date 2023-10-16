@@ -1,31 +1,38 @@
 ﻿using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class EnemyDamage : MonoBehaviour
 {
-    PlayerScript playerScript;
-    public int minDamage;
-    public int maxDamage;
+    public float left, right;
+    public GameObject monster;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Update()
     {
-        if (collision.CompareTag("Player"))
-        {
-            playerScript = collision.GetComponent<PlayerScript>();
-            InvokeRepeating("DamagePlayer", 0, 0.1f);
-        }
-    }
+        var monsterX = monster.transform.position.x;
+        var monsterY = monster.transform.position.y;
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        var cameraX = transform.position.x;
+        var cameraY = transform.position.y;
+
+        if (monsterX > left && monsterX < right)
         {
-            playerScript = null;
-            CancelInvoke();
+            cameraX = monsterX;
         }
+        else
+        {
+            if (cameraX < left) cameraX = left;
+            if (cameraX > right) cameraX = right;
+        }
+        if (monsterY > 0)
+        {
+            cameraY = monsterY;
+        }
+        else
+        {
+            cameraY = 0;
+        }
+
+
+        transform.position = new Vector3(cameraX, cameraY, -8);
     }
-    void DamagePlayer()
-    {
-        int damage = UnityEngine.Random.Range(minDamage, maxDamage);
-       
-    }
-};
+}
