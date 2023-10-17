@@ -33,12 +33,12 @@ public class ManaScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            TakeMana(10);
+            TakeMana(5);
 
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
-            TakeMana(10);
+            TakeMana(5);
         }
         }
 }

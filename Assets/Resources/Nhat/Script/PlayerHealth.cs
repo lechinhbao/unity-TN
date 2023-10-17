@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     public float deathAnimationDuration = 2.0f;
 
     //Hiển thị panel
-    public GameObject pausePanel;
+    public GameObject DiePanel;
     private bool isGamePaused = false;
 
     private void OnEnable()
@@ -66,7 +66,7 @@ public class PlayerHealth : MonoBehaviour
 
         Time.timeScale = 0; // Tạm dừng thời gian trong trò chơi.
         isGamePaused = true;
-        pausePanel.SetActive(true); // Hiển thị Panel Pause.
+        DiePanel.SetActive(true); // Hiển thị Panel Pause.
     }
     
     private void Update()
