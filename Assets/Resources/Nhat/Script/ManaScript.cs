@@ -22,6 +22,7 @@ public class ManaScript : MonoBehaviour
 
         if (currentMana < 0)
         {
+            Debug.Log("oke nha");
             currentMana = 0;
             animator.ResetTrigger("Attack");
             animator.ResetTrigger("PlayerAttackExtra");
