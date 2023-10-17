@@ -34651,7 +34651,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0036907196, y: 0.025817871}
@@ -34680,8 +34680,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   victoryPanel: {fileID: 977293139}
-  restartButton: {fileID: 0}
-  continueButton: {fileID: 0}
+  restartButton: {fileID: 1672007264}
+  continueButton: {fileID: 484168285}
 --- !u!1 &1270091756
 GameObject:
   m_ObjectHideFlags: 0
@@ -53333,6 +53333,10 @@ PrefabInstance:
     - target: {fileID: 8707469445697796815, guid: a4184c91aaf67b84db887807c6a5dda2, type: 3}
       propertyPath: m_Name
       value: Bear (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707469445697796815, guid: a4184c91aaf67b84db887807c6a5dda2, type: 3}
+      propertyPath: m_TagString
+      value: Monster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
