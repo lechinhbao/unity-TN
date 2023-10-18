@@ -9,6 +9,8 @@ TagManager:
   - Trap
   - Monster
   - HealthBar
+  - Enemy
+  - DamagePlayer
   layers:
   - Default
   - TransparentFX
