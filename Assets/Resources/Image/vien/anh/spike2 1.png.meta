@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b7a8b48ad5328647a2aeaec69fe4362
+guid: 343f4555168888646b3f6f73b7d936d4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jump1_0
+      name: spike2 1_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 18
-        width: 62
-        height: 49
+        x: 53
+        y: 35
+        width: 22
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9644ba8a93a85dd44adde44df73ecd2f
-      internalID: 872865543
+      spriteID: a669a75b550cfdd47a6883638ccec1b6
+      internalID: -1845907916
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jump1_0: 872865543
+      spike2 1_0: -1845907916
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

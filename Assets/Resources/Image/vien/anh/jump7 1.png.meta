@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b7a8b48ad5328647a2aeaec69fe4362
+guid: 9db070192388ea74da2be1fd6beeaaa0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jump1_0
+      name: jump7_0
       rect:
         serializedVersion: 2
-        x: 16
+        x: 14
         y: 18
-        width: 62
-        height: 49
+        width: 65
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9644ba8a93a85dd44adde44df73ecd2f
-      internalID: 872865543
+      spriteID: 99f472fa5f77aac4d92c904479ed6022
+      internalID: 299950238
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jump1_0: 872865543
+      jump7_0: 299950238
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
