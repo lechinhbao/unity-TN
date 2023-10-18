@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3797032203475645947}
   - component: {fileID: 2202141636260610915}
   - component: {fileID: 3226646173166185559}
-  - component: {fileID: 3836271093422949284}
   - component: {fileID: 9155400909411814460}
   m_Layer: 0
   m_Name: quai
@@ -108,21 +107,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3836271093422949284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4910708816154184238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f25a81b97832393448015ff80f052125, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: -4.09
-  end: -2
-  player: {fileID: 0}
 --- !u!61 &9155400909411814460
 BoxCollider2D:
   m_ObjectHideFlags: 0

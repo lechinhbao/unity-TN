@@ -76,7 +76,7 @@ public class NPC : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Playered"))
+        if(other.CompareTag("Player"))
         {
             playerIsClosel= true;
             Debug.Log("hhahahaha");
@@ -84,7 +84,7 @@ public class NPC : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Playered"))
+        if (other.CompareTag("Player"))
         {
             playerIsClosel = false;
             zeroText();

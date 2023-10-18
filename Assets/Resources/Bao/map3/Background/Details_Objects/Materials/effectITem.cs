@@ -9,7 +9,7 @@ public class effectITem : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Playered").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     
     public void use()
