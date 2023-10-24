@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class Attack : MonoBehaviour
@@ -16,18 +17,18 @@ public class Attack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
-            // Kích hoạt animation chém khi nhấn "S"
+         // Kích hoạt animation chém khi nhấn "S"
             animator.SetTrigger("Attack");
-         //   isAttacking = true;
-        
+         //   isAttacking = true;        
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
             // Tắt animation chém khi ngừng nhấn "S"
             animator.ResetTrigger("Attack");
         }
+
         if (Input.GetKeyDown(KeyCode.X))
         {
             // Kích hoạt animation chém khi nhấn "X"
@@ -40,10 +41,24 @@ public class Attack : MonoBehaviour
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("PlayerAttackExtra");
         }
-        
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            {
+                // Kích hoạt animation chém khi nhấn "X"
+                animator.SetTrigger("PlayerRunAttack");
+                // isAttacking = true;
+            }
+
+        }
+        else if (Input.GetKeyUp(KeyCode.S))
+        {
+            // Tắt animation chém khi ngừng nhấn "X"
+            animator.ResetTrigger("PlayerRunAttack");
+        }
+        }
     }
  
-}
+
   
 
 

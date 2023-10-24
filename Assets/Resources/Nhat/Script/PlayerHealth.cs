@@ -36,6 +36,8 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.UpdateBar(currentHealth, maxHealth);
         animator = GetComponent<Animator>();
+      
+
     }
     public void TakeDamage(int damage)
     {
@@ -71,14 +73,22 @@ public class PlayerHealth : MonoBehaviour
     
     private void Update()
     {
-    
+
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTr(Collision2D collision)
+    {
+        
+    
+       
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
+            // Kích hoạt animation
+            //animator.SetTrigger("PlayerHurt");
             TakeDamage(Health);
         }
     }
- 
+
 }

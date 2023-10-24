@@ -1,49 +1,64 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class EnemyHealth : MonoBehaviour
 {
-    public float maxHealth;
-    float currentHealth;
+    public int maxHealth = 100;
+    public int currentHealth;
+    public Slider healthSlider;
 
-    //Khai báo biến để tạo máu
-    public Slider enemyHealthSlider;
-    void Start()
+    private Animator animator;
+    public float deathAnimationDuration = 2.0f;
+
+    private void Start()
     {
-       currentHealth = maxHealth;
-
-       enemyHealthSlider.maxValue = maxHealth;
-       enemyHealthSlider.value = maxHealth;
-
+        currentHealth = maxHealth;
+        UpdateHealthSlider();
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void UpdateHealthSlider()
     {
+        healthSlider.value = currentHealth / (float)maxHealth;
     }
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("DamagePlayer"))
         {
-            TakeDamage(10); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
+            
+            TakeDamage(20); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
         }
     }
-    public void TakeDamage(float damage)
+
+            public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Đảm bảo giới hạn máu trong khoảng [0, maxHealth]
+        UpdateHealthSlider();
 
-        enemyHealthSlider.value = currentHealth;
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
-            makeDead();
+            DeathEnemy();
         }
-        void makeDead()
-        {
-            Destroy (gameObject);
-          
-        }
+    }
+    public void DeathEnemy()
+    {
+        // Kích hoạt animation "Die".
+        animator.SetTrigger("DworfDie");
 
+        // Chờ cho đến khi animation hoàn thành trước khi hủy GameObject.
+        StartCoroutine(DestroyAfterAnimation());
     }
 
+    private IEnumerator DestroyAfterAnimation()
+    {
+        // Chờ đợi thời gian của animation chết hoàn thành.
+        yield return new WaitForSeconds(deathAnimationDuration);
+
+        // Hủy (destroy) GameObject.
+        Destroy(gameObject);
+    }
 }
+

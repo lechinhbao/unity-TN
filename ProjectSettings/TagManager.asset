@@ -11,6 +11,7 @@ TagManager:
   - HealthBar
   - Enemy
   - DamagePlayer
+  - Coin
   layers:
   - Default
   - TransparentFX
