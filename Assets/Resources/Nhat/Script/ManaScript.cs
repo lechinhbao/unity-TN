@@ -24,7 +24,7 @@ public class ManaScript : MonoBehaviour
         {
             Debug.Log("oke nha");
             currentMana = 0;
-            animator.ResetTrigger("Attack");
+            //animator.ResetTrigger("Attack");
             animator.ResetTrigger("PlayerAttackExtra");
         }
         manaBar.UpdateMana(currentMana, maxMana);

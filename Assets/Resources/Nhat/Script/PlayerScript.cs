@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,6 +17,9 @@ public class PlayerScript : MonoBehaviour
 
     private bool isFacingRight = true;
 
+    //Coin
+    public TMP_Text txtCoin;
+    private int countCoin = 0;
 
     private void Start()
 
@@ -46,16 +50,30 @@ public class PlayerScript : MonoBehaviour
                 transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
             }
         }
+        if (move != 0)
+        {
+            if (move < 0 && Input.GetKeyDown(KeyCode.F))
+            {
+                animator.SetTrigger("RunAttack");
+                Debug.Log("Đa bat");
+            }
+            else if(move > 0 && Input.GetKeyDown(KeyCode.F))
+            {
+                animator.SetTrigger("RunAttack");
+                Debug.Log("Đa bat");
+            }
+          
+        }
         // Xác định hướng nhìn của Player
-      /*  if (move > 0 && !isFacingRight)
-          {
-             Flip();
-            Debug.Log("phai");
-          }
-          else if (move < 0 && isFacingRight)
-          {
-              Flip();
-          }*/
+        /*  if (move > 0 && !isFacingRight)
+            {
+               Flip();
+              Debug.Log("phai");
+            }
+            else if (move < 0 && isFacingRight)
+            {
+                Flip();
+            }*/
 
         // Điều khiển nhảy
         if (Input.GetButtonDown("Jump") && !isJumping)
@@ -92,7 +110,22 @@ public class PlayerScript : MonoBehaviour
         animator.SetTrigger("PlayerDeath");
        
     }
-    
+    //Coin
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Coin")
+        {
+           // soundCoin.Play();
+            countCoin += 1;
+            txtCoin.text = countCoin + " X";
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "checkpoint")
+        {
+         //   SavePosition();
+        }
+    }
+
 
 }
 
