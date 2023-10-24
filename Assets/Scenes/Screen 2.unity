@@ -2370,8 +2370,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1595042813755551503, guid: 2a2b69d0717c6994d8f2518af415b1bd, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 4727302808836633120}
+    - target: {fileID: 1595042813755551503, guid: 2a2b69d0717c6994d8f2518af415b1bd, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918583212299598120, guid: 2a2b69d0717c6994d8f2518af415b1bd, type: 3}
+      propertyPath: currentHealth
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3775870045454304457, guid: 2a2b69d0717c6994d8f2518af415b1bd, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2384,6 +2392,10 @@ PrefabInstance:
     - target: {fileID: 3995559716841947343, guid: 2a2b69d0717c6994d8f2518af415b1bd, type: 3}
       propertyPath: m_Name
       value: Monster 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3995559716841947343, guid: 2a2b69d0717c6994d8f2518af415b1bd, type: 3}
+      propertyPath: m_TagString
+      value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 4800242846201963116, guid: 2a2b69d0717c6994d8f2518af415b1bd, type: 3}
       propertyPath: m_IsTrigger
