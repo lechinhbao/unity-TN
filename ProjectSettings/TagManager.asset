@@ -10,6 +10,7 @@ TagManager:
   - Fire
   - Trai
   - Boss
+  - fireBall
   layers:
   - Default
   - TransparentFX
