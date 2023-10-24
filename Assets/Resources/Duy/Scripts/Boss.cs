@@ -6,10 +6,18 @@ public class Boss : MonoBehaviour
 {
     Transform target;
     public Transform borderCheck; 
-    // Start is called before the first frame update
+    
+    public bool isRight;
+    // public bool isShootable = false;
+    public GameObject fireBall;
+    private float timeSpawn ;
+    private float time ;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+
+       timeSpawn = 20;
+       time = timeSpawn;
     }
 
     // Update is called once per frame
@@ -23,5 +31,22 @@ public class Boss : MonoBehaviour
             transform.localScale = new Vector2(-1f, 1f);
 
         }
+
+        time -= Time.deltaTime;
+        if(time < 0)
+        {
+            time = timeSpawn;
+            GameObject fb = Instantiate(fireBall);
+            fb.transform.position = new Vector2(
+                transform.position.x + (isRight ? 0.8f : -0.8f),
+                transform.position.y
+            );
+            fb.GetComponent<FireScript>().SetSpeed(
+                isRight ? 2 : -2
+            );
+        }
     }
+
+   
+   
 }
