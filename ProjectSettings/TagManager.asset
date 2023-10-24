@@ -8,6 +8,12 @@ TagManager:
   - enimi
   - Playered
   - bulletPlayer
+  - san
+  - quaivat
+  - stone
+  - Stone
+  - Trap
+  - fireball
   layers:
   - Default
   - TransparentFX
