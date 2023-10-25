@@ -96,7 +96,7 @@ public class PlayerHealth : MonoBehaviour
             PlayerHurt = false;
             // Kích hoạt animation
             animator.SetBool("PlayerHurt", false);
-            TakeDamage(Health);
+
         }
     }
 }
