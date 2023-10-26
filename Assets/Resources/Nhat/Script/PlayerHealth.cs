@@ -54,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
     public void Death()
     {
         // Kích hoạt animation "Die".
-        animator.SetTrigger("PlayerDeath");
+        animator.SetTrigger("IsDeath");
 
         // Chờ cho đến khi animation hoàn thành trước khi hủy GameObject.
         StartCoroutine(DestroyAfterAnimation());
@@ -84,7 +84,7 @@ public class PlayerHealth : MonoBehaviour
         {
             PlayerHurt = true;
             // Kích hoạt animation
-            animator.SetBool("PlayerHurt", true);
+            animator.SetBool("IsHurt", true);
             TakeDamage(Health);
         }
       
@@ -95,7 +95,7 @@ public class PlayerHealth : MonoBehaviour
         {
             PlayerHurt = false;
             // Kích hoạt animation
-            animator.SetBool("PlayerHurt", false);
+            animator.SetBool("IsHurt", false);
 
         }
     }
