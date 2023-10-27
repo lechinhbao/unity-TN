@@ -103,8 +103,13 @@ public class PlayerScript : MonoBehaviour
         {
             isJumping = false;
         }
+        else if(collision.gameObject.CompareTag("Die"))
+        {
+            Destroy(gameObject);
+        }
      
     }
+
     public void Death()
     {
         animator.SetTrigger("PlayerDeath");
