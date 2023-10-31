@@ -60065,7 +60065,7 @@ PrefabInstance:
     - target: {fileID: 1007617366432705999, guid: 0ded6a496f7568c40bef07398262bbb2, type: 3}
       propertyPath: manaBar
       value: 
-      objectReference: {fileID: 678170364102962768}
+      objectReference: {fileID: 678170364102962770}
     - target: {fileID: 2463358991243383342, guid: 0ded6a496f7568c40bef07398262bbb2, type: 3}
       propertyPath: exitButton
       value: 
@@ -60097,7 +60097,7 @@ PrefabInstance:
     - target: {fileID: 4135748816712546336, guid: 0ded6a496f7568c40bef07398262bbb2, type: 3}
       propertyPath: DiePanel
       value: 
-      objectReference: {fileID: 1377412428}
+      objectReference: {fileID: 416643960}
     - target: {fileID: 4135748816712546336, guid: 0ded6a496f7568c40bef07398262bbb2, type: 3}
       propertyPath: healthBar
       value: 
@@ -60150,8 +60150,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2946822492408205507, guid: 0ded6a496f7568c40bef07398262bbb2, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -60422,7 +60421,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3722663579460783928, guid: 0cf8fe397e964044aa6e53bb2973f019, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
