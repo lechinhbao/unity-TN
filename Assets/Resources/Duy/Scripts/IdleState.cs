@@ -11,7 +11,7 @@ public class IdleState : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        borderCheck = animator.GetComponent<Boss>().borderCheck;
+        borderCheck = animator.GetComponent<KnightScript>().borderCheck;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

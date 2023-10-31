@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class chaseState : StateMachineBehaviour
+public class BossChaseState : StateMachineBehaviour
 {
     Transform target;
 
-    public float speed = 3;
+    public float speed = 1;
     Transform borderCheck;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        borderCheck = animator.GetComponent<KnightScript>().borderCheck;
+        borderCheck = animator.GetComponent<Boss>().borderCheck;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
