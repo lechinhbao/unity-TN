@@ -4,30 +4,23 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
-    public GameObject bulletPrefab; // Prefab viên đạn
-    public Transform firePoint; // Điểm bắn viên đạn
 
-    public float bulletSpeed = 10f; // Tốc độ viên đạn
-
-    // Update is called once per frame
     void Update()
     {
+        //Bắn đạn
         if (Input.GetKeyDown(KeyCode.S))
         {
-            Shoot();
+            var x = transform.position.x;
+            var y = transform.position.y;
+            var z = transform.position.z;
+
+            Instantiate(
+                Resources.Load("Nhat/Prefabs/Fire"),
+                new Vector3(x, y, z),
+                Quaternion.identity
+                );
         }
     }
 
-    void Shoot()
-    {
-        // Tạo một thể hiện của Prefab viên đạn tại vị trí của firePoint
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
-        // Lấy Rigidbody2D của viên đạn để áp dụng lực
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-
-        // Áp dụng lực để bắn viên đạn
-        rb.AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse);
-    }
 }
 
