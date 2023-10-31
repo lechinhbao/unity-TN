@@ -13,6 +13,12 @@ TagManager:
   - DamagePlayer
   - Coin
   - Die
+  - quaivat
+  - fireball
+  - fireBall
+  - bulletPlayer
+  - Fire
+  - Trai
   layers:
   - Default
   - TransparentFX
