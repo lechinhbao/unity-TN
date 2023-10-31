@@ -14,7 +14,7 @@ public class Fire_ImpScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       timeSpawn = 1;
+       timeSpawn = 3;
        time = timeSpawn;
     }
    
@@ -43,11 +43,11 @@ public class Fire_ImpScript : MonoBehaviour
             time = timeSpawn;
             GameObject fb = Instantiate(Fire);
             fb.transform.position = new Vector2(
-                transform.position.x + (isRight ? 0.8f : -0.8f),
+                transform.position.x + (isRight ? 0.1f : -0.1f),
                 transform.position.y
             );
             fb.GetComponent<FireScript>().SetSpeed(
-                isRight ? 2 : -2
+                isRight ? 4 : -4
             );
         }
 
