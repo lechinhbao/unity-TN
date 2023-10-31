@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
 
     private bool isFacingRight = true;
     //Coin
-   // public TMP_Text txtCoin;
+    public TMP_Text txtCoin;
     private int countCoin = 0;
 
     private void Start()
@@ -101,7 +101,7 @@ public class PlayerScript : MonoBehaviour
         {
            // soundCoin.Play();
             countCoin += 1;
-            //txtCoin.text = countCoin + " X";
+            txtCoin.text = countCoin + " X";
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "checkpoint")
