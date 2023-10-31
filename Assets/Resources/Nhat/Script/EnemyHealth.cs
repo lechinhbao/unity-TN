@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     private Animator animator;
     public float deathAnimationDuration = 2.0f;
 
+    private bool DworfHurt = false;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -27,12 +28,24 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("DamagePlayer"))
         {
-            
+            DworfHurt = true;
+            // Kích hoạt animation
+            animator.SetBool("DworfHurt", true);
             TakeDamage(20); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
+        }
+      
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("DamagePlayer"))
+        {
+            DworfHurt = false;
+            // Kích hoạt animation
+            animator.SetBool("DworfHurt", false);
         }
     }
 
-            public void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Đảm bảo giới hạn máu trong khoảng [0, maxHealth]
