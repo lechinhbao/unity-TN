@@ -4,11 +4,11 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour
+public class MageScript : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D rb;
-   
+
     private bool isRunning;
     private bool isJumping;
 
@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
 
     private bool isFacingRight = true;
     //Coin
-   // public TMP_Text txtCoin;
+    // public TMP_Text txtCoin;
     private int countCoin = 0;
 
     private void Start()
@@ -25,28 +25,28 @@ public class PlayerScript : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        
+
     }
 
     private void Update()
     {
-       
+
 
         // Điều khiển chạy
         float move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(move * runSpeed, rb.velocity.y);
         isRunning = Mathf.Abs(move) > 0;
-    
-    
-        if(move != 0)
+
+
+        if (move != 0)
         {
             if (move < 0)
-            {       
+            {
                 transform.localScale = new Vector3(-1.2f, 1.2f, 1.2f);
             }
             else
             {
-  
+
                 transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
             }
         }
@@ -57,12 +57,12 @@ public class PlayerScript : MonoBehaviour
                 animator.SetTrigger("RunAttack");
                 Debug.Log("Đa bat");
             }
-            else if(move > 0 && Input.GetKeyDown(KeyCode.F))
+            else if (move > 0 && Input.GetKeyDown(KeyCode.F))
             {
                 animator.SetTrigger("RunAttack");
                 Debug.Log("Đa bat");
             }
-          
+
         }
         // Điều khiển nhảy
         if (Input.GetButtonDown("Jump") && !isJumping)
@@ -75,7 +75,7 @@ public class PlayerScript : MonoBehaviour
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsJumping", isJumping);
     }
-   
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Kiểm tra va chạm với mặt đất (hoặc các platform)
@@ -83,30 +83,30 @@ public class PlayerScript : MonoBehaviour
         {
             isJumping = false;
         }
-        else if(collision.gameObject.CompareTag("Die"))
+        else if (collision.gameObject.CompareTag("Die"))
         {
             Destroy(gameObject);
         }
-     
+
     }
     public void Death()
     {
         animator.SetTrigger("PlayerDeath");
-       
+
     }
     //Coin
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Coin")
         {
-           // soundCoin.Play();
+            // soundCoin.Play();
             countCoin += 1;
             //txtCoin.text = countCoin + " X";
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "checkpoint")
         {
-         //   SavePosition();
+            //   SavePosition();
         }
     }
 

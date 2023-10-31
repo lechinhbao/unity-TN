@@ -4,12 +4,12 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-public class Attack : MonoBehaviour
+public class BulletScript : MonoBehaviour
 {
     private Animator animator;
-   // public int attackDamage = 20;
-   // public float attackRange = 2.0f;
-  
+    // public int attackDamage = 20;
+    // public float attackRange = 2.0f;
+    private bool isRight = true;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -19,10 +19,22 @@ public class Attack : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.S))
         {
+            //Bắn đạn
+            var x = transform.position.x + (isRight ? 0.5f : -0.5f);
+            var y = transform.position.y;
+            var z = transform.position.z;
+
+            GameObject gameObject = (GameObject) Instantiate(
+            Resources.Load("Nhat/Prefabs/Fire"),
+            new Vector3(x, y, z),
+            Quaternion.identity
+
+            );
+           // gameObject.GetComponent<Fire>().setIsRight(isRight);
 
             // Kích hoạt animation chém khi nhấn "S"
             animator.SetTrigger("IsAttack");
-         //   isAttacking = true;        
+            //   isAttacking = true;        
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
@@ -56,11 +68,11 @@ public class Attack : MonoBehaviour
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("PlayerRunAttack");
         }
-        }
     }
- 
+}
 
-  
+
+
 
 
 

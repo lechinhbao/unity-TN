@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
-
+    private bool isRight;
+    void Start()
+    {
+        Destroy(gameObject, 5f);
+    }
     void Update()
     {
-        //Bắn đạn
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            var x = transform.position.x;
-            var y = transform.position.y;
-            var z = transform.position.z;
+        //Di chuyển đạn
+        transform.Translate((isRight ? Vector3.right : Vector3.left) * Time.deltaTime * 5f);
 
-            Instantiate(
-                Resources.Load("Nhat/Prefabs/Fire"),
-                new Vector3(x, y, z),
-                Quaternion.identity
-                );
-        }
     }
-
+    public void setIsRight(bool isRight)
+    {
+        this.isRight = isRight;
+    }
 }
 
