@@ -60048,6 +60048,14 @@ PrefabInstance:
       propertyPath: manaBar
       value: 
       objectReference: {fileID: 678170364102962768}
+    - target: {fileID: 1007617366432705999, guid: 0ded6a496f7568c40bef07398262bbb2, type: 3}
+      propertyPath: maxMana
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074868972042106948, guid: 0ded6a496f7568c40bef07398262bbb2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2463358991243383342, guid: 0ded6a496f7568c40bef07398262bbb2, type: 3}
       propertyPath: exitButton
       value: 
@@ -60132,8 +60140,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2946822492408205507, guid: 0ded6a496f7568c40bef07398262bbb2, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

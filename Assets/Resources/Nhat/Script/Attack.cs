@@ -19,7 +19,6 @@ public class Attack : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.S))
         {
-
             // Kích hoạt animation chém khi nhấn "S"
             animator.SetTrigger("IsAttack");
          //   isAttacking = true;        
