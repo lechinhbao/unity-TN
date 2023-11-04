@@ -33,6 +33,7 @@ public class EnemyHealth : MonoBehaviour
             animator.SetBool("DworfHurt", true);
             TakeDamage(20); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
         }
+      
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -43,6 +44,7 @@ public class EnemyHealth : MonoBehaviour
             animator.SetBool("DworfHurt", false);
         }
     }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;

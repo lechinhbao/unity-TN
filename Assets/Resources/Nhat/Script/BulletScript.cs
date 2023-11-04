@@ -30,7 +30,7 @@ public class BulletScript : MonoBehaviour
             Quaternion.identity
 
             );
-            gameObject.GetComponent<Fire>().setIsRight(isRight);
+           // gameObject.GetComponent<Fire>().setIsRight(isRight);
 
             // Kích hoạt animation chém khi nhấn "S"
             animator.SetTrigger("IsAttack");
@@ -42,7 +42,7 @@ public class BulletScript : MonoBehaviour
             animator.ResetTrigger("IsAttack");
         }
 
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             // Kích hoạt animation chém khi nhấn "X"
             animator.SetTrigger("IsAttackExtra");

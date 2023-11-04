@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 259555090121610282}
   - component: {fileID: 2463358991243383342}
   - component: {fileID: 2946822492408205507}
+  - component: {fileID: 8805020715663530042}
   - component: {fileID: 2074868972042106948}
   - component: {fileID: 3852560661571403870}
   - component: {fileID: 5423972506823073269}
@@ -27,7 +28,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7963381422464594649
 Transform:
   m_ObjectHideFlags: 0
@@ -152,6 +153,18 @@ MonoBehaviour:
   panelDie: {fileID: 0}
   continueButton: {fileID: 0}
   restartButton: {fileID: 0}
+--- !u!114 &8805020715663530042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5512468171760565196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68059cf54193e754facc70bfa571a374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &2074868972042106948
 SpriteRenderer:
   m_ObjectHideFlags: 0

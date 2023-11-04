@@ -23,19 +23,19 @@ public class ManaScript : MonoBehaviour
         if (currentMana < 0)
         {
             currentMana = 0;
-            animator.ResetTrigger("Attack");
-            animator.ResetTrigger("IsAttackExtra");
-            animator.ResetTrigger("IsRunAttackExtra");
+            //animator.ResetTrigger("Attack");
+            animator.ResetTrigger("PlayerAttackExtra");
         }
         manaBar.UpdateMana(currentMana, maxMana);
     }
+
     private void Update()
     {
-       /* if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             TakeMana(5);
 
-        }*/
+        }
         if (Input.GetKeyDown(KeyCode.X))
         {
             TakeMana(5);

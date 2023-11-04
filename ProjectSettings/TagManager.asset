@@ -13,7 +13,6 @@ TagManager:
   - DamagePlayer
   - Coin
   - Die
-  - Box
   layers:
   - Default
   - TransparentFX

@@ -14,38 +14,46 @@ public class Attack : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             // Kích hoạt animation chém khi nhấn "S"
             animator.SetTrigger("IsAttack");
-            // isAttacking = true;        
+         //   isAttacking = true;        
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
             // Tắt animation chém khi ngừng nhấn "S"
             animator.ResetTrigger("IsAttack");
         }
+
         if (Input.GetKeyDown(KeyCode.X))
         {
             // Kích hoạt animation chém khi nhấn "X"
             animator.SetTrigger("IsAttackExtra");
+            //   isAttacking = true;
+
         }
         else if (Input.GetKeyUp(KeyCode.X))
         {
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("IsAttackExtra");
         }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {   
-            // Kích hoạt animation chém khi nhấn "X"
-                animator.SetTrigger("IsRunAttack");           
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            {
+                // Kích hoạt animation chém khi nhấn "X"
+                animator.SetTrigger("PlayerRunAttack");
+                // isAttacking = true;
+            }
+
         }
-        else if (Input.GetKeyUp(KeyCode.Q))
+        else if (Input.GetKeyUp(KeyCode.S))
         {
             // Tắt animation chém khi ngừng nhấn "X"
-            animator.ResetTrigger("IsRunAttack");
+            animator.ResetTrigger("PlayerRunAttack");
         }
         }
     }
