@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Resources/Nhat/Image/10Defeat/button_yellow.png.meta
 guid: f87da468d8396db44b7cf6ec1db5f1c6
+========
+guid: da636539968434c469e5cfefca6f4266
+>>>>>>>> Vien:Assets/Resources/Nhat/Image/10Defeat/clock_yellow.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

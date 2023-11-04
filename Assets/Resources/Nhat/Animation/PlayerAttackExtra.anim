@@ -16,6 +16,7 @@ AnimationClip:
   m_EulerCurves: []
   m_PositionCurves: []
   m_ScaleCurves: []
+<<<<<<< HEAD
   m_FloatCurves:
   - serializedVersion: 2
     curve:
@@ -311,6 +312,9 @@ AnimationClip:
     classID: 61
     script: {fileID: 0}
     flags: 0
+=======
+  m_FloatCurves: []
+>>>>>>> Vien
   m_PPtrCurves:
   - serializedVersion: 2
     curve:
@@ -349,6 +353,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
+<<<<<<< HEAD
       path: 2211730067
       attribute: 413499720
       script: {fileID: 0}
@@ -394,6 +399,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
+=======
+>>>>>>> Vien
       path: 0
       attribute: 0
       script: {fileID: 0}
@@ -434,6 +441,7 @@ AnimationClip:
     m_KeepOriginalPositionXZ: 0
     m_HeightFromFeet: 0
     m_Mirror: 0
+<<<<<<< HEAD
   m_EditorCurves:
   - serializedVersion: 2
     curve:
@@ -729,6 +737,9 @@ AnimationClip:
     classID: 61
     script: {fileID: 0}
     flags: 0
+=======
+  m_EditorCurves: []
+>>>>>>> Vien
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0

@@ -45,12 +45,12 @@ public class bay : MonoBehaviour
         if (isRight)
         {
             scale.x = -1;
-            transform.Translate(Vector3.right * 2f * Time.deltaTime);
+           // transform.Translate(Vector3.right * 2f * Time.deltaTime);
         }
         else
         {
             scale.x = 1;
-            transform.Translate(Vector3.left * 2f * Time.deltaTime);
+            //transform.Translate(Vector3.left * 2f * Time.deltaTime);
         }
         transform.localScale = scale;
     }

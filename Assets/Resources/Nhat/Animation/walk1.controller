@@ -1,5 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
 --- !u!1101 &-8915482969989617290
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -25,6 +26,8 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+=======
+>>>>>>> Vien
 --- !u!1101 &-8831816268006384985
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -34,7 +37,11 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
+<<<<<<< HEAD
     m_ConditionEvent: IsAttackExtra
+=======
+    m_ConditionEvent: PlayerAttackExtra
+>>>>>>> Vien
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4918019751272796538}
@@ -164,7 +171,11 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
+<<<<<<< HEAD
     m_ConditionEvent: IsDeath
+=======
+    m_ConditionEvent: PlayerDeath
+>>>>>>> Vien
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4918019751272796538}
@@ -224,10 +235,13 @@ AnimatorState:
   - {fileID: -2813783244309629184}
   - {fileID: -1472445242373049551}
   - {fileID: 2146671002480020543}
+<<<<<<< HEAD
   - {fileID: 6629112437075846696}
   - {fileID: 2990061503426948585}
   - {fileID: 1176359197241604896}
   - {fileID: 5320710235920182710}
+=======
+>>>>>>> Vien
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -293,6 +307,7 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+<<<<<<< HEAD
 --- !u!1102 &-3297518732237579068
 AnimatorState:
   serializedVersion: 6
@@ -320,6 +335,8 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+=======
+>>>>>>> Vien
 --- !u!1101 &-3228911420960501458
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -329,7 +346,11 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
+<<<<<<< HEAD
     m_ConditionEvent: IsAttackExtra
+=======
+    m_ConditionEvent: PlayerAttackExtra
+>>>>>>> Vien
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2999977354171726537}
@@ -340,6 +361,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.7887324
+<<<<<<< HEAD
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -391,6 +413,8 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.516129
+=======
+>>>>>>> Vien
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -455,7 +479,11 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
+<<<<<<< HEAD
     m_ConditionEvent: IsAttackExtra
+=======
+    m_ConditionEvent: PlayerAttackExtra
+>>>>>>> Vien
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2999977354171726537}
@@ -557,18 +585,29 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
+<<<<<<< HEAD
     m_Controller: {fileID: 0}
   - m_Name: IsAttackExtra
+=======
+    m_Controller: {fileID: 9100000}
+  - m_Name: PlayerAttackExtra
+>>>>>>> Vien
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
+<<<<<<< HEAD
     m_Controller: {fileID: 0}
   - m_Name: IsDeath
+=======
+    m_Controller: {fileID: 9100000}
+  - m_Name: PlayerDeath
+>>>>>>> Vien
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
+<<<<<<< HEAD
     m_Controller: {fileID: 0}
   - m_Name: IsRunAttack
     m_Type: 4
@@ -594,6 +633,9 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+=======
+    m_Controller: {fileID: 9100000}
+>>>>>>> Vien
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -617,8 +659,12 @@ AnimatorState:
   m_Name: PlayerRunAttack
   m_Speed: 1
   m_CycleOffset: 0
+<<<<<<< HEAD
   m_Transitions:
   - {fileID: -8915482969989617290}
+=======
+  m_Transitions: []
+>>>>>>> Vien
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -671,7 +717,11 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
+<<<<<<< HEAD
     m_ConditionEvent: IsAttackExtra
+=======
+    m_ConditionEvent: PlayerAttackExtra
+>>>>>>> Vien
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8737832263218222823}
@@ -701,18 +751,27 @@ AnimatorStateMachine:
     m_Position: {x: 280, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8737832263218222823}
+<<<<<<< HEAD
     m_Position: {x: 640, y: -20, z: 0}
+=======
+    m_Position: {x: 610, y: 10, z: 0}
+>>>>>>> Vien
   - serializedVersion: 1
     m_State: {fileID: -5164224439113147109}
     m_Position: {x: 280, y: 140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 559771808835718155}
+<<<<<<< HEAD
     m_Position: {x: 300, y: -220, z: 0}
+=======
+    m_Position: {x: 270, y: -180, z: 0}
+>>>>>>> Vien
   - serializedVersion: 1
     m_State: {fileID: 2999977354171726537}
     m_Position: {x: -120, y: -190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6656383220732869885}
+<<<<<<< HEAD
     m_Position: {x: 660, y: -200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 386362623308254034}
@@ -738,6 +797,12 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -3210454529593100250}
     m_Position: {x: 890, y: 260, z: 0}
+=======
+    m_Position: {x: 910, y: -130, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 386362623308254034}
+    m_Position: {x: 550, y: 180, z: 0}
+>>>>>>> Vien
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -886,7 +951,11 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
+<<<<<<< HEAD
     m_ConditionEvent: IsDeath
+=======
+    m_ConditionEvent: PlayerDeath
+>>>>>>> Vien
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6656383220732869885}
@@ -902,18 +971,31 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+<<<<<<< HEAD
 --- !u!1102 &2932896081135129036
+=======
+--- !u!1102 &2999977354171726537
+>>>>>>> Vien
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: PlayerIdle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 9101268922873608796}
+=======
+  m_Name: PlayerAttackExtra
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -8831816268006384985}
+  - {fileID: 629420113502677047}
+>>>>>>> Vien
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -923,7 +1005,38 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
+<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: 482b79384182bba48be0d8205f3264c2, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: 8f083b1cde0244541a9ca3ebc9751920, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &6656383220732869885
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerDeath
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -5461189505951881491}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 2277a56c49d506f4ca56684fb840919a, type: 2}
+>>>>>>> Vien
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

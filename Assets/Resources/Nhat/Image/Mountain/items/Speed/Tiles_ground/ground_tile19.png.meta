@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: bd88753a8496c1d468d75de64168cd78
+<<<<<<< HEAD
+guid: 078e40732fa994d4a8874e80140963a0
+=======
+guid: 5aae846caf2e7894488d5f921f2915c8
+>>>>>>> Vien
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

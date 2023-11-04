@@ -8,7 +8,7 @@ public class slots : MonoBehaviour
     private Transform player;
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Playered").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     

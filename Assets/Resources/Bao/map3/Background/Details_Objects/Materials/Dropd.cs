@@ -10,7 +10,7 @@ public class Dropd : MonoBehaviour
 
     private void Start()
     {
-        inventory= GameObject.FindGameObjectWithTag("Playered").GetComponent<Inventory>();
+        inventory= GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
     private void Update()

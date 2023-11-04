@@ -15,6 +15,7 @@ TagManager:
   - Die
   - quaivat
   - fireball
+<<<<<<< HEAD
   - fireBall
   - bulletPlayer
   - Fire
@@ -22,6 +23,11 @@ TagManager:
   - Thang
   - Teleporter
   - Bullet
+=======
+  - Monster
+  - Thang
+  - Teleporter
+>>>>>>> Vien
   layers:
   - Default
   - TransparentFX
