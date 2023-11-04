@@ -6,7 +6,6 @@ public class CameraScript : MonoBehaviour
 {
     public float left, right;
     public GameObject player;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +38,7 @@ public class CameraScript : MonoBehaviour
             cameraY = 0;
         }
 
+
         transform.position = new Vector3(cameraX, cameraY, -8);
     }
-
 }

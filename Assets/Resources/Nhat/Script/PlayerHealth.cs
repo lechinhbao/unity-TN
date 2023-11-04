@@ -23,8 +23,6 @@ public class PlayerHealth : MonoBehaviour
     public GameObject DiePanel;
     private bool isGamePaused = false;
 
-    //Hurt
-    private bool PlayerHurt = false;
     private void OnEnable()
     {
         OnDeath.AddListener(Death);
@@ -38,8 +36,6 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.UpdateBar(currentHealth, maxHealth);
         animator = GetComponent<Animator>();
-      
-
     }
     public void TakeDamage(int damage)
     {
@@ -54,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
     public void Death()
     {
         // Kích hoạt animation "Die".
-        animator.SetTrigger("IsDeath");
+        animator.SetTrigger("PlayerDeath");
 
         // Chờ cho đến khi animation hoàn thành trước khi hủy GameObject.
         StartCoroutine(DestroyAfterAnimation());
@@ -75,28 +71,14 @@ public class PlayerHealth : MonoBehaviour
     
     private void Update()
     {
-
-    }
     
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
-            PlayerHurt = true;
-            // Kích hoạt animation
-            animator.SetBool("IsHurt", true);
             TakeDamage(Health);
         }
-      
     }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Monster"))
-        {
-            PlayerHurt = false;
-            // Kích hoạt animation
-            animator.SetBool("IsHurt", false);
-
-        }
-    }
+ 
 }

@@ -302,6 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3442070475340660568}
   - component: {fileID: 1834820514857742878}
+  - component: {fileID: 9005490907534749308}
   m_Layer: 0
   m_Name: DamePlayer
   m_TagString: Untagged
@@ -369,3 +370,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07941438, y: 0.21870546}
   m_EdgeRadius: 0
+--- !u!114 &9005490907534749308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593962897669318375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08b3437eb9efd8469c5bd119ff1c6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

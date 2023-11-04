@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,9 +15,7 @@ public class PlayerScript : MonoBehaviour
     public float jumpForce = 5f;
 
     private bool isFacingRight = true;
-    //Coin
-    public TMP_Text txtCoin;
-    private int countCoin = 0;
+
 
     private void Start()
 
@@ -41,29 +38,25 @@ public class PlayerScript : MonoBehaviour
         if(move != 0)
         {
             if (move < 0)
-            {       
+            {
                 transform.localScale = new Vector3(-1.2f, 1.2f, 1.2f);
             }
             else
             {
-  
                 transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
             }
         }
-        if (move != 0)
-        {
-            if (move < 0 && Input.GetKeyDown(KeyCode.F))
-            {
-                animator.SetTrigger("RunAttack");
-                Debug.Log("Đa bat");
-            }
-            else if(move > 0 && Input.GetKeyDown(KeyCode.F))
-            {
-                animator.SetTrigger("RunAttack");
-                Debug.Log("Đa bat");
-            }
-          
-        }
+        // Xác định hướng nhìn của Player
+      /*  if (move > 0 && !isFacingRight)
+          {
+             Flip();
+            Debug.Log("phai");
+          }
+          else if (move < 0 && isFacingRight)
+          {
+              Flip();
+          }*/
+
         // Điều khiển nhảy
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
@@ -75,6 +68,15 @@ public class PlayerScript : MonoBehaviour
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsJumping", isJumping);
     }
+
+  /* private void Flip()
+    {
+        // Đảo ngược hướng nhìn của Player
+        isFacingRight = !isFacingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= 1;
+        transform.localScale = scale;
+    }*/
    
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -83,10 +85,6 @@ public class PlayerScript : MonoBehaviour
         {
             isJumping = false;
         }
-        else if(collision.gameObject.CompareTag("Die"))
-        {
-            Destroy(gameObject);
-        }
      
     }
     public void Death()
@@ -94,22 +92,7 @@ public class PlayerScript : MonoBehaviour
         animator.SetTrigger("PlayerDeath");
        
     }
-    //Coin
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Coin")
-        {
-           // soundCoin.Play();
-            countCoin += 1;
-            txtCoin.text = countCoin + " X";
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.tag == "checkpoint")
-        {
-         //   SavePosition();
-        }
-    }
-
+    
 
 }
 
