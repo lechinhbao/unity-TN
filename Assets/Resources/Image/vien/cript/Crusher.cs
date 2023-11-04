@@ -10,7 +10,7 @@ public class Crusher : MonoBehaviour
     public Transform up;
     public Transform down;
     bool chop;
-    public Animator camera;
+    //public Animator camera;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class Crusher : MonoBehaviour
         }
         if(transform.position.y <= down.position.y)
         {
-            camera.SetTrigger("shake");
+            //camera.SetTrigger("shake");
             chop= false;
         }
         if(chop)
