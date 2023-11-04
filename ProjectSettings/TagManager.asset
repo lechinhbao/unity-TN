@@ -19,6 +19,9 @@ TagManager:
   - bulletPlayer
   - Fire
   - Trai
+  - Thang
+  - Teleporter
+  - Bullet
   layers:
   - Default
   - TransparentFX
