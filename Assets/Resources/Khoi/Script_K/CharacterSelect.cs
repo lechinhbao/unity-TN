@@ -15,7 +15,7 @@ public class CharacterSelect : MonoBehaviour
         skins[selectedCharacter].SetActive(true);
     }
 
-    public void ChangeRight()
+    public void ChangeNext()
     {
         skins[selectedCharacter].SetActive(false);
         selectedCharacter++;
@@ -25,13 +25,12 @@ public class CharacterSelect : MonoBehaviour
         PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
     }
 
-    public void ChangeLeft()
+    public void ChangePrevious()
     {
         skins[selectedCharacter].SetActive(false);
         selectedCharacter--;
         if (selectedCharacter == -1)
             selectedCharacter = skins.Length -1;
-
         skins[selectedCharacter].SetActive(true);
         PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
     }
