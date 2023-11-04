@@ -5,7 +5,7 @@ using TMPro;
 using System.Text;
 using UnityEngine.Networking;
 
-public class Player2 : MonoBehaviour
+public class Player3 : MonoBehaviour
 {
     private Rigidbody2D rb;
     private bool isFloor;
@@ -55,7 +55,7 @@ public class Player2 : MonoBehaviour
             anim.SetBool("isRunning", true);
             scale.x = 1;
             //Vector3(1,0,0)
-            transform.Translate(Vector3.right * 5f * Time.deltaTime);
+        //   transform.Translate(Vector3.right * 5f * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -64,7 +64,7 @@ public class Player2 : MonoBehaviour
             anim.SetBool("isRunning", true);
             scale.x = -1;
             //Vector3(1,0,0)
-            transform.Translate(Vector3.left * 5f * Time.deltaTime);
+          //  transform.Translate(Vector3.left * 5f * Time.deltaTime);
         }
 
         transform.localScale = scale;
@@ -120,13 +120,13 @@ public class Player2 : MonoBehaviour
         {
 
             menu.SetActive(true);
-            Time.timeScale = 0;
+       //     Time.timeScale = 0;
             isPlaying = false;
         }
         else
         {
             menu.SetActive(false);
-            Time.timeScale = 1;
+        //    Time.timeScale = 1;
             isPlaying = true;
         }
     }

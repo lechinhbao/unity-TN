@@ -17,6 +17,16 @@ public class PlayerScript_V : MonoBehaviour
     private bool isFacingRight = true;
 
 
+    //toc bien
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 0.5f;
+
+    [SerializeField] private TrailRenderer tr;
+                
+
     private void Start()
 
     {
@@ -27,7 +37,11 @@ public class PlayerScript_V : MonoBehaviour
 
     private void Update()
     {
-       
+       //toc bien
+       if(isDashing)
+        {
+            return;
+        }
 
         // Điều khiển chạy
         float move = Input.GetAxis("Horizontal");
@@ -67,6 +81,13 @@ public class PlayerScript_V : MonoBehaviour
         // Cập nhật trạng thái của Animator
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsJumping", isJumping);
+
+
+        //toc bien
+        if(Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
     }
 
   /* private void Flip()
@@ -92,7 +113,32 @@ public class PlayerScript_V : MonoBehaviour
         animator.SetTrigger("PlayerDeath");
        
     }
-    
+
+    //toc bien
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+    }
+
+    private void FixedUpdate()
+    {
+        if(isDashing)
+        {
+            return;
+        }
+    }
+
 
 }
 

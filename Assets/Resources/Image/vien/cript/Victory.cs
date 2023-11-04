@@ -20,7 +20,7 @@ public class Victory : MonoBehaviour
     public void RestartGame()
     {
         // Gọi hàm này khi bạn muốn khởi đầu lại trò chơi sau khi nhân vật chết.
-        Time.timeScale = 1; // Đảm bảo rằng thời gian đang chạy bình thường.
+        //Time.timeScale = 1; // Đảm bảo rằng thời gian đang chạy bình thường.
         isGamePaused = false;
         victoryPanel.SetActive(false); // Ẩn Panel Pause.
 
@@ -29,7 +29,7 @@ public class Victory : MonoBehaviour
     }
     public void ResumeGame()
     {
-        Time.timeScale = 1; // Khôi phục thời gian về bình thường.
+       // Time.timeScale = 1; // Khôi phục thời gian về bình thường.
         isGamePaused = false;
         victoryPanel.SetActive(false); // Ẩn Panel Pause.
     }

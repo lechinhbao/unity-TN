@@ -14,6 +14,9 @@ TagManager:
   - Stone
   - Trap
   - fireball
+  - Monster
+  - Thang
+  - Teleporter
   layers:
   - Default
   - TransparentFX
