@@ -39,5 +39,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Screen 5.unity
     guid: b4691a0a6199aef4dba4b718c11b40c3
   m_configObjects:
-    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 901de59aacbad6444b0681b1be543f29, type: 2}
-    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 543d696373f125c4b9f69c36ce2a4be0, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 6841d36e845285c4ca1fbea94390b18e, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 0a4806a3157b3bb4db4af7970fc9d6ea, type: 2}
