@@ -23,6 +23,10 @@ TagManager:
   - Teleporter
   - Bullet
   - Box
+  - enimi
+  - Playered
+  - PER
+  - Phitieu
   layers:
   - Default
   - TransparentFX

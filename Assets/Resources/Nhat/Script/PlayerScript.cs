@@ -10,15 +10,18 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody2D rb;
    
     private bool isRunning;
-    private bool isJumping;
+    //private bool isJumping;
 
     public float runSpeed = 5f;
-    public float jumpForce = 5f;
+   // public float jumpForce = 5f;
 
-    private bool isFacingRight = true;
+    //private bool isFacingRight = true;
     //Coin
     public TMP_Text txtCoin;
     private int countCoin = 0;
+
+    //Bắn đạn
+    private bool isRight = true;
 
     private void Start()
 
@@ -30,8 +33,6 @@ public class PlayerScript : MonoBehaviour
 
     private void Update()
     {
-       
-
         // Điều khiển chạy
         float move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(move * runSpeed, rb.velocity.y);
@@ -43,11 +44,12 @@ public class PlayerScript : MonoBehaviour
             if (move < 0)
             {       
                 transform.localScale = new Vector3(-1.2f, 1.2f, 1.2f);
+                isRight = false;
             }
             else
             {
-  
                 transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                isRight = true;
             }
         }
         if (move != 0)
@@ -62,18 +64,33 @@ public class PlayerScript : MonoBehaviour
                 animator.SetTrigger("RunAttack");
                 Debug.Log("Đa bat");
             }
-          
         }
         // Điều khiển nhảy
-        if (Input.GetButtonDown("Jump") && !isJumping)
-        {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            isJumping = true;
-        }
+        // if (Input.GetButtonDown("Jump") && !isJumping)
+        // {
+        //     rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        //      isJumping = true;
+        //  }
 
         // Cập nhật trạng thái của Animator
         animator.SetBool("IsRunning", isRunning);
-        animator.SetBool("IsJumping", isJumping);
+        
+        // animator.SetBool("IsJumping", isJumping);
+
+        //Bắn đạn
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            var x = transform.position.x + (isRight ? 0.5f : -0.5f);
+            var y = transform.position.y;
+            var z = transform.position.z;
+
+            GameObject gameObject = (GameObject)Instantiate(
+            Resources.Load("Nhat/Prefabs/Phitieu"),
+            new Vector3(x, y, z),
+            Quaternion.identity
+            );
+            gameObject.GetComponent<Fire>().setIsRight(isRight);
+        }
     }
    
     private void OnCollisionEnter2D(Collision2D collision)
@@ -81,7 +98,7 @@ public class PlayerScript : MonoBehaviour
         // Kiểm tra va chạm với mặt đất (hoặc các platform)
         if (collision.gameObject.CompareTag("Stone"))
         {
-            isJumping = false;
+            //isJumping = false;
         }
         else if(collision.gameObject.CompareTag("Die"))
         {
