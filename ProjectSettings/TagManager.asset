@@ -3,31 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Stone
-  - Ladder
-  - Trap
-  - Monster
-  - HealthBar
-  - Enemy
-  - DamagePlayer
-  - Coin
-  - Die
-  - quaivat
-  - fireball
-<<<<<<< HEAD
-  - fireBall
-  - bulletPlayer
-  - Fire
-  - Trai
-  - Thang
-  - Teleporter
-  - Bullet
-=======
-  - Monster
-  - Thang
-  - Teleporter
->>>>>>> Vien
+  tags: []
   layers:
   - Default
   - TransparentFX
