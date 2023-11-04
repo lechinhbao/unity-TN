@@ -16,7 +16,6 @@ public class PlayerScript : MonoBehaviour
     public float jumpForce = 5f;
 
     private bool isFacingRight = true;
-
     //Coin
     public TMP_Text txtCoin;
     private int countCoin = 0;
@@ -42,11 +41,12 @@ public class PlayerScript : MonoBehaviour
         if(move != 0)
         {
             if (move < 0)
-            {
+            {       
                 transform.localScale = new Vector3(-1.2f, 1.2f, 1.2f);
             }
             else
             {
+  
                 transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
             }
         }
@@ -64,17 +64,6 @@ public class PlayerScript : MonoBehaviour
             }
           
         }
-        // Xác định hướng nhìn của Player
-        /*  if (move > 0 && !isFacingRight)
-            {
-               Flip();
-              Debug.Log("phai");
-            }
-            else if (move < 0 && isFacingRight)
-            {
-                Flip();
-            }*/
-
         // Điều khiển nhảy
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
@@ -86,15 +75,6 @@ public class PlayerScript : MonoBehaviour
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsJumping", isJumping);
     }
-
-  /* private void Flip()
-    {
-        // Đảo ngược hướng nhìn của Player
-        isFacingRight = !isFacingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= 1;
-        transform.localScale = scale;
-    }*/
    
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -102,6 +82,10 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Stone"))
         {
             isJumping = false;
+        }
+        else if(collision.gameObject.CompareTag("Die"))
+        {
+            Destroy(gameObject);
         }
      
     }

@@ -4,10 +4,24 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PER
-  - enimi
-  - Playered
+  - Stone
+  - Ladder
+  - Trap
+  - Monster
+  - HealthBar
+  - Enemy
+  - DamagePlayer
+  - Coin
+  - Die
+  - quaivat
+  - fireball
+  - fireBall
   - bulletPlayer
+  - Fire
+  - Trai
+  - Thang
+  - Teleporter
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -15,8 +29,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Grounded
-  - monsterLayer
+  - 
+  - 
   - 
   - 
   - 
