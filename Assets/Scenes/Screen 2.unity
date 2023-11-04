@@ -59420,7 +59420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2553682503468463348, guid: 96de6988b1897f5459064c304d08f34e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2969166293970444020, guid: 96de6988b1897f5459064c304d08f34e, type: 3}
       propertyPath: txtCoin
@@ -60207,7 +60207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2364192761857669775, guid: a9f9ce3879ac58c41b00f27bb9d78825, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2593962897669318375, guid: a9f9ce3879ac58c41b00f27bb9d78825, type: 3}
       propertyPath: m_TagString
