@@ -8,14 +8,10 @@ public class MonsterScript : MonoBehaviour
     private bool isRight; //true -> di chuyen phai false di chuyen ben trai
     public GameObject player;
     // Start is called before the first frame update
-
-
-
     void Start()
     {
 
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -30,7 +26,6 @@ public class MonsterScript : MonoBehaviour
             {
                 if (positionPlayer < positionEnemy) isRight = false;
                 if (positionPlayer > positionEnemy) isRight = true;
-
             }
         }
         if (positionEnemy < start)

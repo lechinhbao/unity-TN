@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
     private bool isRunning;
     private bool isJumping;
 
+
     public float runSpeed = 5f;
     public float jumpForce = 5f;
 
@@ -24,14 +25,11 @@ public class PlayerScript : MonoBehaviour
 
     {
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        
+        rb = GetComponent<Rigidbody2D>(); 
     }
 
     private void Update()
     {
-       
-
         // Điều khiển chạy
         float move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(move * runSpeed, rb.velocity.y);
@@ -46,24 +44,23 @@ public class PlayerScript : MonoBehaviour
             }
             else
             {
-  
                 transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
             }
         }
-        if (move != 0)
+       /* if (move != 0)
         {
             if (move < 0 && Input.GetKeyDown(KeyCode.F))
             {
-                animator.SetTrigger("RunAttack");
+                animator.SetTrigger("IsRunAttack");
                 Debug.Log("Đa bat");
             }
             else if(move > 0 && Input.GetKeyDown(KeyCode.F))
             {
-                animator.SetTrigger("RunAttack");
+                animator.SetTrigger("IsRunAttack");
                 Debug.Log("Đa bat");
             }
           
-        }
+        }*/
         // Điều khiển nhảy
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
@@ -75,7 +72,6 @@ public class PlayerScript : MonoBehaviour
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsJumping", isJumping);
     }
-   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Kiểm tra va chạm với mặt đất (hoặc các platform)
@@ -87,12 +83,11 @@ public class PlayerScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
-     
+       
     }
     public void Death()
     {
         animator.SetTrigger("PlayerDeath");
-       
     }
     //Coin
     private void OnTriggerEnter2D(Collider2D collision)
@@ -106,10 +101,9 @@ public class PlayerScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "checkpoint")
         {
-         //   SavePosition();
+          // SavePosition();
         }
     }
-
 
 }
 
