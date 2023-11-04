@@ -41536,6 +41536,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1500193930}
   - component: {fileID: 1500193932}
   - component: {fileID: 1500193931}
@@ -46374,6 +46375,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+=======
+>>>>>>> parent of 7af5b90 (Nhat)
   - component: {fileID: 1503603945}
   - component: {fileID: 1503603944}
   m_Layer: 0
@@ -50002,6 +50005,7 @@ MonoBehaviour:
   continueButton: {fileID: 1746169744}
   restartButton: {fileID: 2044338872}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &1646757215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50027,6 +50031,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7963381422464594649, guid: 0ded6a496f7568c40bef07398262bbb2, type: 3}
   m_PrefabInstance: {fileID: 3966123913967283586}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of 7af5b90 (Nhat)
 =======
 >>>>>>> parent of 7af5b90 (Nhat)
 --- !u!1 &1656812794
@@ -58702,6 +58708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!50 &1947780608 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3160306117981154289, guid: 876dc9a4847e5f14bac0bed31ae01689, type: 3}
@@ -58757,6 +58764,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5281042767596983770, guid: 876dc9a4847e5f14bac0bed31ae01689, type: 3}
   m_PrefabInstance: {fileID: 2547818164250337891}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of 7af5b90 (Nhat)
 =======
 >>>>>>> parent of 7af5b90 (Nhat)
 --- !u!1 &1951761592
