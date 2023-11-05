@@ -1,33 +1,57 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.Mathematics;
+using UnityEngine;
 
 public class Climb : MonoBehaviour
 {
-    public float climbSpeed = 2.0f;
-    private bool isClimbing = false;
 
+    private float vertical;
+    private float speed = 8f;
+    private bool isLadder;
+    private bool isClimbing;
+
+    [SerializeField] private Rigidbody2D rb;
+
+
+    // Update is called once per frame
     void Update()
     {
-        if (isClimbing)
-        {
-            // Xử lý việc nhân vật leo lên cây thang
-            float verticalInput = Input.GetAxis("Vertical");
-            Vector3 climbDirection = new Vector3(0, verticalInput, 0) * climbSpeed * Time.deltaTime;
-            transform.Translate(climbDirection);
-        }
-    }
+        vertical = Input.GetAxis("Vertical");
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Ladder")) // Đảm bảo cây thang được đánh dấu với tag "Ladder"
+        if (isLadder && Mathf.Abs(vertical) > 0f)
         {
             isClimbing = true;
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    private void FixedUpdate()
     {
-        if (other.CompareTag("Ladder")) // Đảm bảo cây thang được đánh dấu với tag "Ladder"
+        if (isClimbing)
         {
+            rb.gravityScale = 0f;
+            rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
+        }
+        else
+        {
+            rb.gravityScale = 4f;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Thang"))
+        {
+            isLadder = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Thang"))
+        {
+            isLadder = false;
             isClimbing = false;
         }
     }
