@@ -2172,9 +2172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skins:
-  - {fileID: 8274884519929077854, guid: 26690e6ee4b82f942a95d4423f2de64f, type: 3}
-  - {fileID: 514084433583610288, guid: d100566ce53243e48a1c696c5d619f2d, type: 3}
-  - {fileID: 8065578023645402663, guid: c39776291bb25c1478b6e3cf5e5cfe41, type: 3}
+  - {fileID: 1745289217}
+  - {fileID: 1146632424}
+  - {fileID: 1580096433}
   selectedCharacter: 1
 --- !u!1 &811642707
 GameObject:
@@ -2659,6 +2659,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1146632424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 514084433583610288, guid: d100566ce53243e48a1c696c5d619f2d, type: 3}
+  m_PrefabInstance: {fileID: 1717450609}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1190767796
 GameObject:
   m_ObjectHideFlags: 0
@@ -3377,7 +3382,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517588739}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1517588741
 Camera:
   m_ObjectHideFlags: 0
@@ -3673,6 +3678,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536633830}
   m_CullTransparentMesh: 1
+--- !u!1 &1580096433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8065578023645402663, guid: c39776291bb25c1478b6e3cf5e5cfe41, type: 3}
+  m_PrefabInstance: {fileID: 2022199301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1584062691
 GameObject:
   m_ObjectHideFlags: 0
@@ -4206,6 +4216,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 9073047413409730920, guid: d100566ce53243e48a1c696c5d619f2d, type: 3}
   m_PrefabInstance: {fileID: 1717450609}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1745289217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8274884519929077854, guid: 26690e6ee4b82f942a95d4423f2de64f, type: 3}
+  m_PrefabInstance: {fileID: 827133792}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1763616551
 GameObject:
