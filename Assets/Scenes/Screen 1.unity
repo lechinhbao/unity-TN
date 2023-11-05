@@ -7045,7 +7045,7 @@ GameObject:
   - component: {fileID: 653381410}
   m_Layer: 0
   m_Name: Ground_grass_0001_tile
-  m_TagString: Stone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7427,7 +7427,7 @@ GameObject:
   - component: {fileID: 740658826}
   m_Layer: 0
   m_Name: Ground_grass_0000_tile
-  m_TagString: Stone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8214,7 +8214,7 @@ GameObject:
   - component: {fileID: 854426407}
   m_Layer: 0
   m_Name: Ground_grass_0042_tile
-  m_TagString: Stone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11235,8 +11235,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPerfabs:
-  - {fileID: 2364192761857669775, guid: a9f9ce3879ac58c41b00f27bb9d78825, type: 3}
   - {fileID: 7364028998566865675, guid: 26cd898201038b940b56f7effe188b77, type: 3}
+  - {fileID: 2753070840333768624, guid: 242218f8c18e6574c873af36c3442941, type: 3}
+  - {fileID: 5038009154752603799, guid: e8e7fca984361524c9cd924d28c8c65c, type: 3}
+  - {fileID: 7070112458743014854, guid: be02dab0a48fe0a4f9f0ab125990ea77, type: 3}
+  - {fileID: 4470576378652402552, guid: 8013ec57cf034144eaed2f033b6c5603, type: 3}
+  - {fileID: 8337104259188555512, guid: a48710e13a4de6d4baf83d648098f86e, type: 3}
 --- !u!1 &1047280619
 GameObject:
   m_ObjectHideFlags: 0
@@ -14429,7 +14433,7 @@ GameObject:
   - component: {fileID: 1332868592}
   m_Layer: 0
   m_Name: Ground_grass_0040_tile
-  m_TagString: Stone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
