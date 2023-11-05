@@ -11,7 +11,7 @@ public class Climb : MonoBehaviour
     private float speed = 8f;
     private bool isLadder;
     private bool isClimbing;
-
+    private Animator animator;
     [SerializeField] private Rigidbody2D rb;
 
 
@@ -45,6 +45,7 @@ public class Climb : MonoBehaviour
         {
             isLadder = true;
         }
+ 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
