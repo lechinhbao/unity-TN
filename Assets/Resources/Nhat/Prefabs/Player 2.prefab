@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 5
   jumpForce: 5.5
-  tr: {fileID: 0}
+  txtCoin: {fileID: 0}
 --- !u!212 &4766260379222340314
 SpriteRenderer:
   m_ObjectHideFlags: 0
