@@ -23,6 +23,8 @@ public class PlayerScript : MonoBehaviour
     //Bắn đạn
     private bool isRight = true;
 
+    //Bụi
+    public ParticleSystem psBui;
     private void Start()
 
     {
@@ -37,19 +39,29 @@ public class PlayerScript : MonoBehaviour
         float move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(move * runSpeed, rb.velocity.y);
         isRunning = Mathf.Abs(move) > 0;
-    
-    
-        if(move != 0)
+
+        //Bụi
+        Quaternion rotation = psBui.transform.localRotation;
+
+        if (move != 0)
         {
             if (move < 0)
             {       
                 transform.localScale = new Vector3(-1.2f, 1.2f, 1.2f);
                 isRight = false;
+                //Bụi
+                psBui.Play();
+                rotation.y = 0;
+                psBui.transform.localRotation = rotation;
             }
             else
             {
                 transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
                 isRight = true;
+                //Bụi
+                psBui.Play();
+                rotation.y = 180;
+                psBui.transform.localRotation = rotation;
             }
         }
         if (move != 0)
@@ -102,7 +114,7 @@ public class PlayerScript : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("Die"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
      
     }

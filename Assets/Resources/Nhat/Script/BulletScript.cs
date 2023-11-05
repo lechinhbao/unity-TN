@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    private int comboCount = 0;
     private Animator animator;
-    // public int attackDamage = 20;
-    // public float attackRange = 2.0f;
+    private bool isComboActive = false;
+
+    public int comboThreshold = 3; // Số lần đánh cần để kích hoạt combo
+    public float comboDuration = 3.0f; // Thời gian tồn tại của combo animation
+
     private bool isRight = true;
     private void Start()
     {
@@ -17,67 +19,75 @@ public class BulletScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S)) // Người chơi đánh chiêu
         {
-            //Bắn đạn
-            var x = transform.position.x + (isRight ? 0.5f : -0.5f);
-            var y = transform.position.y;
-            var z = transform.position.z;
-
-            GameObject gameObject = (GameObject) Instantiate(
-            Resources.Load("Nhat/Prefabs/Fire"),
-            new Vector3(x, y, z),
-            Quaternion.identity
-
-            );
-           // gameObject.GetComponent<Fire>().setIsRight(isRight);
-
-            // Kích hoạt animation chém khi nhấn "S"
             animator.SetTrigger("IsAttack");
-            //   isAttacking = true;        
+            comboCount++;
+            if (comboCount >= comboThreshold && !isComboActive)
+            {
+                StartCombo();
+            }
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
             // Tắt animation chém khi ngừng nhấn "S"
             animator.ResetTrigger("IsAttack");
         }
-
         if (Input.GetKeyDown(KeyCode.X))
         {
             // Kích hoạt animation chém khi nhấn "X"
             animator.SetTrigger("IsAttackExtra");
-            //   isAttacking = true;
-
         }
         else if (Input.GetKeyUp(KeyCode.X))
         {
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("IsAttackExtra");
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            {
-                // Kích hoạt animation chém khi nhấn "X"
-                animator.SetTrigger("PlayerRunAttack");
-                // isAttacking = true;
-            }
-
+            // Kích hoạt animation chém khi nhấn "X"
+            animator.SetTrigger("IsWalkAttack");
         }
-        else if (Input.GetKeyUp(KeyCode.S))
+        else if (Input.GetKeyUp(KeyCode.F))
         {
             // Tắt animation chém khi ngừng nhấn "X"
-            animator.ResetTrigger("PlayerRunAttack");
+            animator.ResetTrigger("IsWalkAttack");
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Kích hoạt animation chém khi nhấn "X"
+            animator.SetTrigger("IsRunAttack");
+        }
+        else if (Input.GetKeyUp(KeyCode.E))
+        {
+            // Tắt animation chém khi ngừng nhấn "X"
+            animator.ResetTrigger("IsRunAttack");
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            animator.SetTrigger("IsPush");
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        animator.ResetTrigger("IsPush");
+    }
+
+
+    void StartCombo()
+    {
+        isComboActive = true;
+        comboCount = 0;
+        animator.SetBool("IsAttackExtra", true);
+        StartCoroutine(EndCombo());
+    }
+    IEnumerator EndCombo()
+    {
+        yield return new WaitForSeconds(comboDuration);
+        isComboActive = false;
+        animator.SetBool("IsAttackExtra", false);
+    }
 }
-
-
-
-
-
-
-
-
-
-
-

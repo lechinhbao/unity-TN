@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     int currentHealth;
 
     public int Health;
+    public int Enemy;
+    public int Trap;
     public HealthBar healthBar;
 
 
@@ -66,7 +68,7 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(deathAnimationDuration);
 
         // Hủy (destroy) GameObject.
-        //Destroy(gameObject);
+        Destroy(gameObject);
 
         Time.timeScale = 0; // Tạm dừng thời gian trong trò chơi.
         isGamePaused = true;
@@ -86,16 +88,49 @@ public class PlayerHealth : MonoBehaviour
             animator.SetBool("IsHurt", true);
             TakeDamage(Health);
         }
-      
+        if (collision.gameObject.CompareTag("Enemy")){
+            PlayerHurt = true;
+            // Kích hoạt animation
+            animator.SetBool("IsHurt", true);
+            TakeDamage(Enemy);
+        }
+        if (collision.gameObject.CompareTag("Trap"))
+        {
+            PlayerHurt = true;
+            // Kích hoạt animation
+            animator.SetBool("IsHurt", true);
+            TakeDamage(Trap);
+        }
+        if (collision.gameObject.CompareTag("Water"))
+        {
+            animator.SetTrigger("IsDeath");
+            Destroy(gameObject);
+            Time.timeScale = 0; // Tạm dừng thời gian trong trò chơi.
+            isGamePaused = true;
+            DiePanel.SetActive(true); // Hiển thị Panel Pause.
+          
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
             PlayerHurt = false;
-            // Kích hoạt animation
+            animator.SetBool("IsHurt", false);
+
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            PlayerHurt = false;
+            animator.SetBool("IsHurt", false);
+
+        }
+        if (collision.gameObject.CompareTag("Trap"))
+        {
+            PlayerHurt = false;
             animator.SetBool("IsHurt", false);
 
         }
     }
+
 }

@@ -10,16 +10,20 @@ public class MageScript : MonoBehaviour
     private Rigidbody2D rb;
 
     private bool isRunning;
-    private bool isJumping;
+    //private bool isJumping;
 
     public float runSpeed = 5f;
-    public float jumpForce = 5f;
+    // public float jumpForce = 5f;
 
-    private bool isFacingRight = true;
+    //private bool isFacingRight = true;
     //Coin
-    // public TMP_Text txtCoin;
+    public TMP_Text txtCoin;
     private int countCoin = 0;
 
+    //Bắn đạn
+    private bool isRight = true;
+    //Bụi
+    public ParticleSystem psBui;
     private void Start()
 
     {
@@ -27,27 +31,34 @@ public class MageScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
     }
-
     private void Update()
     {
-
-
         // Điều khiển chạy
         float move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(move * runSpeed, rb.velocity.y);
         isRunning = Mathf.Abs(move) > 0;
-
+        //Bụi
+        Quaternion rotation = psBui.transform.localRotation;
 
         if (move != 0)
         {
             if (move < 0)
             {
                 transform.localScale = new Vector3(-1.2f, 1.2f, 1.2f);
+                isRight = false;
+                //Bụi
+                psBui.Play();
+                rotation.y = 0;
+                psBui.transform.localRotation = rotation;
             }
             else
             {
-
                 transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                isRight = true;
+                //Bụi
+                psBui.Play();
+                rotation.y = 180;
+                psBui.transform.localRotation = rotation;
             }
         }
         if (move != 0)
@@ -62,26 +73,82 @@ public class MageScript : MonoBehaviour
                 animator.SetTrigger("RunAttack");
                 Debug.Log("Đa bat");
             }
-
         }
         // Điều khiển nhảy
-        if (Input.GetButtonDown("Jump") && !isJumping)
-        {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            isJumping = true;
-        }
+        // if (Input.GetButtonDown("Jump") && !isJumping)
+        // {
+        //     rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        //      isJumping = true;
+        //  }
 
         // Cập nhật trạng thái của Animator
         animator.SetBool("IsRunning", isRunning);
-        animator.SetBool("IsJumping", isJumping);
-    }
 
+        // animator.SetBool("IsJumping", isJumping);
+
+        //Bắn đạn
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            var x = transform.position.x + (isRight ? 0.5f : -0.5f);
+            var y = transform.position.y;
+            var z = transform.position.z;
+
+            GameObject gameObject = (GameObject)Instantiate(
+            Resources.Load("Nhat/Prefabs/Fire"),
+            new Vector3(x, y, z),
+            Quaternion.identity
+            );
+            gameObject.GetComponent<Fire>().setIsRight(isRight);
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            var x = transform.position.x + (isRight ? 0.5f : -0.5f);
+            var y = transform.position.y;
+            var z = transform.position.z;
+
+            GameObject gameObject = (GameObject)Instantiate(
+            Resources.Load("Nhat/Prefabs/FireExtra"),
+            new Vector3(x, y, z),
+            Quaternion.identity
+            );
+            gameObject.GetComponent<Fire>().setIsRight(isRight);
+
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            var x = transform.position.x + (isRight ? 0.5f : -0.5f);
+            var y = transform.position.y;
+            var z = transform.position.z;
+
+            GameObject gameObject = (GameObject)Instantiate(
+            Resources.Load("Nhat/Prefabs/Comet"),
+            new Vector3(x, y, z),
+            Quaternion.identity
+            );
+            gameObject.GetComponent<Fire>().setIsRight(isRight);
+
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            var x = transform.position.x + (isRight ? 0.5f : -0.5f);
+            var y = transform.position.y;
+            var z = transform.position.z;
+
+            GameObject gameObject = (GameObject)Instantiate(
+            Resources.Load("Nhat/Prefabs/Fire2"),
+            new Vector3(x, y, z),
+            Quaternion.identity
+            );
+            gameObject.GetComponent<Fire>().setIsRight(isRight);
+
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Kiểm tra va chạm với mặt đất (hoặc các platform)
         if (collision.gameObject.CompareTag("Stone"))
         {
-            isJumping = false;
+            //isJumping = false;
         }
         else if (collision.gameObject.CompareTag("Die"))
         {
@@ -101,7 +168,7 @@ public class MageScript : MonoBehaviour
         {
             // soundCoin.Play();
             countCoin += 1;
-            //txtCoin.text = countCoin + " X";
+            txtCoin.text = countCoin + " X";
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "checkpoint")

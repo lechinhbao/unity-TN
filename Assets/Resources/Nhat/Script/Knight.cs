@@ -52,6 +52,16 @@ public class Knight : MonoBehaviour
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("IsWalkAttack");
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Kích hoạt animation chém khi nhấn "X"
+            animator.SetTrigger("IsRunAttack");
+        }
+        else if (Input.GetKeyUp(KeyCode.E))
+        {
+            // Tắt animation chém khi ngừng nhấn "X"
+            animator.ResetTrigger("IsRunAttack");
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

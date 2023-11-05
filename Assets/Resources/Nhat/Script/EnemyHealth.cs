@@ -31,8 +31,9 @@ public class EnemyHealth : MonoBehaviour
             DworfHurt = true;
             // Kích hoạt animation
             animator.SetBool("DworfHurt", true);
-            TakeDamage(20); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
+            TakeDamage(10); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
         }
+    
       
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -42,6 +43,17 @@ public class EnemyHealth : MonoBehaviour
             DworfHurt = false;
             // Kích hoạt animation
             animator.SetBool("DworfHurt", false);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            DworfHurt = true;
+            // Kích hoạt animation
+            animator.SetBool("DworfHurt", true);
+            TakeDamage(10); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
         }
     }
 

@@ -32,25 +32,35 @@ public class Attack : MonoBehaviour
             // Tắt animation chém khi ngừng nhấn "S"
             animator.ResetTrigger("IsAttack");
         }
-        if (Input.GetKeyDown(KeyCode.X))
+       /* if (Input.GetKeyDown(KeyCode.X))
         {
             // Kích hoạt animation chém khi nhấn "X"
-            animator.SetTrigger("IsRunAttack");
+            animator.SetTrigger("IsAttackExtra");
         }
         else if (Input.GetKeyUp(KeyCode.X))
         {
             // Tắt animation chém khi ngừng nhấn "X"
-            animator.ResetTrigger("IsRunAttack");
-        }
-        if (Input.GetKeyDown(KeyCode.F))
+            animator.ResetTrigger("IsAttackExtra");
+        }*/
+        if (Input.GetKeyDown(KeyCode.E))
         {
             // Kích hoạt animation chém khi nhấn "X"
             animator.SetTrigger("IsWalkAttack");
         }
-        else if (Input.GetKeyUp(KeyCode.F))
+        else if (Input.GetKeyUp(KeyCode.E))
         {
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("IsWalkAttack");
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            // Kích hoạt animation chém khi nhấn "X"
+            animator.SetTrigger("IsRunAttack");
+        }
+        else if (Input.GetKeyUp(KeyCode.F))
+        {
+            // Tắt animation chém khi ngừng nhấn "X"
+            animator.ResetTrigger("IsRunAttack");
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

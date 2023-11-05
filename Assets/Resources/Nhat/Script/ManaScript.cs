@@ -25,21 +25,26 @@ public class ManaScript : MonoBehaviour
             Debug.Log("oke nha");
             currentMana = 0;
             //animator.ResetTrigger("Attack");
-            animator.ResetTrigger("PlayerAttackExtra");
+            animator.ResetTrigger("IsAttackExtra");
+            animator.ResetTrigger("IsWalkAttack");
+            animator.ResetTrigger("IsRunAttack");
         }
         manaBar.UpdateMana(currentMana, maxMana);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            TakeMana(5);
-
-        }
         if (Input.GetKeyDown(KeyCode.X))
         {
             TakeMana(5);
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            TakeMana(5);
         }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TakeMana(5);
+        }
+    }
 }
