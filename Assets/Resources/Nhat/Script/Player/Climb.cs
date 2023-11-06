@@ -8,13 +8,19 @@ public class Climb : MonoBehaviour
 {
 
     private float vertical;
-    private float speed = 8f;
+    private float speed = 80f;
     private bool isLadder;
     private bool isClimbing;
     private Animator animator;
-    [SerializeField] private Rigidbody2D rb;
+    //[SerializeField] private Rigidbody2D rb;
+    private Rigidbody2D rb;
+    private void Start()
 
+    {
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
 
+    }
     // Update is called once per frame
     void Update()
     {
@@ -44,6 +50,10 @@ public class Climb : MonoBehaviour
         if (collision.CompareTag("Thang"))
         {
             isLadder = true;
+        }
+        if (collision.CompareTag("Thang"))
+        {
+            animator.SetTrigger("IsClimbing");
         }
  
     }

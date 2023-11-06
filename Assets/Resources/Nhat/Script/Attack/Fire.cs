@@ -7,7 +7,7 @@ public class Fire : MonoBehaviour
     private bool isRight;
     void Start()
     {
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 3f);
     }
     void Update()
     {

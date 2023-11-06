@@ -15,6 +15,7 @@ public class ManaScript : MonoBehaviour
         currentMana = maxMana;
         manaBar.UpdateMana(currentMana, maxMana);
         animator = GetComponent<Animator>();
+
     }
     public void TakeMana(int mana)
     {
