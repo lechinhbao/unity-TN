@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -28,7 +29,9 @@ public class PlayerHealth : MonoBehaviour
     //Hurt
     private bool PlayerHurt = false;
 
-    public GameObject popupUpDamagePrefab;
+    //Popup
+    public GameObject popUpDamagePrefabs;
+    public TMP_Text popUpText;
     private void OnEnable()
     {
         OnDeath.AddListener(Death);
@@ -47,11 +50,14 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        //popup
-        Instantiate(popupUpDamagePrefab, transform.position, Quaternion.identity);
+
         currentHealth -= damage;
 
-        if(currentHealth < 0) {
+        //Popup
+        popUpText.text = damage.ToString();
+        Instantiate(popUpDamagePrefabs, transform.position, Quaternion.identity);
+
+        if (currentHealth < 0) {
             currentHealth = 0;
             OnDeath.Invoke();
         }
