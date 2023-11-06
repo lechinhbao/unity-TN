@@ -28,6 +28,7 @@ TagManager:
   - PER
   - Phitieu
   - Water
+  - Nen
   layers:
   - Default
   - TransparentFX
