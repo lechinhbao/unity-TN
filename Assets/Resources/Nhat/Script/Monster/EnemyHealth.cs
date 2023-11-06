@@ -12,6 +12,8 @@ public class EnemyHealth : MonoBehaviour
     public float deathAnimationDuration = 2.0f;
 
     private bool DworfHurt = false;
+
+    public GameObject popupUpDamagePrefab;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -57,6 +59,9 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        //popup
+        Instantiate(popupUpDamagePrefab, transform.position, Quaternion.identity);
+
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Đảm bảo giới hạn máu trong khoảng [0, maxHealth]
         UpdateHealthSlider();

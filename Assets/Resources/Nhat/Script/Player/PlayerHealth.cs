@@ -27,6 +27,8 @@ public class PlayerHealth : MonoBehaviour
 
     //Hurt
     private bool PlayerHurt = false;
+
+    public GameObject popupUpDamagePrefab;
     private void OnEnable()
     {
         OnDeath.AddListener(Death);
@@ -45,6 +47,8 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        //popup
+        Instantiate(popupUpDamagePrefab, transform.position, Quaternion.identity);
         currentHealth -= damage;
 
         if(currentHealth < 0) {
