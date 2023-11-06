@@ -5,9 +5,9 @@ using UnityEngine.Events;
 public class ManaScript : MonoBehaviour
 {
     [SerializeField] int maxMana;
-    int currentMana;
+    [SerializeField] int currentMana;
 
-    public Mana manaBar;
+    [SerializeField] public Mana manaBar;
 
     private Animator animator;
     public void Start()

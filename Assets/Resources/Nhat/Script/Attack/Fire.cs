@@ -19,5 +19,15 @@ public class Fire : MonoBehaviour
     {
         this.isRight = isRight;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Monster"))
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("Enemy")){
+            Destroy(gameObject);
+        }
+    }
 }
 

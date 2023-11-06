@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Security.Cryptography;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int maxHealth = 100;
+    [SerializeField] private int maxHealth = 100;
     public int currentHealth;
     public Slider healthSlider;
 
@@ -14,7 +15,10 @@ public class EnemyHealth : MonoBehaviour
 
     private bool DworfHurt = false;
 
-    public GameObject popupUpDamagePrefab;
+    //Popup
+    public GameObject popUpDamagePrefab;
+    public TMP_Text popUpText;
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -30,10 +34,11 @@ public class EnemyHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("DamagePlayer"))
-        {
+        { 
+
             DworfHurt = true;
             // Kích hoạt animation
-            animator.SetBool("DworfHurt", true);
+            animator.SetBool("IsHurt", true);
             TakeDamage(10); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
         }
     }
@@ -43,7 +48,7 @@ public class EnemyHealth : MonoBehaviour
         {
             DworfHurt = false;
             // Kích hoạt animation
-            animator.SetBool("DworfHurt", false);
+            animator.SetBool("IsHurt", false);
         }
     }
 
@@ -53,7 +58,7 @@ public class EnemyHealth : MonoBehaviour
         {
             DworfHurt = true;
             // Kích hoạt animation
-            animator.SetTrigger("DworfHurt");
+            animator.SetTrigger("IsHurt");
             TakeDamage(10); 
         }
     }
@@ -63,16 +68,17 @@ public class EnemyHealth : MonoBehaviour
         {
             DworfHurt = false;
             // Kích hoạt animation
-            animator.ResetTrigger("DworfHurt");
+            animator.ResetTrigger("IsHurt");
         }
     }
 
     public void TakeDamage(int damage)
     {
-        //popup
-        Instantiate(popupUpDamagePrefab, transform.position, Quaternion.identity);
-
         currentHealth -= damage;
+
+        //Popup
+        popUpText.text = damage.ToString();
+        Instantiate(popUpDamagePrefab, transform.position, Quaternion.identity);
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Đảm bảo giới hạn máu trong khoảng [0, maxHealth]
         UpdateHealthSlider();
 
@@ -84,7 +90,7 @@ public class EnemyHealth : MonoBehaviour
     public void DeathEnemy()
     {
         // Kích hoạt animation "Die".
-        animator.SetTrigger("DworfDie");
+        animator.SetTrigger("IsDie");
 
         // Chờ cho đến khi animation hoàn thành trước khi hủy GameObject.
         StartCoroutine(DestroyAfterAnimation());
@@ -98,5 +104,14 @@ public class EnemyHealth : MonoBehaviour
         // Hủy (destroy) GameObject.
         Destroy(gameObject);
     }
+
+  /*  void ShowDamage(string text)
+    {
+        if (floatingTextPrefabs)
+        {
+            GameObject prefabs = Instantiate(floatingTextPrefabs);
+            prefabs.GetComponentInChildren<TextMeshPro>().text = text;
+        }
+    }*/
 }
 
