@@ -36,7 +36,16 @@ public class Victory : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) // Kiểm tra xem đối tượng va chạm có tag "Player" hay không
+        if (other.CompareTag("Victory")) // Kiểms tra xem đối tượng va chạm có tag "Player" hay không
+        {
+            Time.timeScale = 0; // Tạm dừng thời gian trong trò chơi.
+            isGamePaused = true;
+            victoryPanel.SetActive(true); // Hiển thị Panel Pause.
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Victory")) // Kiểm tra xem đối tượng va chạm có tag "Player" hay không
         {
             Time.timeScale = 0; // Tạm dừng thời gian trong trò chơi.
             isGamePaused = true;

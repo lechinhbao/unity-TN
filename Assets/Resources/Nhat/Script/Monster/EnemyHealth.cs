@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,8 +53,17 @@ public class EnemyHealth : MonoBehaviour
         {
             DworfHurt = true;
             // Kích hoạt animation
-            animator.SetBool("DworfHurt", true);
-            TakeDamage(10); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
+            animator.SetTrigger("DworfHurt");
+            TakeDamage(10); 
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            DworfHurt = false;
+            // Kích hoạt animation
+            animator.ResetTrigger("DworfHurt");
         }
     }
 
