@@ -17,9 +17,9 @@ public class MageScript : MonoBehaviour
 
     //private bool isFacingRight = true;
     //Coin
-    public TMP_Text txtCoin;
+   /* public TMP_Text txtCoin;
     private int countCoin = 0;
-
+*/
     //Bắn đạn
     private bool isRight = true;
     //Bụi
@@ -94,7 +94,7 @@ public class MageScript : MonoBehaviour
             var z = transform.position.z;
 
             GameObject gameObject = (GameObject)Instantiate(
-            Resources.Load("Nhat/Prefabs/Fire"),
+            Resources.Load("Nhat/PrefabsBullet/Fire"),
             new Vector3(x, y, z),
             Quaternion.identity
             );
@@ -107,7 +107,7 @@ public class MageScript : MonoBehaviour
             var z = transform.position.z;
 
             GameObject gameObject = (GameObject)Instantiate(
-            Resources.Load("Nhat/Prefabs/FireExtra"),
+            Resources.Load("Nhat/PrefabsBullet/FireExtra"),
             new Vector3(x, y, z),
             Quaternion.identity
             );
@@ -121,7 +121,7 @@ public class MageScript : MonoBehaviour
             var z = transform.position.z;
 
             GameObject gameObject = (GameObject)Instantiate(
-            Resources.Load("Nhat/Prefabs/Comet"),
+            Resources.Load("Nhat/PrefabsBullet/Comet"),
             new Vector3(x, y, z),
             Quaternion.identity
             );
@@ -135,7 +135,7 @@ public class MageScript : MonoBehaviour
             var z = transform.position.z;
 
             GameObject gameObject = (GameObject)Instantiate(
-            Resources.Load("Nhat/Prefabs/Fire2"),
+            Resources.Load("Nhat/PrefabsBullet/Fire2"),
             new Vector3(x, y, z),
             Quaternion.identity
             );
@@ -162,7 +162,7 @@ public class MageScript : MonoBehaviour
 
     }
     //Coin
-    private void OnTriggerEnter2D(Collider2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Coin")
         {
@@ -175,7 +175,7 @@ public class MageScript : MonoBehaviour
         {
             //   SavePosition();
         }
-    }
+    }*/
 
 
 }

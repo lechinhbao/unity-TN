@@ -28,6 +28,18 @@ public class Fire : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy")){
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("Stone"))
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("Trap"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
 

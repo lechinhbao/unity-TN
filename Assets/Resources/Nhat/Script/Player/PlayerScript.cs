@@ -16,6 +16,7 @@ public class PlayerScript : MonoBehaviour
    // public float jumpForce = 5f;
 
     //private bool isFacingRight = true;
+
     //Coin
     public TMP_Text txtCoin;
     private int countCoin = 0;
@@ -97,7 +98,7 @@ public class PlayerScript : MonoBehaviour
             var z = transform.position.z;
 
             GameObject gameObject = (GameObject)Instantiate(
-            Resources.Load("Nhat/Prefabs/Phitieu"),
+            Resources.Load("Nhat/PrefabsBullet/Phitieu"),
             new Vector3(x, y, z),
             Quaternion.identity
             );
