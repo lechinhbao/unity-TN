@@ -53,7 +53,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3493477350981574103}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0261727a6842a3f49ab50667183b4555, type: 3}
   m_Name: 
@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMana: 100
+  currentMana: 0
   manaBar: {fileID: 0}
 --- !u!114 &1806866128137914308
 MonoBehaviour:
@@ -139,6 +140,8 @@ MonoBehaviour:
       m_Calls: []
   deathAnimationDuration: 1
   DiePanel: {fileID: 0}
+  popUpDamagePrefabs: {fileID: 0}
+  popUpText: {fileID: 0}
 --- !u!114 &8089378260816951450
 MonoBehaviour:
   m_ObjectHideFlags: 0

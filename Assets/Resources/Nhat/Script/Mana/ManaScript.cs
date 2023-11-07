@@ -32,7 +32,18 @@ public class ManaScript : MonoBehaviour
         }
         manaBar.UpdateMana(currentMana, maxMana);
     }
+    //Cộng Mana
+    public void IncreaseMana(int amount)
+    {
+        currentMana += amount;
 
+        if (currentMana > maxMana)
+        {
+            currentMana = maxMana;
+        }
+
+        manaBar.UpdateMana(currentMana, maxMana);
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.X))

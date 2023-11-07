@@ -9,13 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8173381762713657298}
+  - component: {fileID: 7108450703592231335}
   - component: {fileID: 4493832427238837465}
   - component: {fileID: 2105755429814887314}
   - component: {fileID: 5591315042949828358}
   - component: {fileID: -161233800773829492}
   m_Layer: 0
   m_Name: heart1 (1)
-  m_TagString: Coin
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,6 +36,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7108450703592231335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014725265791493788}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab314112229860349ba8930da087ec11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmount: 20
 --- !u!212 &4493832427238837465
 SpriteRenderer:
   m_ObjectHideFlags: 0

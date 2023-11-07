@@ -63,6 +63,18 @@ public class PlayerHealth : MonoBehaviour
         }
         healthBar.UpdateBar(currentHealth, maxHealth);
     }
+    //Cộng Máu
+    public void IncreaseHealth(int amount)
+    {
+        currentHealth += amount;
+
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+        healthBar.UpdateBar(currentHealth, maxHealth);
+    }
     public void Death()
     {
         // Kích hoạt animation "Die".
