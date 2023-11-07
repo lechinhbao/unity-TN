@@ -19,6 +19,11 @@ public class EnemyHealth : MonoBehaviour
     public GameObject popUpDamagePrefab;
     public TMP_Text popUpText;
 
+    public GameObject Effect;
+
+    //CoinDrop
+    public GameObject CoinModel;
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -79,15 +84,28 @@ public class EnemyHealth : MonoBehaviour
         //Popup
         popUpText.text = damage.ToString();
         Instantiate(popUpDamagePrefab, transform.position, Quaternion.identity);
+        //Effect
+        Instantiate(Effect, transform.position, Quaternion.identity);
+
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Đảm bảo giới hạn máu trong khoảng [0, maxHealth]
         UpdateHealthSlider();
 
         if (currentHealth <= 0)
         {
             DeathEnemy();
+            DropCoin();
         }
     }
-    public void DeathEnemy()
+    //Drop Coin
+    void DropCoin()
+    {
+        Vector3 position = transform.position;
+        GameObject coin = Instantiate(CoinModel,transform.position, Quaternion.identity);
+        coin.SetActive(true);
+        Destroy(coin, 5f);
+    }
+
+public void DeathEnemy()
     {
         // Kích hoạt animation "Die".
         animator.SetTrigger("IsDie");
