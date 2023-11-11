@@ -27,6 +27,7 @@ TagManager:
   - Water
   - Die
   - Victory
+  - BoxPush
   layers:
   - Default
   - TransparentFX

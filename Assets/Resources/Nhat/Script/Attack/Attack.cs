@@ -18,7 +18,7 @@ public class Attack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S)) // Người chơi đánh chiêu
+        if (Input.GetKeyDown(KeyCode.Q)) // Người chơi đánh chiêu
         {
             animator.SetTrigger("IsAttack");
             comboCount++;
@@ -27,7 +27,7 @@ public class Attack : MonoBehaviour
                 StartCombo();
             }
         }
-        else if (Input.GetKeyUp(KeyCode.S))
+        else if (Input.GetKeyUp(KeyCode.Q))
         {
             // Tắt animation chém khi ngừng nhấn "S"
             animator.ResetTrigger("IsAttack");
@@ -42,40 +42,37 @@ public class Attack : MonoBehaviour
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("IsAttackExtra");
         }*/
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             // Kích hoạt animation chém khi nhấn "X"
             animator.SetTrigger("IsWalkAttack");
         }
-        else if (Input.GetKeyUp(KeyCode.E))
+        else if (Input.GetKeyUp(KeyCode.Q))
         {
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("IsWalkAttack");
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             // Kích hoạt animation chém khi nhấn "X"
             animator.SetTrigger("IsRunAttack");
         }
-        else if (Input.GetKeyUp(KeyCode.F))
+        else if (Input.GetKeyUp(KeyCode.E))
         {
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("IsRunAttack");
         }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Box"))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            animator.SetTrigger("IsPush");
+            // Kích hoạt animation chém khi nhấn "X"
+            animator.SetTrigger("IsBullet");
+        }
+        else if (Input.GetKeyUp(KeyCode.R))
+        {
+            // Tắt animation chém khi ngừng nhấn "X"
+            animator.ResetTrigger("IsBullet");
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        animator.ResetTrigger("IsPush");
-    }
-
-
     void StartCombo()
     {
         isComboActive = true;

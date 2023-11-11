@@ -18,22 +18,54 @@ public class PlayerScript : MonoBehaviour
     //private bool isFacingRight = true;
 
     //Coin
-    public TMP_Text txtCoin;
-    private int countCoin = 0;
+/*    public TMP_Text txtCoin;
+    private int countCoin = 0;*/
 
     //Bắn đạn
     private bool isRight = true;
 
     //Bụi
     public ParticleSystem psBui;
+
+
+    //Mana
+    public int maxMana = 100; // Số mana tối đa
+    public int currentMana;
+    public Mana manaBar;
+
+    public float manaIncreaseInterval = 5f; // Thời gian để tăng thêm mana (10 giây trong trường hợp này)
     private void Start()
 
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        
-    }
 
+        //Mana
+        currentMana = maxMana;
+        manaBar.UpdateMana(currentMana, maxMana);
+
+        InvokeRepeating("IncreaseMana", 0f, manaIncreaseInterval);
+    }
+    //Hồi mana
+    void IncreaseMana()
+    {
+        if (currentMana < maxMana)
+        {
+            currentMana += 5; // Tăng thêm 10 mana sau mỗi khoảng thời gian
+            manaBar.UpdateMana(currentMana, maxMana);
+        }
+    }
+    public void IncreaseMana(int amount)
+    {
+        currentMana += amount;
+
+        if (currentMana > maxMana)
+        {
+            currentMana = maxMana;
+        }
+
+        manaBar.UpdateMana(currentMana, maxMana);
+    }
     private void Update()
     {
         // Điều khiển chạy
@@ -47,7 +79,7 @@ public class PlayerScript : MonoBehaviour
         if (move != 0)
         {
             if (move < 0)
-            {       
+            {
                 transform.localScale = new Vector3(-1.2f, 1.2f, 1.2f);
                 isRight = false;
                 //Bụi
@@ -65,19 +97,6 @@ public class PlayerScript : MonoBehaviour
                 psBui.transform.localRotation = rotation;
             }
         }
-        if (move != 0)
-        {
-            if (move < 0 && Input.GetKeyDown(KeyCode.F))
-            {
-                animator.SetTrigger("RunAttack");
-                Debug.Log("Đa bat");
-            }
-            else if(move > 0 && Input.GetKeyDown(KeyCode.F))
-            {
-                animator.SetTrigger("RunAttack");
-                Debug.Log("Đa bat");
-            }
-        }
         // Điều khiển nhảy
         // if (Input.GetButtonDown("Jump") && !isJumping)
         // {
@@ -87,25 +106,36 @@ public class PlayerScript : MonoBehaviour
 
         // Cập nhật trạng thái của Animator
         animator.SetBool("IsRunning", isRunning);
-        
+
         // animator.SetBool("IsJumping", isJumping);
 
-        //Bắn đạn
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            var x = transform.position.x + (isRight ? 0.5f : -0.5f);
-            var y = transform.position.y;
-            var z = transform.position.z;
-
-            GameObject gameObject = (GameObject)Instantiate(
-            Resources.Load("Nhat/PrefabsBullet/Phitieu"),
-            new Vector3(x, y, z),
-            Quaternion.identity
-            );
-            gameObject.GetComponent<Fire>().setIsRight(isRight);
+            if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
+            {
+                Shoot();
+                currentMana -= 5; // Trừ đi 10 mana sau khi bắn
+                manaBar.UpdateMana(currentMana, maxMana);
+            }
+            else
+            {
+                Debug.Log("Không đủ mana để bắn đạn!");
+            }
         }
     }
-   
+    void Shoot()
+    {
+        var x = transform.position.x + (isRight ? 0.5f : -0.5f);
+        var y = transform.position.y;
+        var z = transform.position.z;
+
+        GameObject gameObject = (GameObject)Instantiate(
+        Resources.Load("Nhat/PrefabsBullet/Phitieu"),
+        new Vector3(x, y, z),
+        Quaternion.identity
+        );
+        gameObject.GetComponent<Fire>().setIsRight(isRight);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Kiểm tra va chạm với mặt đất (hoặc các platform)
@@ -117,16 +147,23 @@ public class PlayerScript : MonoBehaviour
         {
             //Destroy(gameObject);
         }
-     
-    }
-    public void Death()
-    {
-        animator.SetTrigger("PlayerDeath");
+        if (collision.gameObject.CompareTag("BoxPush"))
+        {
+            animator.SetTrigger("IsPush");
+        }
+        }
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            animator.ResetTrigger("IsPush");
+        }
+        public void Death()
+        {
+            animator.SetTrigger("PlayerDeath");
        
-    }
-    //Coin
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+        }
+        //Coin
+       /* private void OnTriggerEnter2D(Collider2D collision)
+        {
         if (collision.gameObject.tag == "Coin")
         {
            // soundCoin.Play();
@@ -138,9 +175,7 @@ public class PlayerScript : MonoBehaviour
         {
          //   SavePosition();
         }
-    }
-
-
+    }*/
 }
 
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     private bool isRight;
+
     void Start()
     {
         Destroy(gameObject, 3f);
@@ -14,10 +15,15 @@ public class Fire : MonoBehaviour
         //Di chuyển đạn
         transform.Translate((isRight ? Vector3.right : Vector3.left) * Time.deltaTime * 5f);
 
+        // Xoay mặt viên đạn theo hướng của người chơi
+     
+
     }
+
     public void setIsRight(bool isRight)
     {
         this.isRight = isRight;
+     
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,7 +31,8 @@ public class Fire : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (collision.gameObject.CompareTag("Enemy")){
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Box"))

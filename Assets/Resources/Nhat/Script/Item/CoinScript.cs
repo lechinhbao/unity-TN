@@ -29,9 +29,9 @@ public class CoinScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Coin")
         {
-            // soundCoin.Play();
+            //soundCoin.Play();
             countCoin += 1;
-            txtCoin.text = countCoin + " X";
+            txtCoin.text = countCoin + "";
             Destroy(collision.gameObject);
 
             //Popup
@@ -40,7 +40,7 @@ public class CoinScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "checkpoint")
         {
-            //   SavePosition();
+               //SavePosition();
         }
     }
 

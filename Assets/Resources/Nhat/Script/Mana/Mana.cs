@@ -10,4 +10,5 @@ public class Mana : MonoBehaviour
     {
         fillBar.fillAmount = (float)currentValue / (float)maxValue;
     }
+
 }

@@ -19,7 +19,7 @@ public class BulletScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S)) // Người chơi đánh chiêu
+        if (Input.GetKeyDown(KeyCode.Q)) // Người chơi đánh chiêu
         {
             animator.SetTrigger("IsAttack");
             comboCount++;
@@ -28,27 +28,27 @@ public class BulletScript : MonoBehaviour
                 StartCombo();
             }
         }
-        else if (Input.GetKeyUp(KeyCode.S))
+        else if (Input.GetKeyUp(KeyCode.Q))
         {
             // Tắt animation chém khi ngừng nhấn "S"
             animator.ResetTrigger("IsAttack");
         }
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             // Kích hoạt animation chém khi nhấn "X"
             animator.SetTrigger("IsAttackExtra");
         }
-        else if (Input.GetKeyUp(KeyCode.X))
+        else if (Input.GetKeyUp(KeyCode.W))
         {
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("IsAttackExtra");
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             // Kích hoạt animation chém khi nhấn "X"
             animator.SetTrigger("IsWalkAttack");
         }
-        else if (Input.GetKeyUp(KeyCode.F))
+        else if (Input.GetKeyUp(KeyCode.E))
         {
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("IsWalkAttack");
@@ -64,19 +64,6 @@ public class BulletScript : MonoBehaviour
             animator.ResetTrigger("IsRunAttack");
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Box"))
-        {
-            animator.SetTrigger("IsPush");
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        animator.ResetTrigger("IsPush");
-    }
-
-
     void StartCombo()
     {
         isComboActive = true;

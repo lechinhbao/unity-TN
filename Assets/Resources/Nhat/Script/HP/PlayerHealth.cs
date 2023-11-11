@@ -45,7 +45,6 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.UpdateBar(currentHealth, maxHealth);
         animator = GetComponent<Animator>();
-      
 
     }
     public void TakeDamage(int damage)
@@ -90,7 +89,7 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(deathAnimationDuration);
 
         // Hủy (destroy) GameObject.
-        Destroy(gameObject);
+        // Destroy(gameObject);
 
         Time.timeScale = 0; // Tạm dừng thời gian trong trò chơi.
         isGamePaused = true;

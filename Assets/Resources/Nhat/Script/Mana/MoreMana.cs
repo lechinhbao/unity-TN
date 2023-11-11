@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoreMana: MonoBehaviour
 {
-    public int manaAmount = 20; // Số lượng máu mà trái tim sẽ cung cấp
+    public int manaAmount = 20;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,7 +14,7 @@ public class MoreMana: MonoBehaviour
             if (player != null)
             {
                 player.IncreaseMana(manaAmount);
-                Destroy(gameObject); // Xóa trái tim sau khi ăn
+                Destroy(gameObject); 
             }
         }
     }

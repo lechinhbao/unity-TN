@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5091144523931701386}
+  - component: {fileID: -2884136096429302400}
+  - component: {fileID: -9030363186865001831}
   - component: {fileID: -8804840843133608183}
   - component: {fileID: 3388776167460829271}
   - component: {fileID: 4112613939832351934}
@@ -36,6 +38,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2884136096429302400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2940499881210238936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d169aebfe81f664fb2e01b95981ce6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.2
+  shakeMagnitude: 0.1
+--- !u!114 &-9030363186865001831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2940499881210238936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7c0a254d106ae49b7ec0c20ad4f4ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 2
+  knockbackHeight: 2
+  knockbackDistance: 2
 --- !u!114 &-8804840843133608183
 MonoBehaviour:
   m_ObjectHideFlags: 0

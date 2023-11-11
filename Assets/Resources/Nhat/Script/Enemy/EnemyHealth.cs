@@ -14,7 +14,6 @@ public class EnemyHealth : MonoBehaviour
     public float deathAnimationDuration = 2.0f;
 
     private bool DworfHurt = false;
-
     //Popup
     public GameObject popUpDamagePrefab;
     public TMP_Text popUpText;
@@ -39,8 +38,7 @@ public class EnemyHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("DamagePlayer"))
-        { 
-
+        {
             DworfHurt = true;
             // Kích hoạt animation
             animator.SetBool("IsHurt", true);
@@ -56,14 +54,13 @@ public class EnemyHealth : MonoBehaviour
             animator.SetBool("IsHurt", false);
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            DworfHurt = true;
+            //DworfHurt = true;
             // Kích hoạt animation
-            animator.SetTrigger("IsHurt");
+            animator.SetBool("IsHurt", true);
             TakeDamage(10); 
         }
     }
@@ -71,9 +68,9 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            DworfHurt = false;
+            //DworfHurt = false;
             // Kích hoạt animation
-            animator.ResetTrigger("IsHurt");
+            animator.SetBool("IsHurt", false);
         }
     }
 
@@ -104,7 +101,6 @@ public class EnemyHealth : MonoBehaviour
         coin.SetActive(true);
         Destroy(coin, 5f);
     }
-
 public void DeathEnemy()
     {
         // Kích hoạt animation "Die".
@@ -120,9 +116,8 @@ public void DeathEnemy()
         yield return new WaitForSeconds(deathAnimationDuration);
 
         // Hủy (destroy) GameObject.
-        Destroy(gameObject);
+        Destroy(gameObject, 3f);
     }
-
   /*  void ShowDamage(string text)
     {
         if (floatingTextPrefabs)
