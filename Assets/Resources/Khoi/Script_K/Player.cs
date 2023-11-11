@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     private new Rigidbody2D rigidbody2D;
     private bool isNen;
     private Animator animator;
+    private float speed;
+
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -18,18 +20,18 @@ public class Player : MonoBehaviour
     void Update()
     {
         Vector2 scale = transform.localScale;
-        animator.SetTrigger("isRunning");
+        animator.SetBool("isRunning", true);
 
         if (Input.GetKey(KeyCode.D))
         {
-            animator.SetTrigger("isRunning");
+            animator.SetBool("isRunning", true );
             scale.x = 1;
             transform.Translate(Vector3.right * 5 * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            animator.SetTrigger("isRunning");
+            animator.SetBool("isRunning", true);
             scale.x = -1;
             transform.Translate(Vector3.left * 5 * Time.deltaTime);
         }
@@ -40,8 +42,8 @@ public class Player : MonoBehaviour
         {
             if (isNen)
             {
-                rigidbody2D.AddForce(new Vector2(0, 300));
-                isNen = false;
+                rigidbody2D.AddForce(new Vector2(0, 100));
+                isNen = true;
             }
         }
     }
