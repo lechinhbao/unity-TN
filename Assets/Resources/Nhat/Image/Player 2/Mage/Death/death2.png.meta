@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0ac669f6692f32d4d963a28e60d8c4f4
+guid: f73e92bc8c95e63449c14c29f9fdc453
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,10 +113,10 @@ TextureImporter:
       name: death2_0
       rect:
         serializedVersion: 2
-        x: 98
+        x: 97
         y: 100
         width: 54
-        height: 60
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c81eb5e14098b749a86cd92587d3d4c
-      internalID: 861448556
+      spriteID: 76c01ea4797178246a07b46b94f86704
+      internalID: -1773170277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death2_1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 151
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9f7a60a4ae6f946a632ca6ca3343b6
+      internalID: -1740298515
       vertices: []
       indices: 
       edges: []
@@ -141,7 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      death2_0: 861448556
+      death2_0: -1773170277
+      death2_1: -1740298515
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

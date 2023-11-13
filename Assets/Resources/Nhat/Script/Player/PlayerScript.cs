@@ -30,7 +30,7 @@ public class PlayerScript : MonoBehaviour
 
     //Mana
     public int maxMana = 100; // Số mana tối đa
-    public int currentMana;
+    public int currentMana = 100;
     public Mana manaBar;
 
     public float manaIncreaseInterval = 5f; // Thời gian để tăng thêm mana (10 giây trong trường hợp này)

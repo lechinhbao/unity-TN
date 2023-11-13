@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3840973698c9bbc48893220c1d5fefad
+guid: 9c5ea1998f4222e4397936e6e1d7b613
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e78f2f72316a8a4994d87277c47d4b6
-      internalID: 1496648965
+      spriteID: 090fc066b8273af4b94f9523fdc74da1
+      internalID: 856064747
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9e5aa905db103c418dcd5a1a2e7d80b
-      internalID: -2109797619
+      spriteID: 192d2328ea66add40a7bf1614722154f
+      internalID: 1503291007
       vertices: []
       indices: 
       edges: []
@@ -155,10 +155,10 @@ TextureImporter:
       name: death3_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 99
         y: 100
-        width: 48
-        height: 51
+        width: 45
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8b3932b01daff84aa98c0fbd3399d68
-      internalID: -1635575106
+      spriteID: ae8817a256ac9ca4e967344bbebf8d66
+      internalID: -44081302
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a42587e372ef7149b2bd859f13f4d7d
-      internalID: 582218604
+      spriteID: 838858a4c6463394b8e784c0131fc63f
+      internalID: 331189074
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      death3_0: 1496648965
-      death3_1: -2109797619
-      death3_2: -1635575106
-      death3_3: 582218604
+      death3_0: 856064747
+      death3_1: 1503291007
+      death3_2: -44081302
+      death3_3: 331189074
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

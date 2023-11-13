@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7652527803822740942}
   - component: {fileID: 2281228260576696801}
+  - component: {fileID: 7402808342287159261}
   m_Layer: 0
   m_Name: DamePlayer
   m_TagString: DamagePlayer
@@ -64,7 +65,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.048891068, y: -0.07852107}
+  m_Offset: {x: 0.048891068, y: -0.060948312}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -75,8 +76,23 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.060710907, y: 0.41035163}
+  m_Size: {x: 0.060710907, y: 0.3752061}
   m_EdgeRadius: 0
+--- !u!114 &7402808342287159261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574095114257533642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7c0a254d106ae49b7ec0c20ad4f4ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 2
+  knockbackHeight: 3
+  knockbackDistance: 2
 --- !u!1 &5218136202984259100
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +209,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -681,7 +697,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 10
+    maxNumParticles: 5
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -747,8 +763,8 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0.15, y: -0.23, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Position: {x: 0.22338104, y: -0.20903325, z: -0}
+    m_Rotation: {x: -0, y: 0, z: 0}
     m_Scale: {x: 5.12, y: 1.94, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -1575,12 +1591,6 @@ ParticleSystem:
     - sprite: {fileID: -222648645, guid: ae4532324c631664396b55b072729fee, type: 3}
     - sprite: {fileID: -1965912712, guid: ae4532324c631664396b55b072729fee, type: 3}
     - sprite: {fileID: -955298566, guid: ae4532324c631664396b55b072729fee, type: 3}
-    - sprite: {fileID: 1582443390, guid: ae4532324c631664396b55b072729fee, type: 3}
-    - sprite: {fileID: -328357398, guid: ae4532324c631664396b55b072729fee, type: 3}
-    - sprite: {fileID: 168633804, guid: ae4532324c631664396b55b072729fee, type: 3}
-    - sprite: {fileID: 1105166636, guid: ae4532324c631664396b55b072729fee, type: 3}
-    - sprite: {fileID: -730419737, guid: ae4532324c631664396b55b072729fee, type: 3}
-    - sprite: {fileID: 462914821, guid: ae4532324c631664396b55b072729fee, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4930,6 +4940,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8158680208939176080}
+  - component: {fileID: 5707293966484866112}
+  - component: {fileID: 8674776314798475151}
+  - component: {fileID: 134469414160499399}
   - component: {fileID: 4445021687122324604}
   - component: {fileID: 5581627891125216528}
   - component: {fileID: 4944465180918838913}
@@ -4942,6 +4955,7 @@ GameObject:
   - component: {fileID: 144541686748417622}
   - component: {fileID: 1939815173822989720}
   - component: {fileID: 4658720766640621907}
+  - component: {fileID: 3442069419924414702}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Player
@@ -4966,6 +4980,48 @@ Transform:
   - {fileID: 855694626828912566}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5707293966484866112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631254011340013645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d169aebfe81f664fb2e01b95981ce6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.2
+  shakeMagnitude: 0.1
+--- !u!114 &8674776314798475151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631254011340013645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4352b40d244eaa743b87135a6cd3042f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtCoin: {fileID: 0}
+  popUpCoin: {fileID: 2247913691990460115, guid: ae8a679a8d0ef394faf6ee4217fe7fa0, type: 3}
+  popUpCoinText: {fileID: 7397827659297117475, guid: ae8a679a8d0ef394faf6ee4217fe7fa0, type: 3}
+--- !u!114 &134469414160499399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631254011340013645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ec5b56817501840bdf2501ed973645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeText: {fileID: 0}
 --- !u!114 &4445021687122324604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4993,9 +5049,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
-  psBui: {fileID: 0}
+  psBui: {fileID: 2375218190746020288}
   maxMana: 100
-  currentMana: 0
+  currentMana: 100
   manaBar: {fileID: 0}
   manaIncreaseInterval: 5
 --- !u!114 &4944465180918838913
@@ -5025,7 +5081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157fc6c218e70f143ba782f00f23a786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMana: 0
+  currentMana: 5
   manaBar: {fileID: 0}
   maxMana: 100
   manaIncreaseInterval: 5
@@ -5056,18 +5112,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d534037837930846b9825bf90e69d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 100
   Health: 5
-  Enemy: 0
-  Trap: 0
+  Enemy: 5
+  Trap: 5
   healthBar: {fileID: 0}
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
   deathAnimationDuration: 2
   DiePanel: {fileID: 0}
-  popUpDamagePrefabs: {fileID: 0}
-  popUpText: {fileID: 0}
+  popUpDamagePrefabs: {fileID: 7444324826586196203, guid: a800d5a9465aa844790484c3e398aa77, type: 3}
+  popUpText: {fileID: 1119544880312331300, guid: a800d5a9465aa844790484c3e398aa77, type: 3}
 --- !u!114 &9073985164478655057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5094,7 +5150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 0}
-  restartButton: {fileID: 0}
+  resumeButton: {fileID: 0}
   continueButton: {fileID: 0}
   exitButton: {fileID: 0}
 --- !u!114 &3357503455649870010
@@ -5152,7 +5208,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 1789238504, guid: f0c53ed2e26fab2488b145be10977be0, type: 3}
+  m_Sprite: {fileID: 547372112, guid: e84e85c9bbafa784d91a9a2195d6271c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5211,3 +5267,48 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &3442069419924414702
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631254011340013645}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.65, y: 0.55}
+    newSize: {x: 0.63, y: 0.53}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.63, y: 0.53}
+  m_EdgeRadius: 0

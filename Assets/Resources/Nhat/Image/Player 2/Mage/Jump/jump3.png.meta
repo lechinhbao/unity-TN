@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1a566ec83392e8d488fcb7b9ce5e94d5
+guid: 5db526168dba4234cba5aa34d0117c1a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,9 +113,9 @@ TextureImporter:
       name: jump3_0
       rect:
         serializedVersion: 2
-        x: 22
+        x: 21
         y: 18
-        width: 50
+        width: 52
         height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23ed5462c0aec5e4792b2cc00f62521f
-      internalID: -666648843
+      spriteID: f4f88052e5b125f4ebd8971e8a6b7f81
+      internalID: -1167390349
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jump3_0: -666648843
+      jump3_0: -1167390349
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

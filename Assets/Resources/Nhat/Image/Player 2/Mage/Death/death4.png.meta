@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 69d486ff4fc44b94ab5dcc0f7382cdce
+guid: 0f72d686cf2ad3f41a0cbe04602c6ca7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,9 +113,9 @@ TextureImporter:
       name: death4_0
       rect:
         serializedVersion: 2
-        x: 92
+        x: 89
         y: 103
-        width: 51
+        width: 54
         height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2023a1886613a1d43abbe5926e703a0d
-      internalID: 1499232837
+      spriteID: d28fa4d6246776b43a4b19d5b1b13a5f
+      internalID: -1872407257
       vertices: []
       indices: 
       edges: []
@@ -136,7 +136,7 @@ TextureImporter:
         serializedVersion: 2
         x: 144
         y: 102
-        width: 38
+        width: 37
         height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b90dce0681391e146a2643ac3b9b0b5a
-      internalID: -569558614
+      spriteID: e4cf1b70aa9ac91469001f4bebaf09dd
+      internalID: 104463948
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      death4_0: 1499232837
-      death4_1: -569558614
+      death4_0: -1872407257
+      death4_1: 104463948
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

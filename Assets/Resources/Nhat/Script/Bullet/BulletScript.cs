@@ -52,12 +52,12 @@ public class BulletScript : MonoBehaviour
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("IsWalkAttack");
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             // Kích hoạt animation chém khi nhấn "X"
             animator.SetTrigger("IsRunAttack");
         }
-        else if (Input.GetKeyUp(KeyCode.E))
+        else if (Input.GetKeyUp(KeyCode.R))
         {
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("IsRunAttack");

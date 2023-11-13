@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0410ccb6f60b9d54db3e15d1fbd36f76
+guid: 4135475c422ac9042930e58e6f73c0bb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,10 +113,10 @@ TextureImporter:
       name: walk4_0
       rect:
         serializedVersion: 2
-        x: 27
+        x: 20
         y: 16
-        width: 35
-        height: 56
+        width: 41
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c31dd77bceffc345af29e5b27ea7615
-      internalID: 2025801629
+      spriteID: cdb92b50f0a68fc4eb58d3ff1dc3f34b
+      internalID: 1801624564
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      walk4_0: 2025801629
+      walk4_0: 1801624564
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

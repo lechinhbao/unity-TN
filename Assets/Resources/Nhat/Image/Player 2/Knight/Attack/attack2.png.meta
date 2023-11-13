@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 616a6d790be985947b0b006519f252bb
+guid: c440cfb13e19b754f98a18f510791a65
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,9 +113,9 @@ TextureImporter:
       name: attack2_0
       rect:
         serializedVersion: 2
-        x: 23
+        x: 15
         y: 18
-        width: 86
+        width: 94
         height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7b7de6a6b087c546a20ce73ccdebdf7
-      internalID: 765129842
+      spriteID: 1ea909d55fb3ab14388f6952a2012c81
+      internalID: -1221851179
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      attack2_0: 765129842
+      attack2_0: -1221851179
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

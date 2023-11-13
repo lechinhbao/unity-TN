@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5761119b4c2b9014ab07e7d89d60dbb7
+guid: 26bceb1138388a34ba33fff5caf5cbf2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,9 +113,9 @@ TextureImporter:
       name: climb1_0
       rect:
         serializedVersion: 2
-        x: 28
+        x: 15
         y: 18
-        width: 54
+        width: 67
         height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c11a49776e966674391a963a4dd75f11
-      internalID: 1361205001
+      spriteID: dbdc0107d4160914292375da23e94aaa
+      internalID: -73930516
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      climb1_0: 1361205001
+      climb1_0: -73930516
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

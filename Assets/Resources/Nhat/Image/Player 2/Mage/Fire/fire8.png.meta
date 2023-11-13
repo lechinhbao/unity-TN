@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eafa5dbe1471cf9478b07d5ddd2059fd
+guid: 6e62a0472c7f53242a4d5faf6e79f017
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44f3222e83ab5914e8b46bc9e6e6eb31
-      internalID: -1501861564
+      spriteID: b5801c3857530254f82c2d2244e3159c
+      internalID: -408230963
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91ba32a07608efe4d9e8464910e711d6
-      internalID: -817913094
+      spriteID: ad7ac7fd75e1ed540babf975fc13a279
+      internalID: -2082538574
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4057b2df151e4b446ac03a4f8a68a6ca
-      internalID: -116437389
+      spriteID: 6960a5e1191743a449324e83568dd035
+      internalID: -1475841522
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fire8_0: -1501861564
-      fire8_1: -817913094
-      fire8_2: -116437389
+      fire8_0: -408230963
+      fire8_1: -2082538574
+      fire8_2: -1475841522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

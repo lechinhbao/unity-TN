@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MageScript : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class MageScript : MonoBehaviour
 
     //Bụi
     public ParticleSystem psBui;
+
+    //Hiển thị panel
+    public GameObject DiePanel;
 
     //Mana
     public int maxMana = 100; // Số mana tối đa
@@ -223,7 +227,7 @@ public class MageScript : MonoBehaviour
         var z = transform.position.z;
 
         GameObject gameObject = (GameObject)Instantiate(
-        Resources.Load("Nhat/PrefabsBullet/Fire"),
+        Resources.Load("Nhat/PrefabsBullet/Fire2"),
         new Vector3(x, y, z),
         Quaternion.identity
         );
@@ -236,7 +240,7 @@ public class MageScript : MonoBehaviour
             var z = transform.position.z;
 
             GameObject gameObject = (GameObject)Instantiate(
-             Resources.Load("Nhat/PrefabsBullet/FireExtra"),
+             Resources.Load("Nhat/PrefabsBullet/Fire3"),
             new Vector3(x, y, z),
             Quaternion.identity
             );
@@ -251,7 +255,7 @@ public class MageScript : MonoBehaviour
         var z = transform.position.z;
 
         GameObject gameObject = (GameObject)Instantiate(
-        Resources.Load("Nhat/PrefabsBullet/Comet"),
+        Resources.Load("Nhat/PrefabsBullet/Fire4"),
         new Vector3(x, y, z),
         Quaternion.identity
         );
@@ -264,7 +268,7 @@ public class MageScript : MonoBehaviour
         var z = transform.position.z;
 
         GameObject gameObject = (GameObject)Instantiate(
-        Resources.Load("Nhat/PrefabsBullet/SpiralBullet"),
+        Resources.Load("Nhat/PrefabsBullet/Shine"),
         new Vector3(x, y, z),
         Quaternion.identity
         );
@@ -279,7 +283,8 @@ public class MageScript : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Die"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            DiePanel.SetActive(true); // Hiển thị Panel Pause.
         }
         if (collision.gameObject.CompareTag("BoxPush"))
         {

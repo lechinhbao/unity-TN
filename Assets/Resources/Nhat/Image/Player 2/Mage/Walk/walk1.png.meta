@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a5ac2b5bd361f2547a1d1b9ab8000178
+guid: 42cc35214d220914bb1f2e3e06667ebc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,7 +113,7 @@ TextureImporter:
       name: walk1_0
       rect:
         serializedVersion: 2
-        x: 22
+        x: 21
         y: 17
         width: 47
         height: 56
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9dcf9452b139a54f9f4c37a954eb58d
-      internalID: 1054901843
+      spriteID: 8d4a36bc509187247bb25845d12eb88b
+      internalID: -928788725
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      walk1_0: 1054901843
+      walk1_0: -928788725
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

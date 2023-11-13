@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f1bf9a376b8180948a444fbca546e7eb
+guid: 32e6d38bc4e06eb4aaef861efe71f477
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,9 +113,9 @@ TextureImporter:
       name: run8_0
       rect:
         serializedVersion: 2
-        x: 26
+        x: 14
         y: 18
-        width: 35
+        width: 47
         height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 753d4c22baaaa0c44a623b0024bca843
-      internalID: -920411434
+      spriteID: f7c994576305b8142922f9d7915d1931
+      internalID: 1122066798
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      run8_0: -920411434
+      run8_0: 1122066798
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

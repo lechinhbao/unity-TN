@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0b5057c1386a4064da127d306f6b9266
+guid: a61572fc4f81166459ff1d02f16610fd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,10 +113,10 @@ TextureImporter:
       name: high_jump9_0
       rect:
         serializedVersion: 2
-        x: 30
+        x: 34
         y: 18
-        width: 67
-        height: 39
+        width: 62
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a506b153f5a808843b682474af635cae
-      internalID: -1840352920
+      spriteID: 97b7d3cd316283742acf21652e97e4c5
+      internalID: -511862258
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      high_jump9_0: -1840352920
+      high_jump9_0: -511862258
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

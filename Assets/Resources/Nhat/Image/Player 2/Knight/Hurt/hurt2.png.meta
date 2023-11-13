@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1f461e5ae76a4fe43b7888a2c9506f66
+guid: 7b28ec80f245320468a9df39e6c4dac6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -114,9 +114,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 14
-        y: 17
-        width: 75
-        height: 60
+        y: 63
+        width: 10
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4162c69c731388e41879257682bfea49
-      internalID: -2110144586
+      spriteID: 4af7f8e47f06e6c488d0b2a9cecebdc7
+      internalID: 642175599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hurt2_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 18
+        width: 70
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f59fa4b161bd243b6ad4bedae6536e
+      internalID: 1139642433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hurt2_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 69
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab9f8c6dc8810c84bb3d8483870fea01
+      internalID: 1642863937
       vertices: []
       indices: 
       edges: []
@@ -141,7 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hurt2_0: -2110144586
+      hurt2_0: 642175599
+      hurt2_1: 1139642433
+      hurt2_2: 1642863937
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

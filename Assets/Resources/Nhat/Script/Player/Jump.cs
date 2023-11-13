@@ -4,7 +4,7 @@ public class Jump : MonoBehaviour
 {
     private Rigidbody2D rb; // Kết nối Rigidbody2D của nhân vật
     private Animator animator; // Kết nối Animator của nhân vật
-    public float jumpForce = 10f; // Lực nhảy
+    public float jumpForce = 5f; // Lực nhảy
     public int maxJumps = 2; // Số lần nhảy tối đa
     private int jumpCount = 0; // Số lần đã nhảy
     private bool isFlipping = false; // Trạng thái lộn

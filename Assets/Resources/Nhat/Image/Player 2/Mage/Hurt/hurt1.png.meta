@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e8f980764e4f3354dbd5055d8f09081d
+guid: 43b65d3eeaaff5b499dfbac4e6b5d57c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,10 +113,10 @@ TextureImporter:
       name: hurt1_0
       rect:
         serializedVersion: 2
-        x: 19
+        x: 20
         y: 18
-        width: 54
-        height: 54
+        width: 55
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 219c5ea60bc865743b87925a313b0a73
-      internalID: 1112933694
+      spriteID: 68dfe66a65ca3c2428a5f182a2e726da
+      internalID: 733848792
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hurt1_0: 1112933694
+      hurt1_0: 733848792
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

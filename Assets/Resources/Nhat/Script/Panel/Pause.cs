@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Pause : MonoBehaviour
 {
     public GameObject pausePanel;
-    public Button restartButton;
+    public Button resumeButton;
     public Button continueButton;
     public Button exitButton;
 
@@ -16,7 +16,7 @@ public class Pause : MonoBehaviour
         ResumeGame(); // Bắt đầu game chưa tạm dừng.
 
         // Gắn các hàm xử lý cho các nút tương ứng.
-        restartButton.onClick.AddListener(RestartGame);
+        resumeButton.onClick.AddListener(RestartGame);
         continueButton.onClick.AddListener(ResumeGame);
         exitButton.onClick.AddListener(ExitGame);
     }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6dd7bf40b967fcf469475c44616e676d
+guid: 276b190228872da4d8ec7aed03601430
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a9425a5696987444954718c9512a3a3
-      internalID: 1028781649
+      spriteID: dd4c862c5d5417f429fa9087932e2dc1
+      internalID: -893874129
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c789c71c535d7c44aef3f98c0b5a728
-      internalID: 1581270705
+      spriteID: 973ef76ba72bc6e4ab076e7a385805e0
+      internalID: -98516394
       vertices: []
       indices: 
       edges: []
@@ -155,10 +155,10 @@ TextureImporter:
       name: death5_2
       rect:
         serializedVersion: 2
-        x: 85
-        y: 95
-        width: 53
-        height: 43
+        x: 83
+        y: 92
+        width: 55
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cc838a938fe8144fa9b4c2e2253daaa
-      internalID: 179690998
+      spriteID: a28b764c8a577d04292faa49b30886fa
+      internalID: 2105147243
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 334c88014ddb9f846b9510b41591f467
-      internalID: 1867691084
+      spriteID: 8b0fb5d47e357d24abd9347f8b9be87f
+      internalID: 1840141005
       vertices: []
       indices: 
       edges: []
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8cab68185beb944ebf0ceef5a97b986
-      internalID: 855823860
+      spriteID: 072f09fe07fff984da2d735761125192
+      internalID: -412634849
       vertices: []
       indices: 
       edges: []
@@ -225,11 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      death5_0: 1028781649
-      death5_1: 1581270705
-      death5_2: 179690998
-      death5_3: 1867691084
-      death5_4: 855823860
+      death5_0: -893874129
+      death5_1: -98516394
+      death5_2: 2105147243
+      death5_3: 1840141005
+      death5_4: -412634849
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    private int comboCount = 0;
-    private Animator animator;
-    private bool isComboActive = false;
-
-    public int comboThreshold = 3; // Số lần đánh cần để kích hoạt combo
-    public float comboDuration = 3.0f; // Thời gian tồn tại của combo animation
+        private Animator animator;
+    /*  private int comboCount = 0;
+        private bool isComboActive = false;
+        public int comboThreshold = 3; // Số lần đánh cần để kích hoạt combo
+        public float comboDuration = 3.0f; // Thời gian tồn tại của combo animation*/
 
     private void Start()
     {
@@ -21,11 +20,11 @@ public class Attack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q)) // Người chơi đánh chiêu
         {
             animator.SetTrigger("IsAttack");
-            comboCount++;
+           /* comboCount++;
             if (comboCount >= comboThreshold && !isComboActive)
             {
                 StartCombo();
-            }
+            }*/
         }
         else if (Input.GetKeyUp(KeyCode.Q))
         {
@@ -42,12 +41,12 @@ public class Attack : MonoBehaviour
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("IsAttackExtra");
         }*/
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             // Kích hoạt animation chém khi nhấn "X"
             animator.SetTrigger("IsWalkAttack");
         }
-        else if (Input.GetKeyUp(KeyCode.Q))
+        else if (Input.GetKeyUp(KeyCode.W))
         {
             // Tắt animation chém khi ngừng nhấn "X"
             animator.ResetTrigger("IsWalkAttack");
@@ -73,19 +72,19 @@ public class Attack : MonoBehaviour
             animator.ResetTrigger("IsBullet");
         }
     }
-    void StartCombo()
+/*    void StartCombo()
     {
         isComboActive = true;
         comboCount = 0;
         animator.SetBool("IsAttackExtra", true);
         StartCoroutine(EndCombo());
-    }
-    IEnumerator EndCombo()
+    }*/
+/*    IEnumerator EndCombo()
     {
         yield return new WaitForSeconds(comboDuration);
         isComboActive = false;
         animator.SetBool("IsAttackExtra", false);
-    }
+    }*/
 }
 
 
