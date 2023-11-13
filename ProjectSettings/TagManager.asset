@@ -28,6 +28,7 @@ TagManager:
   - Die
   - Victory
   - BoxPush
+  - MapDie
   layers:
   - Default
   - TransparentFX

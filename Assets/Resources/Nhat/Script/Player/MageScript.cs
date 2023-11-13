@@ -231,17 +231,18 @@ public class MageScript : MonoBehaviour
     }
     void Shoot2()
     {
-        var x = transform.position.x + (isRight ? 0.5f : -0.5f);
-        var y = transform.position.y;
-        var z = transform.position.z;
+            var x = transform.position.x + (isRight ? 0.5f : -0.5f);
+            var y = transform.position.y;
+            var z = transform.position.z;
 
-        GameObject gameObject = (GameObject)Instantiate(
-         Resources.Load("Nhat/PrefabsBullet/FireExtra"),
-        new Vector3(x, y, z),
-        Quaternion.identity
-        );
-        gameObject.GetComponent<Fire>().setIsRight(isRight);
-    
+            GameObject gameObject = (GameObject)Instantiate(
+             Resources.Load("Nhat/PrefabsBullet/FireExtra"),
+            new Vector3(x, y, z),
+            Quaternion.identity
+            );
+            // Set additional properties if needed
+            gameObject.GetComponent<Fire>().setIsRight(isRight);
+       
     }
     void Shoot3()
     {
@@ -263,7 +264,7 @@ public class MageScript : MonoBehaviour
         var z = transform.position.z;
 
         GameObject gameObject = (GameObject)Instantiate(
-        Resources.Load("Nhat/PrefabsBullet/water1"),
+        Resources.Load("Nhat/PrefabsBullet/SpiralBullet"),
         new Vector3(x, y, z),
         Quaternion.identity
         );

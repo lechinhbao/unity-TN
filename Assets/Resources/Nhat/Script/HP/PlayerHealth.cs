@@ -125,11 +125,16 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Water"))
         {
             animator.SetTrigger("IsDeath");
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             Time.timeScale = 0; // Tạm dừng thời gian trong trò chơi.
             isGamePaused = true;
             DiePanel.SetActive(true); // Hiển thị Panel Pause.
           
+        }
+        if (collision.gameObject.CompareTag("MapDie"))
+        {
+            gameObject.SetActive(false);
+            DiePanel.SetActive(true); // Hiển thị Panel Pause.
         }
     }
     private void OnCollisionExit2D(Collision2D collision)

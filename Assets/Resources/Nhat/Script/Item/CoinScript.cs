@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -14,9 +14,11 @@ public class CoinScript : MonoBehaviour
     //Popup
     public GameObject popUpCoin;
     public TMP_Text popUpCoinText;
+
+  
     void Start()
     {
-        
+   
     }
 
     // Update is called once per frame

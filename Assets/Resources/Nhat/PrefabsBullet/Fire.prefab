@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 2940499881210238936}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 55.5114, y: 2.1026, z: 0}
+  m_LocalPosition: {x: 54.53074, y: 3.6826036, z: 0}
   m_LocalScale: {x: 2.1578, y: 3.5017, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 2
-  knockbackHeight: 2
+  knockbackHeight: 3
   knockbackDistance: 2
 --- !u!114 &-8804840843133608183
 MonoBehaviour:

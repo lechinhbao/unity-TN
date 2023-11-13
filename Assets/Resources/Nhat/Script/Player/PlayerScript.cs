@@ -122,6 +122,19 @@ public class PlayerScript : MonoBehaviour
                 Debug.Log("Không đủ mana để bắn đạn!");
             }
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
+            {
+                Shoot2();
+                currentMana -= 5; // Trừ đi 10 mana sau khi bắn
+                manaBar.UpdateMana(currentMana, maxMana);
+            }
+            else
+            {
+                Debug.Log("Không đủ mana để bắn đạn!");
+            }
+        }
     }
     void Shoot()
     {
@@ -131,6 +144,19 @@ public class PlayerScript : MonoBehaviour
 
         GameObject gameObject = (GameObject)Instantiate(
         Resources.Load("Nhat/PrefabsBullet/Phitieu"),
+        new Vector3(x, y, z),
+        Quaternion.identity
+        );
+        gameObject.GetComponent<Fire>().setIsRight(isRight);
+    }
+    void Shoot2()
+    {
+        var x = transform.position.x + (isRight ? 0.5f : -0.5f);
+        var y = transform.position.y;
+        var z = transform.position.z;
+
+        GameObject gameObject = (GameObject)Instantiate(
+        Resources.Load("Nhat/PrefabsBullet/Locxoay"),
         new Vector3(x, y, z),
         Quaternion.identity
         );

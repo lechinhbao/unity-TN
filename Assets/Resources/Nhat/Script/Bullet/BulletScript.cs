@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    private int comboCount = 0;
+    /*    private int comboCount = 0;
+        private bool isComboActive = false;
+
+        public int comboThreshold = 3; // Số lần đánh cần để kích hoạt combo
+        public float comboDuration = 3.0f; // Thời gian tồn tại của combo animation*/
     private Animator animator;
-    private bool isComboActive = false;
-
-    public int comboThreshold = 3; // Số lần đánh cần để kích hoạt combo
-    public float comboDuration = 3.0f; // Thời gian tồn tại của combo animation
-
     private bool isRight = true;
     private void Start()
     {
@@ -22,11 +21,11 @@ public class BulletScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q)) // Người chơi đánh chiêu
         {
             animator.SetTrigger("IsAttack");
-            comboCount++;
+           /* comboCount++;
             if (comboCount >= comboThreshold && !isComboActive)
             {
                 StartCombo();
-            }
+            }*/
         }
         else if (Input.GetKeyUp(KeyCode.Q))
         {
@@ -64,7 +63,7 @@ public class BulletScript : MonoBehaviour
             animator.ResetTrigger("IsRunAttack");
         }
     }
-    void StartCombo()
+/*    void StartCombo()
     {
         isComboActive = true;
         comboCount = 0;
@@ -76,5 +75,5 @@ public class BulletScript : MonoBehaviour
         yield return new WaitForSeconds(comboDuration);
         isComboActive = false;
         animator.SetBool("IsAttackExtra", false);
-    }
+    }*/
 }

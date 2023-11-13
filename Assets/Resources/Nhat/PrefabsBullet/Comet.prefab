@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 2
-  knockbackHeight: 2
+  knockbackHeight: 3
   knockbackDistance: 2
 --- !u!114 &1954266860737403218
 MonoBehaviour:

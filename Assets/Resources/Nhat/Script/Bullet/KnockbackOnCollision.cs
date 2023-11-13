@@ -2,9 +2,9 @@
 
 public class KnockbackOnCollision : MonoBehaviour
 {
-    public float knockbackForce = 10f;
-    public float knockbackHeight = 5f;
-    public float knockbackDistance = 5f;
+    public float knockbackForce = 2f;
+    public float knockbackHeight = 3f;
+    public float knockbackDistance = 2f;
 
     void OnCollisionEnter2D(Collision2D collision)
     {

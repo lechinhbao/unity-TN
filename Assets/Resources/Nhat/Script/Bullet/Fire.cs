@@ -16,10 +16,15 @@ public class Fire : MonoBehaviour
         transform.Translate((isRight ? Vector3.right : Vector3.left) * Time.deltaTime * 5f);
 
         // Xoay mặt viên đạn theo hướng của người chơi
-     
-
+        if (isRight)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
-
     public void setIsRight(bool isRight)
     {
         this.isRight = isRight;
