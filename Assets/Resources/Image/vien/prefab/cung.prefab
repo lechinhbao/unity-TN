@@ -130,5 +130,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firepoint: {fileID: 6808197858925119317}
-  bullet: {fileID: 0}
+  bullet: {fileID: 6920441695556458417, guid: f1057a2f856d7124c839573af04b3543, type: 3}
   starttimebetween: 1

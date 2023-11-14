@@ -6,29 +6,24 @@ using UnityEngine.UI;
 
 public class Level : MonoBehaviour
 {
-    public Button button;
-    
-    public void levelr1()
+    public Button[] button;
+
+    private void Awake()
     {
-        SceneManager.LoadScene(3);
-    }
-    public void levelr2()
-    {
-        SceneManager.LoadScene(4);
-    }
-    public void levelr3()
-    {
-        SceneManager.LoadScene(5);
-    }
-    public void levelr4()
-    {
-        SceneManager.LoadScene(6);
-    }
-    public void levelr5()
-    {
-        SceneManager.LoadScene(7);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        for (int i = 0; i < button.Length; i++)
+        {
+            button[i].interactable = false;
+        }
+        for (int i = 0;i < unlockedLevel; i++) 
+        {
+            button[i].interactable = true;
+        }
     }
 
-
-
+    public void Selectlevel(int LevelId)
+    {
+        string LevelName = "Screen " + LevelId;
+        SceneManager.LoadScene(LevelName);
+    }
 }

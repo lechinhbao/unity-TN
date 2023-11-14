@@ -8,13 +8,13 @@ public class PlayerPET : MonoBehaviour
     public float speed;
     public float stoppingDistance;
     private Transform target;
-    private Vector3 originalScale; // Lưu trữ tỷ lệ ban đầu của pet
+    private Vector3 originalScale ; // Lưu trữ tỷ lệ ban đầu của pet
 
     
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("PER").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         originalScale = transform.localScale; // Lưu trữ tỷ lệ ban đầu của pet
     }
 

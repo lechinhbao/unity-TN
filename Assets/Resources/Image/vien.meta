@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Resources/Duy.meta
 guid: b416a78dd6b85094fbb2f569c9cbb8fd
+========
+guid: 0b69899893c79cb4c9596e7ee265adcb
+>>>>>>>> vien:Assets/Resources/Image/vien.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -17,6 +17,20 @@ TagManager:
   - Monster
   - Thang
   - Teleporter
+  - Bullet
+  - DamagePlayer
+  - fireBall
+  - Fire
+  - Ladder
+  - Coin
+  - Enemy
+  - Box
+  - block
+  - quaman
+  - Victory
+  - Hp
+  - Mana
+  - MapDie
   layers:
   - Default
   - TransparentFX
