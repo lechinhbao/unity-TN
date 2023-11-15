@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Mage2 : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class Mage2 : MonoBehaviour
 
     //Bụi
     public ParticleSystem psBui;
+
+    //Hiển thị panel
+    public GameObject DiePanel;
 
     //Mana
     public int maxMana = 100; // Số mana tối đa
@@ -279,7 +283,8 @@ public class Mage2 : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Die"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            DiePanel.SetActive(true); // Hiển thị Panel Pause.
         }
         if (collision.gameObject.CompareTag("BoxPush"))
         {

@@ -53,5 +53,32 @@ public class Fire : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Monster"))
+        {
+            Destroy(gameObject, 0.1f);
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject, 0.1f);
+        }
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            Destroy(gameObject, 0.1f);
+        }
+        if (collision.gameObject.CompareTag("Stone"))
+        {
+            Destroy(gameObject, 0.1f);
+        }
+        if (collision.gameObject.CompareTag("Trap"))
+        {
+            Destroy(gameObject, 0.1f);
+        }
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            Destroy(gameObject, 0.1f);
+        }
+    }
 }
 

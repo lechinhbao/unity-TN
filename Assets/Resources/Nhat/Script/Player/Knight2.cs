@@ -37,6 +37,9 @@ public class Knight2 : MonoBehaviour
     public Mana manaBar;
 
     public float manaIncreaseInterval = 5f; // Thời gian để tăng thêm mana (10 giây trong trường hợp này)
+
+    //Cộng mana
+    public int manaAmount = 20;
     private void Start()
 
     {
@@ -146,7 +149,7 @@ public class Knight2 : MonoBehaviour
         var z = transform.position.z;
 
         GameObject gameObject = (GameObject)Instantiate(
-        Resources.Load("Nhat/PrefabsBullet/Scull"),
+        Resources.Load("Nhat/PrefabsBullet/Spikes"),
         new Vector3(x, y, z),
         Quaternion.identity
         );
@@ -191,6 +194,19 @@ public class Knight2 : MonoBehaviour
     {
         animator.SetTrigger("PlayerDeath");
 
+    }
+    //Cộng mana
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Knight2 player = other.GetComponent<Knight2>();
+            if (player != null)
+            {
+                player.IncreaseMana(manaAmount);
+                Destroy(gameObject);
+            }
+        }
     }
     //Coin
     /* private void OnTriggerEnter2D(Collider2D collision)

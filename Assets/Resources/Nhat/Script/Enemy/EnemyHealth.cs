@@ -44,6 +44,14 @@ public class EnemyHealth : MonoBehaviour
             animator.SetBool("IsHurt", true);
             TakeDamage(10); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
         }
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            DworfHurt = true;
+            // Kích hoạt animation
+            animator.SetBool("IsHurt", true);
+            TakeDamage(10); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
+        }
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -53,26 +61,31 @@ public class EnemyHealth : MonoBehaviour
             // Kích hoạt animation
             animator.SetBool("IsHurt", false);
         }
+
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            DworfHurt = false;
+            // Kích hoạt animation
+            animator.SetBool("IsHurt", false);
+        }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+/*    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            //DworfHurt = true;
-            // Kích hoạt animation
-            animator.SetBool("IsHurt", true);
-            TakeDamage(10); 
+
+            animator.SetTrigger("IsHurt");
+            TakeDamage(10); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
         }
+
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            //DworfHurt = false;
-            // Kích hoạt animation
-            animator.SetBool("IsHurt", false);
+            animator.ResetTrigger("IsHurt");
         }
-    }
+    }*/
 
     public void TakeDamage(int damage)
     {
@@ -116,15 +129,7 @@ public void DeathEnemy()
         yield return new WaitForSeconds(deathAnimationDuration);
 
         // Hủy (destroy) GameObject.
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 1f);
     }
-  /*  void ShowDamage(string text)
-    {
-        if (floatingTextPrefabs)
-        {
-            GameObject prefabs = Instantiate(floatingTextPrefabs);
-            prefabs.GetComponentInChildren<TextMeshPro>().text = text;
-        }
-    }*/
 }
 

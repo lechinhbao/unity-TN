@@ -6,15 +6,15 @@ public class KnockbackOnCollision : MonoBehaviour
     public float knockbackHeight = 3f;
     public float knockbackDistance = 2f;
 
-    void OnCollisionEnter2D(Collision2D collision)
+   void OnTriggerEnter2D(Collider2D collision)
     {
         // Kiểm tra va chạm với đối tượng enemy
         if (collision.gameObject.CompareTag("Enemy"))
         {
             KnockbackAction(collision.gameObject);
         }
+        
     }
-
     void KnockbackAction(GameObject enemy)
     {
         // Lấy component Rigidbody2D của enemy
