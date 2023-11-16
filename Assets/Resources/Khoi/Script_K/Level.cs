@@ -23,7 +23,7 @@ public class Level : MonoBehaviour
 
     public void Selectlevel(int LevelId)
     {
-        string LeveName = "Level " + LevelId;
-        SceneManager.LoadScene(LeveName);
+        string LevelName = "Screen " + LevelId;
+        SceneManager.LoadScene(LevelName);
     }
 }

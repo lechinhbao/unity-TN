@@ -16,19 +16,10 @@ EditorBuildSettings:
     guid: ee61ad33cab6a384e8de6225e5268ae5
   - enabled: 1
     path: Assets/Scenes/Screen 1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: f59c4d5ccfefa4e4c80b6b0065bf744d
   - enabled: 1
     path: Assets/Scenes/Screen 2.unity
-    guid: 17e0a7ebcdda0bb4494a08dd696a759f
-  - enabled: 1
-    path: Assets/Scenes/Screen 3.unity
-    guid: adebd1845a20b3544872909361cee532
-  - enabled: 1
-    path: Assets/Scenes/Screen 4.unity
-    guid: 522429ba5e781f24a9bf925d2c676c49
-  - enabled: 1
-    path: Assets/Scenes/Screen 5.unity
-    guid: b4691a0a6199aef4dba4b718c11b40c3
+    guid: 59c6702e5dc59e040aefd9375ddd1fb3
   m_configObjects:
-    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 6841d36e845285c4ca1fbea94390b18e, type: 2}
-    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 0a4806a3157b3bb4db4af7970fc9d6ea, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 901de59aacbad6444b0681b1be543f29, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 543d696373f125c4b9f69c36ce2a4be0, type: 2}

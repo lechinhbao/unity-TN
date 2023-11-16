@@ -29,6 +29,12 @@ TagManager:
   - Phitieu
   - Water
   - Nen
+  - Victory
+  - quaman
+  - MapDie
+  - Hp
+  - Mana
+  - BoxPush
   layers:
   - Default
   - TransparentFX
