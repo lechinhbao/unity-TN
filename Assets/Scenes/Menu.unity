@@ -2237,7 +2237,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skins:
   - {fileID: 1184392549}
-  - {fileID: 0}
   selectedCharacter: 1
 --- !u!1 &811642707
 GameObject:
