@@ -13,6 +13,11 @@ GameObject:
   - component: {fileID: 6569052836690282305}
   - component: {fileID: 215978678880356369}
   - component: {fileID: -1147150293275316657}
+  - component: {fileID: 6366553927151901891}
+  - component: {fileID: 9107068974302504086}
+  - component: {fileID: 2894232421427456097}
+  - component: {fileID: 742766537717927474}
+  - component: {fileID: 8109125811767452959}
   m_Layer: 0
   m_Name: hp10
   m_TagString: Coin
@@ -137,7 +142,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -170,3 +175,68 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &6366553927151901891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477969374191010799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d30035b6122da4ebd365623f56cf24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manaAmount: 20
+--- !u!114 &9107068974302504086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477969374191010799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe02fea3868b5f4c9ecebe695811e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manaAmount: 20
+--- !u!114 &2894232421427456097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477969374191010799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b75cdd79d07e948a5d17e3fd24b8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manaAmount: 20
+--- !u!114 &742766537717927474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477969374191010799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae00e101bba58de409639888f9f57c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manaAmount: 20
+--- !u!114 &8109125811767452959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477969374191010799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3b04450e7facdb47818b1dc540d28b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manaAmount: 20

@@ -8,6 +8,10 @@ public class SaveScore : MonoBehaviour
 
     private int currentScore = 0;
 
+
+    //Coin Panel
+    public TMP_Text txtCoinPanel;
+    private int countCoin = 0;
     void Start()
     {
         // Đọc điểm từ PlayerPrefs khi bắt đầu game
@@ -44,5 +48,20 @@ public class SaveScore : MonoBehaviour
     {
         // Đọc điểm từ PlayerPrefs
         currentScore = PlayerPrefs.GetInt("CurrentScore", 0);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Coin")
+        {
+            //soundCoin.Play();
+            countCoin += 1;
+            txtCoinPanel.text = "Score:" + countCoin ;
+            Destroy(collision.gameObject);
+
+        }
+        if (collision.gameObject.tag == "checkpoint")
+        {
+            //SavePosition();
+        }
     }
 }

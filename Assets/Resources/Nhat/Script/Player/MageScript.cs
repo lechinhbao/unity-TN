@@ -28,7 +28,19 @@ public class MageScript : MonoBehaviour
     public int currentMana;
     public Mana manaBar;
 
-    public float manaIncreaseInterval = 5f; // Thời gian để tăng thêm mana (10 giây trong trường hợp này)
+    public float manaIncreaseInterval = 5f; 
+    // Thời gian để tăng thêm mana (10 giây trong trường hợp này)
+
+
+    //Coin Panel
+    public TMP_Text txtCoinVictory;
+    private int countCoin = 0;
+
+
+    //đếm thời gian chơi
+    private int time; //Thời gian tính băng giây
+    public TMP_Text timeTextVictory; //Hiển thị thời gian chơi
+    private bool isAlive; //Kiểm tra nhân vật tương tác
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -38,6 +50,22 @@ public class MageScript : MonoBehaviour
         manaBar.UpdateMana(currentMana, maxMana);
 
         InvokeRepeating("IncreaseMana", 0f, manaIncreaseInterval);
+
+        //Time panel
+        isAlive = true;
+        time = 0;
+        timeTextVictory.text = "Time:" + time + "s";
+        StartCoroutine(UpdateTime());
+    }
+    //Time
+    IEnumerator UpdateTime()
+    {
+        while (isAlive)
+        {
+            time++;
+            timeTextVictory.text = "Time:" + time + "s";
+            yield return new WaitForSeconds(1);
+        }
     }
     //Hồi mana
     void IncreaseMana()
@@ -299,6 +327,21 @@ public class MageScript : MonoBehaviour
     {
         animator.SetTrigger("PlayerDeath");
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Coin")
+        {
+            //soundCoin.Play();
+            countCoin += 1;
+            txtCoinVictory.text = "Score:" + countCoin;
+            Destroy(collision.gameObject);
+
+        }
+        if (collision.gameObject.tag == "checkpoint")
+        {
+            //SavePosition();
+        }
     }
 
 }

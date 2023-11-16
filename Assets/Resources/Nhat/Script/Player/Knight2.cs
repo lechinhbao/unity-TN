@@ -38,8 +38,15 @@ public class Knight2 : MonoBehaviour
 
     public float manaIncreaseInterval = 5f; // Thời gian để tăng thêm mana (10 giây trong trường hợp này)
 
-    //Cộng mana
-    public int manaAmount = 20;
+    //Coin Panel
+    public TMP_Text txtCoinVictory;
+    private int countCoin = 0;
+
+    //đếm thời gian chơi
+    private int time; //Thời gian tính băng giây
+    public TMP_Text timeTextVictory; //Hiển thị thời gian chơi
+    private bool isAlive; //Kiểm tra nhân vật tương tác
+
     private void Start()
 
     {
@@ -51,7 +58,24 @@ public class Knight2 : MonoBehaviour
         manaBar.UpdateMana(currentMana, maxMana);
 
         InvokeRepeating("IncreaseMana", 0f, manaIncreaseInterval);
+
+        //Time panel
+        isAlive = true;
+        time = 0;
+        timeTextVictory.text = "Time:" + time + "s";
+        StartCoroutine(UpdateTime());
     }
+    //Time
+    IEnumerator UpdateTime()
+    {
+        while (isAlive)
+        {
+            time++;
+            timeTextVictory.text = "Time:" + time + "s";
+            yield return new WaitForSeconds(1);
+        }
+    }
+
     //Hồi mana
     void IncreaseMana()
     {
@@ -195,34 +219,21 @@ public class Knight2 : MonoBehaviour
         animator.SetTrigger("PlayerDeath");
 
     }
-    //Cộng mana
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.gameObject.tag == "Coin")
         {
-            Knight2 player = other.GetComponent<Knight2>();
-            if (player != null)
-            {
-                player.IncreaseMana(manaAmount);
-                Destroy(gameObject);
-            }
+            //soundCoin.Play();
+            countCoin += 1;
+            txtCoinVictory.text = "Score:" + countCoin;
+            Destroy(collision.gameObject);
+
+        }
+        if (collision.gameObject.tag == "checkpoint")
+        {
+            //SavePosition();
         }
     }
-    //Coin
-    /* private void OnTriggerEnter2D(Collider2D collision)
-     {
-     if (collision.gameObject.tag == "Coin")
-     {
-        // soundCoin.Play();
-         countCoin += 1;
-         txtCoin.text = countCoin + " X";
-         Destroy(collision.gameObject);
-     }
-     if (collision.gameObject.tag == "checkpoint")
-     {
-      //   SavePosition();
-     }
- }*/
 }
 
 
