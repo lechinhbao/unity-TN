@@ -1,64 +1,64 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HoiChieu : MonoBehaviour
 {
-    private bool isRight = true;
-    public Button iconChieu;            // Biểu tượng đánh chiêu
-    public float thoiGianHoiChieu = 5f; // Thời gian giữa các lần hồi chiêu
-    public int mucDoHoiChieu = 1;       // Số lượng chiêu được hồi mỗi lần
+    public float cooldownTime = 5f; // Thời gian hồi chiêu
+    private bool isCooldown = false;
+    private float cooldownTimer = 0f;
 
-    private int soLuongChieuHienTai;    // Số lượng chiêu hiện tại
-    private bool coTheHoiChieu = true;  // Cờ cho biết có thể hồi chiêu hay không
-
-    void Start()
+    // Update is called once per frame
+    void Update()
     {
-        soLuongChieuHienTai = 0;
-
-        // Gán hàm xử lý sự kiện khi nhấn vào biểu tượng
-        iconChieu.onClick.AddListener(NhanVaoIconChieu);
-    }
-
-    void NhanVaoIconChieu()
-    {
-        if (coTheHoiChieu)
+        // Kiểm tra nếu đang trong thời gian cooldown
+        if (isCooldown)
         {
-                var x = transform.position.x + (isRight ? 0.5f : -0.5f);
-                var y = transform.position.y;
-                var z = transform.position.z;
+            // Cập nhật thời gian cooldown
+            cooldownTimer -= Time.deltaTime;
 
-                GameObject gameObject = (GameObject)Instantiate(
-                Resources.Load("Nhat/PrefabsBullet/Phitieu"),
-                new Vector3(x, y, z),
-                Quaternion.identity
-                );
-                gameObject.GetComponent<Fire>().setIsRight(isRight);
-            
-            // Gọi coroutine để hồi chiêu
-            StartCoroutine(HoiChieuTuDong());
+            // Kiểm tra nếu cooldown đã kết thúc
+            if (cooldownTimer <= 0)
+            {
+                isCooldown = false;
+            }
         }
-        else
+
+        // Kích hoạt hồi chiêu (ví dụ: bằng cách nhấn phím hoặc sử dụng một sự kiện khác)
+        if (Input.GetKeyDown(KeyCode.R) && !isCooldown)
         {
-            Debug.Log("Chưa thể hồi chiêu. Đợi thêm một chút!");
+            ActivateSkill();
         }
     }
 
-    IEnumerator HoiChieuTuDong()
+    // Hàm kích hoạt hồi chiêu
+    void ActivateSkill()
     {
-        // Đặt cờ không thể hồi chiêu
-        coTheHoiChieu = false;
+        // Thực hiện các hành động hồi chiêu ở đây
+        Debug.Log("Skill activated!");
 
-        // Chờ đợi thời gian giữa các lần hồi chiêu
-        yield return new WaitForSeconds(thoiGianHoiChieu);
+        // Bắt đầu thời gian cooldown
+        isCooldown = true;
+        cooldownTimer = cooldownTime;
 
-        // Hồi chiêu với số lượng được đặt trong mucDoHoiChieu
-        soLuongChieuHienTai += mucDoHoiChieu;
+        // Thực hiện hiệu ứng xoay
+        StartCoroutine(RotateOverTime(1f));
+    }
 
-        // In thông báo hoặc thực hiện các hành động khác tại đây
-        Debug.Log("Đã hồi " + mucDoHoiChieu + " chiêu. Số lượng chiêu hiện tại: " + soLuongChieuHienTai);
+    // Coroutine để thực hiện xoay
+    IEnumerator RotateOverTime(float duration)
+    {
+        float elapsed = 0f;
+        float startRotation = transform.rotation.eulerAngles.z;
+        float endRotation = startRotation + 360f;
 
-        // Đặt cờ có thể hồi chiêu trở lại
-        coTheHoiChieu = true;
+        while (elapsed < duration)
+        {
+            float newRotation = Mathf.Lerp(startRotation, endRotation, elapsed / duration);
+            transform.rotation = Quaternion.Euler(0, 0, newRotation);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.rotation = Quaternion.Euler(0, 0, endRotation); // Đảm bảo hoàn thành xoay
     }
 }

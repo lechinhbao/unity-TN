@@ -210,6 +210,7 @@ public class PlayerScript : MonoBehaviour
         public void Death()
         {
             animator.SetTrigger("PlayerDeath");
+            Destroy(gameObject, 2f);
        
         }
     private void OnTriggerEnter2D(Collider2D collision)

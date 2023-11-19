@@ -12333,9 +12333,9 @@ RectTransform:
   - {fileID: 2044338871}
   - {fileID: 1746169743}
   - {fileID: 119141219}
+  - {fileID: 933445842}
   - {fileID: 895264337}
   - {fileID: 978820748}
-  - {fileID: 933445842}
   m_Father: {fileID: 1377412432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -23259,9 +23259,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1852250244334458234, guid: c3c1ebbd303bb444cb7a711f0ea63741, type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 1878936011}
+    - target: {fileID: 1852250244334458234, guid: c3c1ebbd303bb444cb7a711f0ea63741, type: 3}
       propertyPath: panelDie
       value: 
       objectReference: {fileID: 416643960}
+    - target: {fileID: 1852250244334458234, guid: c3c1ebbd303bb444cb7a711f0ea63741, type: 3}
+      propertyPath: starText
+      value: 
+      objectReference: {fileID: 1794465369}
+    - target: {fileID: 1852250244334458234, guid: c3c1ebbd303bb444cb7a711f0ea63741, type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 2068467784}
     - target: {fileID: 1852250244334458234, guid: c3c1ebbd303bb444cb7a711f0ea63741, type: 3}
       propertyPath: restartButton
       value: 
@@ -23367,6 +23379,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1176548465}
     - target: {fileID: 7592701369385002577, guid: c3c1ebbd303bb444cb7a711f0ea63741, type: 3}
+      propertyPath: resumeButton
+      value: 
+      objectReference: {fileID: 2128771177}
+    - target: {fileID: 7592701369385002577, guid: c3c1ebbd303bb444cb7a711f0ea63741, type: 3}
       propertyPath: continueButton
       value: 
       objectReference: {fileID: 1658807595}
@@ -23374,10 +23390,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8747237146232782836, guid: c3c1ebbd303bb444cb7a711f0ea63741, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8747237146232782836, guid: c3c1ebbd303bb444cb7a711f0ea63741, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1060358646}
   m_SourcePrefab: {fileID: 100100000, guid: c3c1ebbd303bb444cb7a711f0ea63741, type: 3}
 --- !u!1 &836810703
 GameObject:
@@ -30089,6 +30112,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8747237146232782836, guid: c3c1ebbd303bb444cb7a711f0ea63741, type: 3}
   m_PrefabInstance: {fileID: 834647319}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1060358646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060358625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a626a0d81cb73747a2fc6b6474dec0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 1455684391}
+  stars:
+  - {fileID: 1111345220}
+  - {fileID: 1909338084}
+  - {fileID: 1994115952}
+  starThresholds: 32000000f4010000e8030000
+  starText: {fileID: 1750570239}
 --- !u!1001 &1061284626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36154,16 +36196,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a626a0d81cb73747a2fc6b6474dec0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinTexts: []
   coinText: {fileID: 1455684391}
-  coinTextPanelDie: {fileID: 1878936011}
   stars:
   - {fileID: 1111345220}
   - {fileID: 1909338084}
   - {fileID: 1994115952}
   starThresholds: 0a000000640000002c010000
   starText: {fileID: 1750570239}
-  starTexPanelDie: {fileID: 1794465369}
 --- !u!114 &1268012789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36176,9 +36215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e222144b8d87242b8b01f388d6bb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconChieu: {fileID: 1428235844}
-  thoiGianHoiChieu: 5
-  mucDoHoiChieu: 1
+  cooldownTime: 5
 --- !u!1 &1268856066
 GameObject:
   m_ObjectHideFlags: 0
@@ -41071,6 +41108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1428235843}
+  - component: {fileID: 1428235847}
   - component: {fileID: 1428235846}
   - component: {fileID: 1428235845}
   - component: {fileID: 1428235844}
@@ -41183,6 +41221,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428235842}
   m_CullTransparentMesh: 1
+--- !u!114 &1428235847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428235842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e222144b8d87242b8b01f388d6bb4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownTime: 5
 --- !u!4 &1437999233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6034180763476600680, guid: f1c43643720c55e4a9cbb0a821b3739a, type: 3}
@@ -43182,6 +43233,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 499214951}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1484885859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2112400861387915284, guid: 282a52595a743a24ba36e4bb28bc5993, type: 3}
+  m_PrefabInstance: {fileID: 413527673452998222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1484885877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484885859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a626a0d81cb73747a2fc6b6474dec0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 1455684391}
+  stars:
+  - {fileID: 1111345220}
+  - {fileID: 1909338084}
+  - {fileID: 1994115952}
+  starThresholds: 32000000f4010000e8030000
+  starText: {fileID: 1750570239}
 --- !u!1 &1486226092
 GameObject:
   m_ObjectHideFlags: 0
@@ -46334,6 +46409,30 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!1 &1591353024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3673245659821569961, guid: 06c094fe530da7f44b927078c3d8fe7e, type: 3}
+  m_PrefabInstance: {fileID: 9046904213589152778}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1591353037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591353024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a626a0d81cb73747a2fc6b6474dec0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 1455684391}
+  stars:
+  - {fileID: 1111345220}
+  - {fileID: 1909338084}
+  - {fileID: 1994115952}
+  starThresholds: 3200000064000000c8000000
+  starText: {fileID: 1750570239}
 --- !u!1 &1592568977
 GameObject:
   m_ObjectHideFlags: 0
@@ -63052,14 +63151,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mage
       objectReference: {fileID: 0}
+    - target: {fileID: 2112400861387915284, guid: 282a52595a743a24ba36e4bb28bc5993, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2842458262308695350, guid: 282a52595a743a24ba36e4bb28bc5993, type: 3}
       propertyPath: manaBar
       value: 
       objectReference: {fileID: 678170364102962771}
     - target: {fileID: 3058139200913058354, guid: 282a52595a743a24ba36e4bb28bc5993, type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 1878936011}
+    - target: {fileID: 3058139200913058354, guid: 282a52595a743a24ba36e4bb28bc5993, type: 3}
       propertyPath: panelDie
       value: 
       objectReference: {fileID: 416643960}
+    - target: {fileID: 3058139200913058354, guid: 282a52595a743a24ba36e4bb28bc5993, type: 3}
+      propertyPath: starText
+      value: 
+      objectReference: {fileID: 1794465369}
+    - target: {fileID: 3058139200913058354, guid: 282a52595a743a24ba36e4bb28bc5993, type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 2068467784}
     - target: {fileID: 3058139200913058354, guid: 282a52595a743a24ba36e4bb28bc5993, type: 3}
       propertyPath: restartButton
       value: 
@@ -63172,7 +63287,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 8904530103003997911, guid: 282a52595a743a24ba36e4bb28bc5993, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2112400861387915284, guid: 282a52595a743a24ba36e4bb28bc5993, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1484885877}
   m_SourcePrefab: {fileID: 100100000, guid: 282a52595a743a24ba36e4bb28bc5993, type: 3}
 --- !u!1001 &474270222386068210
 PrefabInstance:
@@ -63433,6 +63551,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7631254011340013645, guid: b1606bb3491f0534b9455ff5df217094, type: 3}
   m_PrefabInstance: {fileID: 8307818784006729620}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2461328459950041525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461328459950041507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a626a0d81cb73747a2fc6b6474dec0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 1455684391}
+  stars:
+  - {fileID: 1111345220}
+  - {fileID: 1909338084}
+  - {fileID: 1994115952}
+  starThresholds: 32000000f4010000e8030000
+  starText: {fileID: 1750570239}
 --- !u!1001 &2596672614460582726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64011,9 +64148,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5287390920872419438}
     - target: {fileID: 5311033123796070945, guid: c3717dcefddcd9040a73cc2f0eb7380d, type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 1878936011}
+    - target: {fileID: 5311033123796070945, guid: c3717dcefddcd9040a73cc2f0eb7380d, type: 3}
       propertyPath: panelDie
       value: 
       objectReference: {fileID: 416643960}
+    - target: {fileID: 5311033123796070945, guid: c3717dcefddcd9040a73cc2f0eb7380d, type: 3}
+      propertyPath: starText
+      value: 
+      objectReference: {fileID: 1794465369}
+    - target: {fileID: 5311033123796070945, guid: c3717dcefddcd9040a73cc2f0eb7380d, type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 2068467784}
     - target: {fileID: 5311033123796070945, guid: c3717dcefddcd9040a73cc2f0eb7380d, type: 3}
       propertyPath: restartButton
       value: 
@@ -64057,6 +64206,10 @@ PrefabInstance:
     - target: {fileID: 7866811164008268869, guid: c3717dcefddcd9040a73cc2f0eb7380d, type: 3}
       propertyPath: m_Name
       value: Knight 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866811164008268869, guid: c3717dcefddcd9040a73cc2f0eb7380d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8956853598549360236, guid: c3717dcefddcd9040a73cc2f0eb7380d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64565,9 +64718,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 484168285}
     - target: {fileID: 4944465180918838913, guid: b1606bb3491f0534b9455ff5df217094, type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 1878936011}
+    - target: {fileID: 4944465180918838913, guid: b1606bb3491f0534b9455ff5df217094, type: 3}
       propertyPath: panelDie
       value: 
       objectReference: {fileID: 416643960}
+    - target: {fileID: 4944465180918838913, guid: b1606bb3491f0534b9455ff5df217094, type: 3}
+      propertyPath: starText
+      value: 
+      objectReference: {fileID: 1794465369}
+    - target: {fileID: 4944465180918838913, guid: b1606bb3491f0534b9455ff5df217094, type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 2068467784}
     - target: {fileID: 4944465180918838913, guid: b1606bb3491f0534b9455ff5df217094, type: 3}
       propertyPath: restartButton
       value: 
@@ -64584,6 +64749,10 @@ PrefabInstance:
       propertyPath: pausePanel
       value: 
       objectReference: {fileID: 1176548465}
+    - target: {fileID: 4997916073090731000, guid: b1606bb3491f0534b9455ff5df217094, type: 3}
+      propertyPath: resumeButton
+      value: 
+      objectReference: {fileID: 2128771177}
     - target: {fileID: 4997916073090731000, guid: b1606bb3491f0534b9455ff5df217094, type: 3}
       propertyPath: continueButton
       value: 
@@ -64607,6 +64776,10 @@ PrefabInstance:
     - target: {fileID: 7631254011340013645, guid: b1606bb3491f0534b9455ff5df217094, type: 3}
       propertyPath: m_Name
       value: Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631254011340013645, guid: b1606bb3491f0534b9455ff5df217094, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8158680208939176080, guid: b1606bb3491f0534b9455ff5df217094, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64659,7 +64832,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7631254011340013645, guid: b1606bb3491f0534b9455ff5df217094, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 2461328459950041525}
   m_SourcePrefab: {fileID: 100100000, guid: b1606bb3491f0534b9455ff5df217094, type: 3}
 --- !u!1001 &8455936941628657383
 PrefabInstance:
@@ -64902,9 +65078,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 330990724651999610, guid: 06c094fe530da7f44b927078c3d8fe7e, type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 1878936011}
+    - target: {fileID: 330990724651999610, guid: 06c094fe530da7f44b927078c3d8fe7e, type: 3}
       propertyPath: panelDie
       value: 
       objectReference: {fileID: 416643960}
+    - target: {fileID: 330990724651999610, guid: 06c094fe530da7f44b927078c3d8fe7e, type: 3}
+      propertyPath: starText
+      value: 
+      objectReference: {fileID: 1794465369}
+    - target: {fileID: 330990724651999610, guid: 06c094fe530da7f44b927078c3d8fe7e, type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 2068467784}
     - target: {fileID: 330990724651999610, guid: 06c094fe530da7f44b927078c3d8fe7e, type: 3}
       propertyPath: restartButton
       value: 
@@ -65010,6 +65198,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 678170364102962771}
     - target: {fileID: 8808863194382919437, guid: 06c094fe530da7f44b927078c3d8fe7e, type: 3}
+      propertyPath: DiePanel
+      value: 
+      objectReference: {fileID: 416643960}
+    - target: {fileID: 8808863194382919437, guid: 06c094fe530da7f44b927078c3d8fe7e, type: 3}
       propertyPath: txtCoinPanel
       value: 
       objectReference: {fileID: 1455684391}
@@ -65024,7 +65216,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3673245659821569961, guid: 06c094fe530da7f44b927078c3d8fe7e, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 1591353037}
   m_SourcePrefab: {fileID: 100100000, guid: 06c094fe530da7f44b927078c3d8fe7e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

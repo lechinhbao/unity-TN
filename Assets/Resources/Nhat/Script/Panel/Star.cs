@@ -5,18 +5,17 @@ using UnityEngine.UI;
 
 public class Star : MonoBehaviour
 {
-    public List<TMP_Text> coinTexts;
 
     private int coinsCollected = 0;      // Số xu đã ăn
     public TMP_Text coinText;               // Text để hiển thị số xu
-    public TMP_Text coinTextPanelDie;               // Text để hiển thị số xu
+
 
     public GameObject[] stars;          // Mảng chứa các sao (đặt trong Inspector)
     public int[] starThresholds;         // Ngưỡng số xu để bật mỗi sao
 
     private int star = 0;            // Số sao
     public TMP_Text starText;            // Text để hiển thị số sao
-    public TMP_Text starTexPanelDie;            // Text để hiển thị số sao
+
     void Start()
     {
         UpdateCoins();  // Cập nhật số xu khi bắt đầu
@@ -39,14 +38,15 @@ public class Star : MonoBehaviour
             }
         }
     }
-    // Hàm này có thể được gọi khi nhân vật ăn một số xu (tùy thuộc vào game logic)
+   
+// Hàm này có thể được gọi khi nhân vật ăn một số xu (tùy thuộc vào game logic)
 /*    public void CollectCoin(int amount)
     {
         coinsCollected += amount;  // Tăng số xu đã ăn
         UpdateCoins();            // Cập nhật số xu
         ActivateStars();          // Kích hoạt sao tương ứng
     }*/
-    private void OnTriggerEnter2D(Collider2D collision)
+private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Coin")
         {
