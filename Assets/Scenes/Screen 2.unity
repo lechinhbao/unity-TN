@@ -23386,6 +23386,10 @@ PrefabInstance:
       propertyPath: continueButton
       value: 
       objectReference: {fileID: 1658807595}
+    - target: {fileID: 8389680202466383627, guid: c3c1ebbd303bb444cb7a711f0ea63741, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8747237146232782836, guid: c3c1ebbd303bb444cb7a711f0ea63741, type: 3}
       propertyPath: m_Name
       value: Player
