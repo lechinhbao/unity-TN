@@ -81,6 +81,7 @@ public class PlayerHealth : MonoBehaviour
 
         // Chờ cho đến khi animation hoàn thành trước khi hủy GameObject.
         StartCoroutine(DestroyAfterAnimation());
+      //Destroy(gameObject);
     }
 
     private IEnumerator DestroyAfterAnimation()

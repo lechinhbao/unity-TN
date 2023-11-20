@@ -13,13 +13,6 @@ public class Knight2 : MonoBehaviour
     //private bool isJumping;
 
     public float runSpeed = 5f;
-    // public float jumpForce = 5f;
-
-    //private bool isFacingRight = true;
-
-    //Coin
-    /*    public TMP_Text txtCoin;
-        private int countCoin = 0;*/
 
     //Bắn đạn
     private bool isRight = true;
@@ -47,6 +40,8 @@ public class Knight2 : MonoBehaviour
     public TMP_Text timeTextVictory; //Hiển thị thời gian chơi
     private bool isAlive; //Kiểm tra nhân vật tương tác
 
+    //Skill
+    private bool canShoot = true;
     private void Start()
 
     {
@@ -127,12 +122,6 @@ public class Knight2 : MonoBehaviour
                 psBui.transform.localRotation = rotation;
             }
         }
-        // Điều khiển nhảy
-        // if (Input.GetButtonDown("Jump") && !isJumping)
-        // {
-        //     rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-        //      isJumping = true;
-        //  }
 
         // Cập nhật trạng thái của Animator
         animator.SetBool("IsRunning", isRunning);
@@ -143,14 +132,18 @@ public class Knight2 : MonoBehaviour
         {
             if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
             {
+
                 Shoot();
                 currentMana -= 5; // Trừ đi 10 mana sau khi bắn
                 manaBar.UpdateMana(currentMana, maxMana);
+                
             }
             else
             {
                 Debug.Log("Không đủ mana để bắn đạn!");
             }
+            // Bắt đầu coroutine để chờ 3 giây trước khi có thể bắn tiếp
+            StartCoroutine(RechargeSkill());
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -165,6 +158,7 @@ public class Knight2 : MonoBehaviour
                 Debug.Log("Không đủ mana để bắn đạn!");
             }
         }
+
     }
     void Shoot()
     {
@@ -191,6 +185,17 @@ public class Knight2 : MonoBehaviour
         Quaternion.identity
         );
         gameObject.GetComponent<Fire>().setIsRight(isRight);
+    }
+    IEnumerator RechargeSkill()
+    {
+        // Đặt biến để tránh bắn liên tục trong khoảng thời gian chờ
+        canShoot = false;
+
+        // Đợi 3 giây
+        yield return new WaitForSeconds(3f);
+
+        // Sau 3 giây, cho phép bắn lại
+        canShoot = true;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

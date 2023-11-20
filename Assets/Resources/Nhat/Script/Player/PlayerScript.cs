@@ -13,20 +13,12 @@ public class PlayerScript : MonoBehaviour
     //private bool isJumping;
 
     public float runSpeed = 5f;
-   // public float jumpForce = 5f;
-
-    //private bool isFacingRight = true;
-
-    //Coin
-/*    public TMP_Text txtCoin;
-    private int countCoin = 0;*/
 
     //Bắn đạn
     private bool isRight = true;
 
     //Bụi
     public ParticleSystem psBui;
-
 
     //Mana
     public int maxMana = 100; // Số mana tối đa

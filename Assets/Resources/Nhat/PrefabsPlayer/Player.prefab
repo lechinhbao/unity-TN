@@ -4971,7 +4971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2182613348931094512
 Transform:
   m_ObjectHideFlags: 0
@@ -5101,6 +5101,9 @@ MonoBehaviour:
   panelDie: {fileID: 0}
   continueButton: {fileID: 0}
   restartButton: {fileID: 0}
+  coinText: {fileID: 0}
+  starText: {fileID: 0}
+  timeText: {fileID: 0}
 --- !u!114 &7592701369385002577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5166,8 +5169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68059cf54193e754facc70bfa571a374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comboThreshold: 3
-  comboDuration: 2
 --- !u!114 &4742391061288598767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5186,6 +5187,8 @@ MonoBehaviour:
   currentMana: 100
   manaBar: {fileID: 0}
   manaIncreaseInterval: 5
+  txtCoinVictory: {fileID: 0}
+  timeTextVictory: {fileID: 0}
 --- !u!114 &7335983097474213192
 MonoBehaviour:
   m_ObjectHideFlags: 0

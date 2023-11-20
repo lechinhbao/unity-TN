@@ -5054,6 +5054,8 @@ MonoBehaviour:
   currentMana: 100
   manaBar: {fileID: 0}
   manaIncreaseInterval: 5
+  txtCoinVictory: {fileID: 0}
+  timeTextVictory: {fileID: 0}
 --- !u!114 &4944465180918838913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5069,6 +5071,9 @@ MonoBehaviour:
   panelDie: {fileID: 0}
   continueButton: {fileID: 0}
   restartButton: {fileID: 0}
+  coinText: {fileID: 0}
+  starText: {fileID: 0}
+  timeText: {fileID: 0}
 --- !u!114 &8792270559551899592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5165,8 +5170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68059cf54193e754facc70bfa571a374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comboThreshold: 3
-  comboDuration: 1
 --- !u!212 &144541686748417622
 SpriteRenderer:
   m_ObjectHideFlags: 0

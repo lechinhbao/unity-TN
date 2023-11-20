@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8827589520908528409}
+  - component: {fileID: 9188137796361906932}
   - component: {fileID: 9202864102781672626}
   - component: {fileID: 4118419131736971472}
   - component: {fileID: 6249831433520931723}
@@ -45,10 +46,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7073162668421392378}
   - {fileID: 825682384081390866}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9188137796361906932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112400861387915284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a626a0d81cb73747a2fc6b6474dec0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 0}
+  stars:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  starThresholds: 32000000f4010000e8030000
+  starText: {fileID: 0}
 --- !u!114 &9202864102781672626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,10 +124,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 5
   psBui: {fileID: 1448750161611506047}
+  DiePanel: {fileID: 0}
   maxMana: 100
   currentMana: 100
   manaBar: {fileID: 0}
   manaIncreaseInterval: 5
+  txtCoinVictory: {fileID: 0}
+  timeTextVictory: {fileID: 0}
 --- !u!114 &4517097744072815523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +225,9 @@ MonoBehaviour:
   panelDie: {fileID: 0}
   continueButton: {fileID: 0}
   restartButton: {fileID: 0}
+  coinText: {fileID: 0}
+  starText: {fileID: 0}
+  timeText: {fileID: 0}
 --- !u!114 &7776716701714624964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5213,34 +5238,3 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!1 &8904530103003997911
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7073162668421392378}
-  m_Layer: 0
-  m_Name: DamePlayer
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7073162668421392378
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8904530103003997911}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8827589520908528409}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

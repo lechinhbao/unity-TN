@@ -10,7 +10,6 @@ public class Knight: MonoBehaviour
     private Rigidbody2D rb;
 
     private bool isRunning;
-    //private bool isJumping;
 
     public float runSpeed = 5f;
 
@@ -19,7 +18,6 @@ public class Knight: MonoBehaviour
 
     //Bụi
     public ParticleSystem psBui;
-
 
     //Mana
     public int maxMana = 100; // Số mana tối đa
@@ -36,6 +34,10 @@ public class Knight: MonoBehaviour
     private int time; //Thời gian tính băng giây
     public TMP_Text timeTextVictory; //Hiển thị thời gian chơi
     private bool isAlive; //Kiểm tra nhân vật tương tác
+
+    //Hồi chiêu
+    public float cooldownDuration = 3f;
+    private bool canShoot = true;
     private void Start()
 
     {
@@ -127,10 +129,26 @@ public class Knight: MonoBehaviour
                 Shoot();
                 currentMana -= 5; // Trừ đi 10 mana sau khi bắn
                 manaBar.UpdateMana(currentMana, maxMana);
+
+                //Hồi chiêu
+                StartCoroutine(StartCooldown());
             }
+
             else
             {
+
                 Debug.Log("Không đủ mana để bắn đạn!");
+            }
+            IEnumerator StartCooldown()
+            {
+                // Không cho phép bắn trong thời gian cooldown
+                canShoot = false;
+
+                // Chờ 3 giây
+                yield return new WaitForSeconds(cooldownDuration);
+
+                // Cho phép bắn lại
+                canShoot = true;
             }
         }
         if (Input.GetKeyDown(KeyCode.E))
