@@ -20,7 +20,6 @@ public class Knight2 : MonoBehaviour
     //Bụi
     public ParticleSystem psBui;
 
-
     //Hiển thị panel
     public GameObject DiePanel;
 
@@ -40,10 +39,12 @@ public class Knight2 : MonoBehaviour
     public TMP_Text timeTextVictory; //Hiển thị thời gian chơi
     private bool isAlive; //Kiểm tra nhân vật tương tác
 
-    //Skill
+    //Hồi chiêu
+    public float shootCooldown = 3f;
     private bool canShoot = true;
+    private bool canShoot2 = true;
+    private bool canShoot3 = true;
     private void Start()
-
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -70,7 +71,6 @@ public class Knight2 : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
-
     //Hồi mana
     void IncreaseMana()
     {
@@ -122,36 +122,52 @@ public class Knight2 : MonoBehaviour
                 psBui.transform.localRotation = rotation;
             }
         }
-
         // Cập nhật trạng thái của Animator
         animator.SetBool("IsRunning", isRunning);
 
         // animator.SetBool("IsJumping", isJumping);
-
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.W) && canShoot )
         {
+
             if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
             {
-
-                Shoot();
+                Shoot3();
                 currentMana -= 5; // Trừ đi 10 mana sau khi bắn
                 manaBar.UpdateMana(currentMana, maxMana);
-                
+                //Hồi chiêu
+                StartCoroutine(ShootCooldown());
             }
             else
             {
                 Debug.Log("Không đủ mana để bắn đạn!");
             }
-            // Bắt đầu coroutine để chờ 3 giây trước khi có thể bắn tiếp
-            StartCoroutine(RechargeSkill());
         }
-        if (Input.GetKeyDown(KeyCode.R))
+
+        if (Input.GetKeyDown(KeyCode.E) && canShoot2 )
+        {
+
+            if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
+            {
+                Shoot();
+                currentMana -= 5; // Trừ đi 10 mana sau khi bắn
+                manaBar.UpdateMana(currentMana, maxMana);
+                //Hồi chiêu
+                StartCoroutine(ShootCooldown2());
+            }
+            else
+            {
+                Debug.Log("Không đủ mana để bắn đạn!");
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.R) && canShoot3 )
         {
             if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
             {
                 Shoot2();
                 currentMana -= 5; // Trừ đi 10 mana sau khi bắn
                 manaBar.UpdateMana(currentMana, maxMana);
+                //Hồi chiêu
+                StartCoroutine(ShootCooldown3());
             }
             else
             {
@@ -186,16 +202,40 @@ public class Knight2 : MonoBehaviour
         );
         gameObject.GetComponent<Fire>().setIsRight(isRight);
     }
-    IEnumerator RechargeSkill()
+    void Shoot3()
     {
-        // Đặt biến để tránh bắn liên tục trong khoảng thời gian chờ
+        var x = transform.position.x + (isRight ? 0.5f : -0.5f);
+        var y = transform.position.y;
+        var z = transform.position.z;
+
+        GameObject gameObject = (GameObject)Instantiate(
+        Resources.Load("Nhat/PrefabsBullet/Locxoay"),
+        new Vector3(x, y, z),
+        Quaternion.identity
+        );
+        gameObject.GetComponent<Fire>().setIsRight(isRight);
+    }
+    //Hồi chiêu
+    IEnumerator ShootCooldown()
+    {
         canShoot = false;
-
-        // Đợi 3 giây
-        yield return new WaitForSeconds(3f);
-
-        // Sau 3 giây, cho phép bắn lại
+        yield return new WaitForSeconds(shootCooldown);
         canShoot = true;
+        Debug.Log("Load 3 giây");
+    }
+    IEnumerator ShootCooldown2()
+    {
+        canShoot2 = false;
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot2 = true;
+        Debug.Log("Load 3 giây");
+    }
+    IEnumerator ShootCooldown3()
+    {
+        canShoot3 = false;
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot3 = true;
+        Debug.Log("Load 3 giây");
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -232,7 +272,6 @@ public class Knight2 : MonoBehaviour
             countCoin += 1;
             txtCoinVictory.text = "Score:" + countCoin;
             Destroy(collision.gameObject);
-
         }
         if (collision.gameObject.tag == "checkpoint")
         {

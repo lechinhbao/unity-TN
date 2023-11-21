@@ -4946,13 +4946,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2182613348931094512}
+  - component: {fileID: 513411093878031413}
   - component: {fileID: 6380921802563202272}
   - component: {fileID: 6500251042018307550}
   - component: {fileID: 3625418048759401479}
   - component: {fileID: 4063522992485327278}
   - component: {fileID: 4305596110555178378}
   - component: {fileID: 8389680202466383627}
-  - component: {fileID: 2934982955364407898}
   - component: {fileID: 1852250244334458234}
   - component: {fileID: 7592701369385002577}
   - component: {fileID: 6541429671117429191}
@@ -4971,7 +4971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2182613348931094512
 Transform:
   m_ObjectHideFlags: 0
@@ -4989,6 +4989,25 @@ Transform:
   - {fileID: 9205962272720266652}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &513411093878031413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8747237146232782836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a626a0d81cb73747a2fc6b6474dec0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 0}
+  stars:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  starThresholds: 32000000f4010000e8030000
+  starText: {fileID: 0}
 --- !u!114 &6380921802563202272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5070,22 +5089,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 5
   maxJumps: 2
---- !u!114 &2934982955364407898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8747237146232782836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157fc6c218e70f143ba782f00f23a786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentMana: 5
-  manaBar: {fileID: 0}
-  maxMana: 100
-  manaIncreaseInterval: 5
 --- !u!114 &1852250244334458234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5189,6 +5192,7 @@ MonoBehaviour:
   manaIncreaseInterval: 5
   txtCoinVictory: {fileID: 0}
   timeTextVictory: {fileID: 0}
+  shootCooldown: 3
 --- !u!114 &7335983097474213192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5392,7 +5396,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 0.5
-  m_PreviewTimeScale: 1
+  m_PreviewTimeScale: 0
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -5409,7 +5413,7 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.91780823
+        time: 1
         value: 0
         inSlope: 0
         outSlope: 0

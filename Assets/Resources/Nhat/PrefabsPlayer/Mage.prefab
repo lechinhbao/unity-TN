@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8827589520908528409}
-  - component: {fileID: 9188137796361906932}
+  - component: {fileID: 5153108468456413570}
   - component: {fileID: 9202864102781672626}
   - component: {fileID: 4118419131736971472}
   - component: {fileID: 6249831433520931723}
@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 8750012056434176115}
   - component: {fileID: 168933657065018678}
   - component: {fileID: 5183638541988191773}
-  - component: {fileID: 2842458262308695350}
   - component: {fileID: 3058139200913058354}
   - component: {fileID: 7776716701714624964}
   - component: {fileID: 6082621721114463630}
@@ -49,7 +48,7 @@ Transform:
   - {fileID: 825682384081390866}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9188137796361906932
+--- !u!114 &5153108468456413570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,6 +130,7 @@ MonoBehaviour:
   manaIncreaseInterval: 5
   txtCoinVictory: {fileID: 0}
   timeTextVictory: {fileID: 0}
+  shootCooldown: 3
 --- !u!114 &4517097744072815523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,22 +194,6 @@ MonoBehaviour:
   DiePanel: {fileID: 0}
   popUpDamagePrefabs: {fileID: 7444324826586196203, guid: a800d5a9465aa844790484c3e398aa77, type: 3}
   popUpText: {fileID: 1119544880312331300, guid: a800d5a9465aa844790484c3e398aa77, type: 3}
---- !u!114 &2842458262308695350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112400861387915284}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157fc6c218e70f143ba782f00f23a786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentMana: 5
-  manaBar: {fileID: 0}
-  maxMana: 100
-  manaIncreaseInterval: 5
 --- !u!114 &3058139200913058354
 MonoBehaviour:
   m_ObjectHideFlags: 0

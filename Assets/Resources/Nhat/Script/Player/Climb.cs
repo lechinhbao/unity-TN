@@ -1,69 +1,63 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Climb : MonoBehaviour
 {
+    public float climbSpeed = 4f;
+    public Animator animator;
 
-    private float vertical;
-    private float speed = 80f;
-    private bool isLadder;
-    private bool isClimbing;
-    private Animator animator;
-    //[SerializeField] private Rigidbody2D rb;
+    private bool isClimbing = false;
     private Rigidbody2D rb;
-    private void Start()
 
+    void Start()
     {
-        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-
     }
-    // Update is called once per frame
+
     void Update()
     {
-        vertical = Input.GetAxis("Vertical");
+        float verticalInput = Input.GetAxis("Vertical");
 
-        if (isLadder && Mathf.Abs(vertical) > 0f)
-        {
-            isClimbing = true;
-        }
-    }
-
-    private void FixedUpdate()
-    {
         if (isClimbing)
         {
-            rb.gravityScale = 0f;
-            rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
+            Climb2(verticalInput);
         }
         else
         {
-            rb.gravityScale = 4f;
+            // Kiểm tra va chạm với box collider để bắt đầu leo
+            Collider2D hitCollider = Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Thang"));
+
+            if (hitCollider != null && verticalInput > 0)
+            {
+                StartClimbing();
+            }
         }
+
+        // Cập nhật trạng thái animation
+        animator.SetBool("isClimbing", isClimbing);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void StartClimbing()
     {
-        if (collision.CompareTag("Thang"))
-        {
-            isLadder = true;
-        }
-        if (collision.CompareTag("Thang"))
-        {
-            animator.SetTrigger("IsClimbing");
-        }
- 
+        isClimbing = true;
+        rb.gravityScale = 0f; // Ngừng sử dụng trọng lực
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    void StopClimbing()
     {
-        if (collision.CompareTag("Thang"))
+        isClimbing = false;
+        rb.gravityScale = 1f; // Bật lại trọng lực
+    }
+
+    void Climb2(float verticalInput)
+    {
+        // Di chuyển nhân vật lên và xuống
+        transform.Translate(Vector3.up * verticalInput * climbSpeed * Time.deltaTime);
+
+        // Kiểm tra nếu nhân vật không còn chạm vào box collider nữa thì dừng leo
+        Collider2D hitCollider = Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Climbable"));
+        if (hitCollider == null)
         {
-            isLadder = false;
-            isClimbing = false;
+            StopClimbing();
         }
     }
 }

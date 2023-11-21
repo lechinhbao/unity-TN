@@ -4940,13 +4940,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8158680208939176080}
+  - component: {fileID: 1357710960335404281}
   - component: {fileID: 5707293966484866112}
   - component: {fileID: 8674776314798475151}
   - component: {fileID: 134469414160499399}
   - component: {fileID: 4445021687122324604}
   - component: {fileID: 5581627891125216528}
   - component: {fileID: 4944465180918838913}
-  - component: {fileID: 8792270559551899592}
   - component: {fileID: 4123251720405090880}
   - component: {fileID: 1324561306483558643}
   - component: {fileID: 9073985164478655057}
@@ -4980,6 +4980,25 @@ Transform:
   - {fileID: 855694626828912566}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1357710960335404281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631254011340013645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a626a0d81cb73747a2fc6b6474dec0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 0}
+  stars:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  starThresholds: 32000000f4010000e8030000
+  starText: {fileID: 0}
 --- !u!114 &5707293966484866112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5056,6 +5075,7 @@ MonoBehaviour:
   manaIncreaseInterval: 5
   txtCoinVictory: {fileID: 0}
   timeTextVictory: {fileID: 0}
+  shootCooldown: 3
 --- !u!114 &4944465180918838913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5074,22 +5094,6 @@ MonoBehaviour:
   coinText: {fileID: 0}
   starText: {fileID: 0}
   timeText: {fileID: 0}
---- !u!114 &8792270559551899592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7631254011340013645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157fc6c218e70f143ba782f00f23a786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentMana: 5
-  manaBar: {fileID: 0}
-  maxMana: 100
-  manaIncreaseInterval: 5
 --- !u!114 &4123251720405090880
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,9 +12,11 @@ public class Skill2 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            //StartCoroutine(UseSkill());
             isCooldown = true;
             Debug.Log("Đợi 3 giây để hồi chiêu");
         }
+    
         if (isCooldown)
         {
             imageCooldown.fillAmount += 1 / cooldown * Time.deltaTime;

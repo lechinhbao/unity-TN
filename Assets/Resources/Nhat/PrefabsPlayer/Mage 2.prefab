@@ -4858,7 +4858,6 @@ GameObject:
   - component: {fileID: 186059304500047634}
   - component: {fileID: 1075132001039635740}
   - component: {fileID: 7964183008528787692}
-  - component: {fileID: 8409053269344856159}
   - component: {fileID: 8808863194382919437}
   - component: {fileID: 4258836976977311840}
   - component: {fileID: 1282189168411726330}
@@ -4877,7 +4876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5984050804480923631
 Transform:
   m_ObjectHideFlags: 0
@@ -5048,25 +5047,6 @@ MonoBehaviour:
   - {fileID: 0}
   starThresholds: 3200000064000000c8000000
   starText: {fileID: 0}
---- !u!114 &8409053269344856159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3673245659821569961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a626a0d81cb73747a2fc6b6474dec0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinText: {fileID: 0}
-  stars:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  starThresholds: 3200000064000000c8000000
-  starText: {fileID: 0}
 --- !u!114 &8808863194382919437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5088,6 +5068,7 @@ MonoBehaviour:
   manaIncreaseInterval: 5
   txtCoinVictory: {fileID: 0}
   timeTextVictory: {fileID: 0}
+  shootCooldown: 3
 --- !u!114 &4258836976977311840
 MonoBehaviour:
   m_ObjectHideFlags: 0

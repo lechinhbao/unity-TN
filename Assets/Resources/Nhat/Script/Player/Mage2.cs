@@ -38,6 +38,12 @@ public class Mage2 : MonoBehaviour
     private int time; //Thời gian tính băng giây
     public TMP_Text timeTextVictory; //Hiển thị thời gian chơi
     private bool isAlive; //Kiểm tra nhân vật tương tác
+
+    //Hồi chiêu
+    public float shootCooldown = 3f;
+    private bool canShoot = true;
+    private bool canShoot2 = true;
+    private bool canShoot3 = true;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -115,129 +121,50 @@ public class Mage2 : MonoBehaviour
             }
         }
         animator.SetBool("IsRunning", isRunning);
-        // Điều khiển nhảy
-        // if (Input.GetButtonDown("Jump") && !isJumping)
-        // {
-        //     rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-        //      isJumping = true;
-        //  }
-
-        // Cập nhật trạng thái của Animator
-
-
-        // animator.SetBool("IsJumping", isJumping);
-
-
-        //Bắn đạn
-        /*        if (Input.GetKeyDown(KeyCode.Q))
-                {
-                    if (currentMana > 0)
-                    {
-                        var x = transform.position.x + (isRight ? 0.5f : -0.5f);
-                        var y = transform.position.y;
-                        var z = transform.position.z;
-
-                        GameObject gameObject = (GameObject)Instantiate(
-                        Resources.Load("Nhat/PrefabsBullet/Fire"),
-                        new Vector3(x, y, z),
-                        Quaternion.identity
-                        );
-                        gameObject.GetComponent<Fire>().setIsRight(isRight);
-                    }
-                    else if(currentMana <= 0)
-                    {
-                        Debug.Log("Không đủ mana");
-                    }
-
-                }
-                if (Input.GetKeyDown(KeyCode.W))
-                {
-                    var x = transform.position.x + (isRight ? 0.5f : -0.5f);
-                    var y = transform.position.y;
-                    var z = transform.position.z;
-
-                    GameObject gameObject = (GameObject)Instantiate(
-                    Resources.Load("Nhat/PrefabsBullet/FireExtra"),
-                    new Vector3(x, y, z),
-                    Quaternion.identity
-                    );
-                    gameObject.GetComponent<Fire>().setIsRight(isRight);
-
-                }
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    var x = transform.position.x + (isRight ? 0.5f : -0.5f);
-                    var y = transform.position.y;
-                    var z = transform.position.z;
-
-                    GameObject gameObject = (GameObject)Instantiate(
-                    Resources.Load("Nhat/PrefabsBullet/Comet"),
-                    new Vector3(x, y, z),
-                    Quaternion.identity
-                    );
-                    gameObject.GetComponent<Fire>().setIsRight(isRight);
-
-                }
-                if (Input.GetKeyDown(KeyCode.R))
-                {
-                    var x = transform.position.x + (isRight ? 0.5f : -0.5f);
-                    var y = transform.position.y;
-                    var z = transform.position.z;
-
-                    GameObject gameObject = (GameObject)Instantiate(
-                    Resources.Load("Nhat/PrefabsBullet/Fire2"),
-                    new Vector3(x, y, z),
-                    Quaternion.identity
-                    );
-                    gameObject.GetComponent<Fire>().setIsRight(isRight);
-
-                }*/
+       
         if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Shoot();
+        }
+        if (Input.GetKeyDown(KeyCode.W) && canShoot)
         {
             if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
             {
                 Shoot();
                 currentMana -= 5; // Trừ đi 10 mana sau khi bắn
                 manaBar.UpdateMana(currentMana, maxMana);
+                //Hồi chiêu
+                StartCoroutine(ShootCooldown());
             }
             else
             {
                 Debug.Log("Không đủ mana để bắn đạn!");
             }
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.E) && canShoot2)
         {
             if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
             {
                 Shoot2();
                 currentMana -= 5; // Trừ đi 10 mana sau khi bắn
                 manaBar.UpdateMana(currentMana, maxMana);
+                //Hồi chiêu
+                StartCoroutine(ShootCooldown2());
             }
             else
             {
                 Debug.Log("Không đủ mana để bắn đạn!");
             }
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.R) && canShoot3)
         {
             if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
             {
                 Shoot3();
                 currentMana -= 5; // Trừ đi 10 mana sau khi bắn
                 manaBar.UpdateMana(currentMana, maxMana);
-            }
-            else
-            {
-                Debug.Log("Không đủ mana để bắn đạn!");
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
-            {
-                Shoot4();
-                currentMana -= 5; // Trừ đi 10 mana sau khi bắn
-                manaBar.UpdateMana(currentMana, maxMana);
+                //Hồi chiêu
+                StartCoroutine(ShootCooldown3());
             }
             else
             {
@@ -252,7 +179,7 @@ public class Mage2 : MonoBehaviour
         var z = transform.position.z;
 
         GameObject gameObject = (GameObject)Instantiate(
-        Resources.Load("Nhat/PrefabsBullet/Fire5"),
+        Resources.Load("Nhat/PrefabsBullet/Comet"),
         new Vector3(x, y, z),
         Quaternion.identity
         );
@@ -286,18 +213,27 @@ public class Mage2 : MonoBehaviour
         );
         gameObject.GetComponent<Fire>().setIsRight(isRight);
     }
-    void Shoot4()
+    //Hồi chiêu
+    IEnumerator ShootCooldown()
     {
-        var x = transform.position.x + (isRight ? 0.5f : -0.5f);
-        var y = transform.position.y;
-        var z = transform.position.z;
-
-        GameObject gameObject = (GameObject)Instantiate(
-        Resources.Load("Nhat/PrefabsBullet/Comet"),
-        new Vector3(x, y, z),
-        Quaternion.identity
-        );
-        gameObject.GetComponent<Fire>().setIsRight(isRight);
+        canShoot = false;
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot = true;
+        Debug.Log("Load 3 giây");
+    }
+    IEnumerator ShootCooldown2()
+    {
+        canShoot2 = false;
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot2 = true;
+        Debug.Log("Load 3 giây");
+    }
+    IEnumerator ShootCooldown3()
+    {
+        canShoot3 = false;
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot3 = true;
+        Debug.Log("Load 3 giây");
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

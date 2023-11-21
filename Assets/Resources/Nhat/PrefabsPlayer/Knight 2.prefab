@@ -5041,7 +5041,6 @@ GameObject:
   - component: {fileID: 6629043457099173630}
   - component: {fileID: 2100068730091606507}
   - component: {fileID: 497492222410485078}
-  - component: {fileID: 7052259593599084069}
   - component: {fileID: 5311033123796070945}
   - component: {fileID: 458490728834731187}
   - component: {fileID: 7853010680413383583}
@@ -5053,7 +5052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8956853598549360236
 Transform:
   m_ObjectHideFlags: 0
@@ -5260,7 +5259,7 @@ MonoBehaviour:
   manaIncreaseInterval: 5
   txtCoinVictory: {fileID: 0}
   timeTextVictory: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  shootCooldown: 3
 --- !u!114 &7084813176449420246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5326,22 +5325,6 @@ MonoBehaviour:
   txtCoin: {fileID: 0}
   popUpCoin: {fileID: 2247913691990460115, guid: ae8a679a8d0ef394faf6ee4217fe7fa0, type: 3}
   popUpCoinText: {fileID: 7397827659297117475, guid: ae8a679a8d0ef394faf6ee4217fe7fa0, type: 3}
---- !u!114 &7052259593599084069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7866811164008268869}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157fc6c218e70f143ba782f00f23a786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentMana: 5
-  manaBar: {fileID: 0}
-  maxMana: 100
-  manaIncreaseInterval: 5
 --- !u!114 &5311033123796070945
 MonoBehaviour:
   m_ObjectHideFlags: 0

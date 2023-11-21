@@ -35,6 +35,12 @@ public class PlayerScript : MonoBehaviour
     private int time; //Thời gian tính băng giây
     public TMP_Text timeTextVictory; //Hiển thị thời gian chơi
     private bool isAlive; //Kiểm tra nhân vật tương tác
+
+    //Hồi chiêu
+    public float shootCooldown = 3f;
+    private bool canShoot = true;
+    private bool canShoot2 = true;
+    private bool canShoot3 = true;
     private void Start()
 
     {
@@ -114,38 +120,52 @@ public class PlayerScript : MonoBehaviour
                 psBui.transform.localRotation = rotation;
             }
         }
-        // Điều khiển nhảy
-        // if (Input.GetButtonDown("Jump") && !isJumping)
-        // {
-        //     rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-        //      isJumping = true;
-        //  }
 
         // Cập nhật trạng thái của Animator
         animator.SetBool("IsRunning", isRunning);
 
         // animator.SetBool("IsJumping", isJumping);
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.W) && canShoot)
         {
             if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
             {
                 Shoot();
                 currentMana -= 5; // Trừ đi 10 mana sau khi bắn
                 manaBar.UpdateMana(currentMana, maxMana);
+                //Hồi chiêu
+                StartCoroutine(ShootCooldown());
             }
             else
             {
                 Debug.Log("Không đủ mana để bắn đạn!");
             }
         }
-        if (Input.GetKeyDown(KeyCode.E))
+
+        if (Input.GetKeyDown(KeyCode.R) && canShoot2 )
         {
             if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
             {
                 Shoot2();
                 currentMana -= 5; // Trừ đi 10 mana sau khi bắn
                 manaBar.UpdateMana(currentMana, maxMana);
+                //Hồi chiêu
+                StartCoroutine(ShootCooldown2());
+            }
+            else
+            {
+                Debug.Log("Không đủ mana để bắn đạn!");
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.E) && canShoot3 )
+        {
+            if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
+            {
+                Shoot3();
+                currentMana -= 5; // Trừ đi 10 mana sau khi bắn
+                manaBar.UpdateMana(currentMana, maxMana);
+                //Hồi chiêu
+                StartCoroutine(ShootCooldown3());
             }
             else
             {
@@ -173,11 +193,46 @@ public class PlayerScript : MonoBehaviour
         var z = transform.position.z;
 
         GameObject gameObject = (GameObject)Instantiate(
+        Resources.Load("Nhat/PrefabsBullet/Scull"),
+        new Vector3(x, y, z),
+        Quaternion.identity
+        );
+        gameObject.GetComponent<Fire>().setIsRight(isRight);
+    }
+    void Shoot3()
+    {
+        var x = transform.position.x + (isRight ? 0.5f : -0.5f);
+        var y = transform.position.y;
+        var z = transform.position.z;
+
+        GameObject gameObject = (GameObject)Instantiate(
         Resources.Load("Nhat/PrefabsBullet/Locxoay"),
         new Vector3(x, y, z),
         Quaternion.identity
         );
         gameObject.GetComponent<Fire>().setIsRight(isRight);
+    }
+    //Hồi chiêu
+    IEnumerator ShootCooldown()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot = true;
+        Debug.Log("Load 3 giây");
+    }
+    IEnumerator ShootCooldown2()
+    {
+        canShoot2 = false;
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot2 = true;
+        Debug.Log("Load 3 giây");
+    }
+    IEnumerator ShootCooldown3()
+    {
+        canShoot3 = false;
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot3 = true;
+        Debug.Log("Load 3 giây");
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
