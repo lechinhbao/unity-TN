@@ -37,10 +37,11 @@ public class PlayerScript : MonoBehaviour
     private bool isAlive; //Kiểm tra nhân vật tương tác
 
     //Hồi chiêu
-    public float shootCooldown = 3f;
+    private float shootCooldown = 3f;
     private bool canShoot = true;
     private bool canShoot2 = true;
     private bool canShoot3 = true;
+
     private void Start()
 
     {

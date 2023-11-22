@@ -4951,8 +4951,6 @@ GameObject:
   - component: {fileID: 6500251042018307550}
   - component: {fileID: 3625418048759401479}
   - component: {fileID: 4063522992485327278}
-  - component: {fileID: 4305596110555178378}
-  - component: {fileID: 8389680202466383627}
   - component: {fileID: 1852250244334458234}
   - component: {fileID: 7592701369385002577}
   - component: {fileID: 6541429671117429191}
@@ -4965,6 +4963,7 @@ GameObject:
   - component: {fileID: 2848742669520760944}
   - component: {fileID: 2025043477302536361}
   - component: {fileID: 8576482129035420497}
+  - component: {fileID: 722585569441238109}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5063,32 +5062,6 @@ MonoBehaviour:
   txtCoin: {fileID: 0}
   popUpCoin: {fileID: 2247913691990460115, guid: ae8a679a8d0ef394faf6ee4217fe7fa0, type: 3}
   popUpCoinText: {fileID: 7397827659297117475, guid: ae8a679a8d0ef394faf6ee4217fe7fa0, type: 3}
---- !u!114 &4305596110555178378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8747237146232782836}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0261727a6842a3f49ab50667183b4555, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8389680202466383627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8747237146232782836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 964f2bf9ce41c9c4da7b8bfb77b756f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 5
-  maxJumps: 2
 --- !u!114 &1852250244334458234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5466,3 +5439,16 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &722585569441238109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8747237146232782836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261727a6842a3f49ab50667183b4555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  climbSpeed: 3

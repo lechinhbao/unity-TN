@@ -6,7 +6,7 @@ public class Speed : MonoBehaviour
 {
     private bool canDash = true;
     private bool isDashing;
-    private float dashingPower = 24f;
+    private float dashingPower = 100f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
 
@@ -25,7 +25,7 @@ public class Speed : MonoBehaviour
         {
             return;
         }
-        if(Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        if(Input.GetKeyDown(KeyCode.LeftShift) && canDash == true)
         {
             StartCoroutine(Dash());
         }

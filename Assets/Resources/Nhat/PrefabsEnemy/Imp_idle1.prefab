@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2578604824559216795}
+  - component: {fileID: -8275172361112189969}
   - component: {fileID: 7295850419277234118}
   - component: {fileID: 8367280345003266572}
   - component: {fileID: 4118729569124838164}
@@ -35,6 +36,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-8275172361112189969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9125311572449808268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598a8ed88c6ba4d40b3af08d9ca4749c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthSlider: {fileID: 0}
+  deathAnimationDuration: 2
+  popUpDamagePrefab: {fileID: 0}
+  popUpText: {fileID: 0}
+  Effect: {fileID: 0}
+  CoinModel: {fileID: 0}
 --- !u!114 &7295850419277234118
 MonoBehaviour:
   m_ObjectHideFlags: 0

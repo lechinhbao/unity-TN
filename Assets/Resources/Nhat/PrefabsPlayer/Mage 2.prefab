@@ -4870,6 +4870,7 @@ GameObject:
   - component: {fileID: 5022565348823110182}
   - component: {fileID: 330990724651999610}
   - component: {fileID: 3340426405593381713}
+  - component: {fileID: -163341085926597700}
   m_Layer: 0
   m_Name: Mage 2
   m_TagString: Player
@@ -5235,3 +5236,16 @@ MonoBehaviour:
   victoryPanel: {fileID: 0}
   restartButton: {fileID: 0}
   continueButton: {fileID: 0}
+--- !u!114 &-163341085926597700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3673245659821569961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261727a6842a3f49ab50667183b4555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  climbSpeed: 3

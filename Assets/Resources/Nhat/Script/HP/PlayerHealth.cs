@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     public int Health;
     public int Enemy;
     public int Trap;
+    public int FireEnemy = 10;
     public HealthBar healthBar;
 
 
@@ -122,6 +123,13 @@ public class PlayerHealth : MonoBehaviour
             // Kích hoạt animation
             animator.SetBool("IsHurt", true);
             TakeDamage(Trap);
+        }
+        if (collision.gameObject.CompareTag("fireBall"))
+        {
+            PlayerHurt = true;
+            // Kích hoạt animation
+            animator.SetBool("IsHurt", true);
+            TakeDamage(FireEnemy);
         }
         if (collision.gameObject.CompareTag("Water"))
         {

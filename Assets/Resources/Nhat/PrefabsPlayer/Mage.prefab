@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 8509352600504433755}
   - component: {fileID: 4465596940165429678}
   - component: {fileID: 8868686880875892886}
+  - component: {fileID: 160727204894262384}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -378,6 +379,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &160727204894262384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112400861387915284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261727a6842a3f49ab50667183b4555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  climbSpeed: 3
 --- !u!1 &8392707627780846761
 GameObject:
   m_ObjectHideFlags: 0
