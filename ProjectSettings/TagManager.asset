@@ -29,6 +29,7 @@ TagManager:
   - Victory
   - BoxPush
   - MapDie
+  - Boss
   layers:
   - Default
   - TransparentFX
