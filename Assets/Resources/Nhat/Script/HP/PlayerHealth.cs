@@ -167,5 +167,25 @@ public class PlayerHealth : MonoBehaviour
 
         }
     }
-
+    //Enemy
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            PlayerHurt = true;
+            // Kích hoạt animation
+            animator.SetBool("IsHurt", true);
+            TakeDamage(FireEnemy);
+        }
+  
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            PlayerHurt = false;
+            // Kích hoạt animation
+            animator.SetBool("IsHurt", false);
+        }
+    }
 }

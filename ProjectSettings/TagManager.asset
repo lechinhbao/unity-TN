@@ -30,6 +30,8 @@ TagManager:
   - BoxPush
   - MapDie
   - Boss
+  - Trai
+  - Left
   layers:
   - Default
   - TransparentFX

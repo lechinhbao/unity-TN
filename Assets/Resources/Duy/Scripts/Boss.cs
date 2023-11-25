@@ -1,10 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-   
+
     Transform target;
     public Transform borderCheck;
 
@@ -12,17 +12,24 @@ public class Boss : MonoBehaviour
     public GameObject fireBall;
     private float timeSpawn;
     private float time;
+
+    private Animator animator;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
 
         timeSpawn = 10;
         time = timeSpawn;
+
+        animator = GetComponent<Animator>();
     }
+
 
     // Update is called once per frame
     void Update()
     {
+
+
         if (target.position.x > transform.position.x)
         {
             isRight = true;
@@ -35,7 +42,7 @@ public class Boss : MonoBehaviour
         }
 
         time -= Time.deltaTime;
-      
+
         if (time < 0)
         {
             Vector2 scale = transform.localScale;
@@ -44,34 +51,50 @@ public class Boss : MonoBehaviour
                 time = timeSpawn;
                 GameObject fb = Instantiate(fireBall);
                 fb.transform.position = new Vector2(
-                    
-                    transform.position.x + (isRight ? 0.1f : - 0.1f),
+
+                    transform.position.x + (isRight ? 0.1f : -0.1f),
                     transform.position.y
-                  
+
                 );
                 fb.GetComponent<FireScript>().SetSpeed(
                    isRight ? 4 : -4
                 );
             }
-            else 
+            else
             {
-                
+
                 time = timeSpawn;
                 GameObject fb = Instantiate(fireBall);
                 fb.transform.position = new Vector2(
-                  
+
                     transform.position.x + (isLeft ? 0.1f : -0.1f),
                     transform.position.y
-                     
+
                 );
                 fb.GetComponent<FireScript>().SetSpeed(
                    isLeft ? 4 : -4
                 );
             }
-            
+
         }
 
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("DamagePlayer"))
+        {
+
+            // Kích hoạt animation
+            animator.SetBool("IsHurt", true);
+
+        }
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+
+            // Kích hoạt animation
+            animator.SetBool("IsHurt", true);
+
+        }
+    }
+
 }
-
-

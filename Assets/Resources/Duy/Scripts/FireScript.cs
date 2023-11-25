@@ -16,11 +16,10 @@ public class FireScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // if (collision.gameObject.CompareTag("block"))
-        // {   
-        //     speedUp = speedUp * 0.95f  ;
-        //     rigidbody2D.velocity = new Vector2(speedUp, Mathf.Abs(speedUp));
-        // }
+         if (collision.gameObject.CompareTag("Player"))
+         {
+            Destroy(gameObject);
+         }
     }
 
     public void SetSpeed(float value)

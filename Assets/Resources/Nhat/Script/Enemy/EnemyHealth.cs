@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
     private Animator animator;
     public float deathAnimationDuration = 2.0f;
 
-    private bool DworfHurt = false;
+    //private bool Hurt = false;
     //Popup
     public GameObject popUpDamagePrefab;
     public TMP_Text popUpText;
@@ -39,14 +39,14 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("DamagePlayer"))
         {
-            DworfHurt = true;
+            //Hurt = true;
             // Kích hoạt animation
             animator.SetBool("IsHurt", true);
             TakeDamage(10); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
         }
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            DworfHurt = true;
+            //Hurt = true;
             // Kích hoạt animation
             animator.SetBool("IsHurt", true);
             TakeDamage(10); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
@@ -57,14 +57,14 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("DamagePlayer"))
         {
-            DworfHurt = false;
+            //Hurt = false;
             // Kích hoạt animation
             animator.SetBool("IsHurt", false);
         }
 
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            DworfHurt = false;
+            //Hurt = false;
             // Kích hoạt animation
             animator.SetBool("IsHurt", false);
         }
@@ -129,7 +129,7 @@ public void DeathEnemy()
         yield return new WaitForSeconds(deathAnimationDuration);
 
         // Hủy (destroy) GameObject.
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 2f);
     }
 }
 

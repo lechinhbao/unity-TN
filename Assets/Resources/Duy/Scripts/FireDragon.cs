@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire_ImpScript : MonoBehaviour
+public class FireDragon : MonoBehaviour
 {
     public float left, right;
     public float speed;

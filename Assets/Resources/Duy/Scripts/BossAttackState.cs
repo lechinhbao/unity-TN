@@ -17,7 +17,7 @@ public class BossAttackState : StateMachineBehaviour
     {
         float distance = Vector2.Distance(target.position, animator.transform.position);
         if (distance > 1 )
-         animator.SetBool("isAttacking",false);
+         animator.SetBool("IsAttack",false);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -25,16 +25,4 @@ public class BossAttackState : StateMachineBehaviour
     {
         
     }
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }
