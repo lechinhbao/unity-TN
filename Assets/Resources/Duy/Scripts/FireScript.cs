@@ -20,6 +20,10 @@ public class FireScript : MonoBehaviour
          {
             Destroy(gameObject);
          }
+        if (collision.gameObject.CompareTag("Stone"))
+        {
+            Destroy(gameObject, 1f);
+        }
     }
 
     public void SetSpeed(float value)

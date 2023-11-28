@@ -47,9 +47,10 @@ public class MageScript : MonoBehaviour
     private bool canShoot = true;
     private bool canShoot2 = true;
     private bool canShoot3 = true;
+
     private void Start()
     {
-        animator = GetComponent<Animator>();
+         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
         currentMana = maxMana;
@@ -63,6 +64,7 @@ public class MageScript : MonoBehaviour
         timeTextVictory.text = "Time:" + time + "s";
         StartCoroutine(UpdateTime());
     }
+
     //Time
     IEnumerator UpdateTime()
     {
@@ -233,6 +235,7 @@ public class MageScript : MonoBehaviour
         yield return new WaitForSeconds(shootCooldown);
         canShoot = true;
         Debug.Log("Load 3 giây");
+  
     }
     IEnumerator ShootCooldown2()
     {

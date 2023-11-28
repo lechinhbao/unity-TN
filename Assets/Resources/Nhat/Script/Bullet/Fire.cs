@@ -52,6 +52,10 @@ public class Fire : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -76,6 +80,10 @@ public class Fire : MonoBehaviour
             Destroy(gameObject, 0.1f);
         }
         if (collision.gameObject.CompareTag("Box"))
+        {
+            Destroy(gameObject, 0.1f);
+        }
+        if (collision.gameObject.CompareTag("Boss"))
         {
             Destroy(gameObject, 0.1f);
         }

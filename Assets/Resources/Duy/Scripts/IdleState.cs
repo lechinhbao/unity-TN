@@ -22,7 +22,7 @@ public class IdleState : StateMachineBehaviour
 
         float distance = Vector2.Distance(target.position, animator.transform.position);
         if (distance < 7 )
-         animator.SetBool("isWalk",true);
+         animator.SetBool("IsWalk",true);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

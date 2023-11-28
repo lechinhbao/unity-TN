@@ -41,6 +41,8 @@ public class PlayerScript : MonoBehaviour
     private bool canShoot = true;
     private bool canShoot2 = true;
     private bool canShoot3 = true;
+    private float countdown;
+    public TMP_Text countdownText; // Kết nối với UI Text
 
     private void Start()
 
@@ -127,6 +129,19 @@ public class PlayerScript : MonoBehaviour
 
         // animator.SetBool("IsJumping", isJumping);
 
+        //Text hồi chiêu
+        if (!canShoot)
+        {
+            countdown -= Time.deltaTime;
+            countdownText.text = Mathf.Ceil(countdown).ToString();
+
+            // Khi đếm ngược kết thúc, hiển thị lại chuỗi trống và cho phép bắn lại
+            if (countdown <= 0f)
+            {
+                countdownText.text = "";
+                canShoot = true;
+            }
+        }
         if (Input.GetKeyDown(KeyCode.W) && canShoot)
         {
             if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
@@ -213,6 +228,7 @@ public class PlayerScript : MonoBehaviour
         );
         gameObject.GetComponent<Fire>().setIsRight(isRight);
     }
+
     //Hồi chiêu
     IEnumerator ShootCooldown()
     {
@@ -220,6 +236,15 @@ public class PlayerScript : MonoBehaviour
         yield return new WaitForSeconds(shootCooldown);
         canShoot = true;
         Debug.Log("Load 3 giây");
+
+        countdown = shootCooldown;
+
+        // Đếm ngược và hiển thị text
+        while (countdown > 0f)
+        {
+            Debug.Log("Load 1 giây");
+            yield return null;
+        }
     }
     IEnumerator ShootCooldown2()
     {
@@ -227,6 +252,15 @@ public class PlayerScript : MonoBehaviour
         yield return new WaitForSeconds(shootCooldown);
         canShoot2 = true;
         Debug.Log("Load 3 giây");
+
+        countdown = shootCooldown;
+
+        // Đếm ngược và hiển thị text
+        while (countdown > 0f)
+        {
+            Debug.Log("Load 1 giây");
+            yield return null;
+        }
     }
     IEnumerator ShootCooldown3()
     {
@@ -234,7 +268,17 @@ public class PlayerScript : MonoBehaviour
         yield return new WaitForSeconds(shootCooldown);
         canShoot3 = true;
         Debug.Log("Load 3 giây");
+
+        countdown = shootCooldown;
+
+        // Đếm ngược và hiển thị text
+        while (countdown > 0f)
+        {
+            Debug.Log("Load 1 giây");
+            yield return null;
+        }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Kiểm tra va chạm với mặt đất (hoặc các platform)

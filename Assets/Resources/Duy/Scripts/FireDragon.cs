@@ -7,15 +7,18 @@ public class FireDragon : MonoBehaviour
     public float left, right;
     public float speed;
     public bool isRight;
-   public GameObject Player;
+    public GameObject Player;
     public GameObject Fire;
-    private float timeSpawn;// thoi gian tao vien dan
+    public float timeSpawn;// thoi gian tao vien dan
     private float time; // thoi gian dem
+
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
        timeSpawn = 3;
        time = timeSpawn;
+       animator = GetComponent<Animator>();
     }
    
 
@@ -40,6 +43,7 @@ public class FireDragon : MonoBehaviour
        time -= Time.deltaTime;
         if(time < 0)
         {
+            animator.SetTrigger("IsAttack");
             time = timeSpawn;
             GameObject fb = Instantiate(Fire);
             fb.transform.position = new Vector2(
@@ -48,7 +52,13 @@ public class FireDragon : MonoBehaviour
             );
             fb.GetComponent<FireScript>().SetSpeed(
                 isRight ? 4 : -4
+                
             );
+
+        }
+        else
+        {
+            animator.ResetTrigger("IsAttack");
         }
 
         var positionBug = transform.position.x;

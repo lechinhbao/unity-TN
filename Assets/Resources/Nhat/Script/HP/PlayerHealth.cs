@@ -82,7 +82,7 @@ public class PlayerHealth : MonoBehaviour
 
         // Chờ cho đến khi animation hoàn thành trước khi hủy GameObject.
         StartCoroutine(DestroyAfterAnimation());
-      //Destroy(gameObject);
+      
     }
 
     private IEnumerator DestroyAfterAnimation()
@@ -92,6 +92,7 @@ public class PlayerHealth : MonoBehaviour
 
         // Hủy (destroy) GameObject.
         // Destroy(gameObject);
+        gameObject.SetActive(false);
 
         Time.timeScale = 0; // Tạm dừng thời gian trong trò chơi.
         isGamePaused = true;

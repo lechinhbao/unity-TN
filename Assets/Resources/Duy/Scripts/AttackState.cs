@@ -17,7 +17,7 @@ public class AttackState : StateMachineBehaviour
     {
         float distance = Vector2.Distance(target.position, animator.transform.position);
         if (distance > 1 )
-         animator.SetBool("isAttacking",false);
+         animator.SetBool("IsAttack",false);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

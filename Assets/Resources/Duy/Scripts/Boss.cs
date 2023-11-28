@@ -47,7 +47,7 @@ public class Boss : MonoBehaviour
         {
             Vector2 scale = transform.localScale;
             if (isRight == true)
-            {
+            {  
                 time = timeSpawn;
                 GameObject fb = Instantiate(fireBall);
                 fb.transform.position = new Vector2(
@@ -59,10 +59,12 @@ public class Boss : MonoBehaviour
                 fb.GetComponent<FireScript>().SetSpeed(
                    isRight ? 4 : -4
                 );
+                animator.SetBool("IsMagic", true);
             }
+             
             else
             {
-
+           
                 time = timeSpawn;
                 GameObject fb = Instantiate(fireBall);
                 fb.transform.position = new Vector2(
@@ -74,14 +76,22 @@ public class Boss : MonoBehaviour
                 fb.GetComponent<FireScript>().SetSpeed(
                    isLeft ? 4 : -4
                 );
+                animator.SetBool("IsMagic", true);
             }
 
         }
+        else
+        {
+            // Stop the "Magic" animation
+            animator.SetBool("IsMagic", false);
+        }
+
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+  /*  private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("DamagePlayer"))
+        if (collision.gameObject.CompareTag("Player"))
         {
 
             // Kích hoạt animation
@@ -96,5 +106,15 @@ public class Boss : MonoBehaviour
 
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+
+            // Kích hoạt animation
+            animator.SetTrigger("IsHurt");
+
+        }
+    }*/
 
 }
