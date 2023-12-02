@@ -9,14 +9,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8402139530234071816}
-  - component: {fileID: -1410068213531973912}
   - component: {fileID: 78012655499776533}
   - component: {fileID: 7825654593358667571}
+  - component: {fileID: 2894810451162939038}
+  - component: {fileID: -156539783875134807}
   - component: {fileID: 2654863131034200723}
   - component: {fileID: -2826009992383351978}
   m_Layer: 0
   m_Name: Blade
-  m_TagString: Enemy
+  m_TagString: PetBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,18 +37,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-1410068213531973912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6279778310341351750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a680bd12f9fb94a806a8a85f09a7c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &78012655499776533
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -121,6 +110,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2894810451162939038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279778310341351750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08b23bb2f0002e459980b77b70fa209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-156539783875134807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279778310341351750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a680bd12f9fb94a806a8a85f09a7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &2654863131034200723
 BoxCollider2D:
   m_ObjectHideFlags: 0

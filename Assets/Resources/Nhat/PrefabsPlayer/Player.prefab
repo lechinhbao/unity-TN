@@ -4960,7 +4960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2182613348931094512
 Transform:
   m_ObjectHideFlags: 0
@@ -5031,7 +5031,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747237146232782836}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3ec5b56817501840bdf2501ed973645, type: 3}
   m_Name: 
@@ -5116,7 +5116,7 @@ MonoBehaviour:
   Health: 5
   Enemy: 5
   Trap: 10
-  FireEnemy: 0
+  FireEnemy: 10
   healthBar: {fileID: 0}
   OnDeath:
     m_PersistentCalls:

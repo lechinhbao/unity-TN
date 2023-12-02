@@ -68,7 +68,7 @@ public class ManaScript : MonoBehaviour
             TakeMana(5);
         }
         if (Input.GetKeyDown(KeyCode.E))
-        {
+        {  
             TakeMana(5);
         }*/
         if (Input.GetKeyDown(KeyCode.R))

@@ -1,22 +1,27 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Skill2 : MonoBehaviour
 {
     public Image imageCooldown;
-    public float cooldown = 3;
-    bool isCooldown;
+    public TMP_Text textCooldown;
+    public float cooldown = 5;
+    private bool isCooldown;
+
+    void Start()
+    {
+        textCooldown.text = "";
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !isCooldown)
         {
-            //StartCoroutine(UseSkill());
-            isCooldown = true;
-            Debug.Log("Đợi 3 giây để hồi chiêu");
+            StartCoroutine(StartCooldown());
         }
-    
+
         if (isCooldown)
         {
             imageCooldown.fillAmount += 1 / cooldown * Time.deltaTime;
@@ -25,7 +30,31 @@ public class Skill2 : MonoBehaviour
             {
                 imageCooldown.fillAmount = 0;
                 isCooldown = false;
+                textCooldown.text = "";
+            }
+            else
+            {
+                int remainingSeconds = Mathf.CeilToInt((1 - imageCooldown.fillAmount) * cooldown);
+                textCooldown.text = remainingSeconds.ToString();
             }
         }
+    }
+
+    IEnumerator StartCooldown()
+    {
+        isCooldown = true;
+        Debug.Log("Wait for " + cooldown + " seconds to cooldown.");
+
+        float remainingTime = cooldown;
+        while (remainingTime > 0)
+        {
+            textCooldown.text = Mathf.CeilToInt(remainingTime).ToString();
+            yield return new WaitForSeconds(1f);
+            remainingTime -= 1f;
+        }
+
+        textCooldown.text = "";
+        isCooldown = false;
+        Debug.Log("Cooldown complete!");
     }
 }

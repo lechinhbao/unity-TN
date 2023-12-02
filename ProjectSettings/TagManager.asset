@@ -32,6 +32,7 @@ TagManager:
   - Boss
   - Trai
   - Left
+  - PetBullet
   layers:
   - Default
   - TransparentFX

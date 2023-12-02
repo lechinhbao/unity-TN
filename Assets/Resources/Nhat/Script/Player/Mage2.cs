@@ -130,7 +130,7 @@ public class Mage2 : MonoBehaviour
         {
             if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
             {
-                Shoot();
+                Shoot2();
                 currentMana -= 5; // Trừ đi 10 mana sau khi bắn
                 manaBar.UpdateMana(currentMana, maxMana);
                 //Hồi chiêu
@@ -145,7 +145,7 @@ public class Mage2 : MonoBehaviour
         {
             if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
             {
-                Shoot2();
+                Shoot3();
                 currentMana -= 5; // Trừ đi 10 mana sau khi bắn
                 manaBar.UpdateMana(currentMana, maxMana);
                 //Hồi chiêu
@@ -160,7 +160,7 @@ public class Mage2 : MonoBehaviour
         {
             if (currentMana >= 5) // Kiểm tra nếu mana đủ để bắn (10 mana trong trường hợp này)
             {
-                Shoot3();
+                Shoot4();
                 currentMana -= 5; // Trừ đi 10 mana sau khi bắn
                 manaBar.UpdateMana(currentMana, maxMana);
                 //Hồi chiêu
@@ -179,7 +179,7 @@ public class Mage2 : MonoBehaviour
         var z = transform.position.z;
 
         GameObject gameObject = (GameObject)Instantiate(
-        Resources.Load("Nhat/PrefabsBullet/Comet"),
+        Resources.Load("Nhat/PrefabsBullet/Fire5"),
         new Vector3(x, y, z),
         Quaternion.identity
         );
@@ -208,6 +208,19 @@ public class Mage2 : MonoBehaviour
 
         GameObject gameObject = (GameObject)Instantiate(
         Resources.Load("Nhat/PrefabsBullet/TeslaBall"),
+        new Vector3(x, y, z),
+        Quaternion.identity
+        );
+        gameObject.GetComponent<Fire>().setIsRight(isRight);
+    }
+    void Shoot4()
+    {
+        var x = transform.position.x + (isRight ? 0.5f : -0.5f);
+        var y = transform.position.y;
+        var z = transform.position.z;
+
+        GameObject gameObject = (GameObject)Instantiate(
+        Resources.Load("Nhat/PrefabsBullet/Comet"),
         new Vector3(x, y, z),
         Quaternion.identity
         );

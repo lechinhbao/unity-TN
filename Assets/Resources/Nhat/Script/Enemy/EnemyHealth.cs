@@ -51,6 +51,10 @@ public class EnemyHealth : MonoBehaviour
             animator.SetBool("IsHurt", true);
             TakeDamage(10); // Giả sử khi va chạm với quái vật, nhân vật mất 10 máu
         }
+        if (collision.gameObject.CompareTag("PetBullet"))
+        {
+            TakeDamage(5); 
+        }
 
     }
     private void OnTriggerExit2D(Collider2D collision)

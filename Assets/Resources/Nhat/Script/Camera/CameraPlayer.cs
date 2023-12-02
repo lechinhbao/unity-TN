@@ -1,43 +1,24 @@
 ﻿using UnityEngine;
 
-public class CameraPlayer : MonoBehaviour
+public class PlayerCameraFollow : MonoBehaviour
 {
-    public Transform[] targets; // Mảng chứa tất cả nhân vật cần theo dõi
-    public float smoothTime = 0.5f; // Thời gian di chuyển mềm mại của camera
-    public Vector3 offset; // Độ chênh lệch vị trí giữa camera và trung bình của các nhân vật
+    public Transform target; // The target to follow (your player)
+    public float smoothSpeed = 0.125f; // The smoothness of camera movement
+    public Vector3 offset; // Offset from the player's position
 
-    private Vector3 velocity;
-
-    void Update()
+    void LateUpdate()
     {
-        if (targets.Length == 0)
+        if (target == null)
         {
-            return; // Không có nhân vật nào để theo dõi
+            Debug.LogWarning("Target not assigned for the camera follow script.");
+            return;
         }
 
-        MoveCamera();
-    }
+        // Calculate the desired position for the camera
+        Vector3 desiredPosition = target.position + offset;
 
-    void MoveCamera()
-    {
-        Vector3 centerPoint = GetCenterPoint();
-        Vector3 newPosition = centerPoint + offset;
-        transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
-    }
-
-    Vector3 GetCenterPoint()
-    {
-        if (targets.Length == 1)
-        {
-            return targets[0].position;
-        }
-
-        Bounds bounds = new Bounds(targets[0].position, Vector3.zero);
-        for (int i = 0; i < targets.Length; i++)
-        {
-            bounds.Encapsulate(targets[i].position);
-        }
-
-        return bounds.center;
+        // Use SmoothDamp to smoothly move the camera towards the desired position
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
     }
 }
